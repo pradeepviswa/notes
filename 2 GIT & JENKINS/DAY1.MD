@@ -1,4 +1,4 @@
-#version control - GIT
+# version control - GIT
 
 ## add
 git add index.html
@@ -29,4 +29,5 @@ git remote -v
 
 ## push code. new branch will also be created in repository with name "pradeep"
 git push -u origin pradeep
+
 
