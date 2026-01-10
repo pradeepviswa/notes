@@ -1,0 +1,2 @@
+1. Autoscaling
+2. S3 bucket
