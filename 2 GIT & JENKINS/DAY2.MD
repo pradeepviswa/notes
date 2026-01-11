@@ -18,4 +18,14 @@ got to MANAGE AND ASSIGN ROLE to create role, set permission and add users in it
 4. trigger via scrip: create custom script to connect jenkisn and trigger the job
 
 
+### webhook - only 2 changes
+1. in githuib repo, settings -> webhook -> new webhook -> 
+   address of jenkins server liek this: http://13.200.37.86:8080/github-webhook/
+   choose "Send me everything."
+2. In Jenkins,
+   job -> configure -> 
+     Source Code Management -> add git repo URL
+     Triggers -> GitHub hook trigger for GITScm polling
+   
+
 
