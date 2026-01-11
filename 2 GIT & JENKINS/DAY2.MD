@@ -1,8 +1,5 @@
 # JENKINS
 
-# QUESTION
-Yesterday you mentioned jenkins is a free ware tool. Can we use this free license for commercial purpose as well?
-
 # USER MANAGEMENT
 ## for access management install role based authtication plugin
 Role-based Authorization Strategy 
