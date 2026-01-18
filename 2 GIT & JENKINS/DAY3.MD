@@ -8,7 +8,7 @@ maven build help document: https://maven.apache.org/guides/introduction/introduc
 checkstyle tool used by maven for quality assurance: https://maven.apache.org/plugins/maven-checkstyle-plugin/
 
 ## steps
-1. new item -> pipeline
+### 1. new item -> pipeline
    click on pipeline and write groovy script, follwo pipelien syntx for help to create groovy script
 ```
 pipeline{
