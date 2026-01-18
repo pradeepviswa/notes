@@ -23,7 +23,7 @@ pipeline{
 }
 ```
 
-2. groovy with some stages and steps
+### 2. groovy with some stages and steps
 ```
 pipeline{
   agent any
@@ -60,7 +60,7 @@ pipeline{
 }
 ```
 
-3. generage reports
+### 3. generage reports
    manage -> plugins -> warning plugin install
    pipeline suyntax: 
   recordIssues: record compiler warning
@@ -110,7 +110,7 @@ pipeline{
 }
 ```
 
-4. CD Part - Deploy.
+### 4. CD Part - Deploy.
    Deploy it in localmachine using tomcat
    Copy link address of tomcat zip file https://tomcat.apache.org/download-90.cgi
    For now I am using: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.113/bin/apache-tomcat-9.0.113.zip
@@ -135,7 +135,7 @@ chmod 700 *.sh
 bash startup.sh 
 
 ```
-4.1. we will copy war file from Jensins lcoation to tomcat webapp directory which is in root location
+#### 4.1. we will copy war file from Jensins lcoation to tomcat webapp directory which is in root location
 
 ```
 visudo
@@ -145,7 +145,7 @@ jenkins ALL=(ALL:ALL) NOPASSWD: ALL
 service jenkins restart
 ```
 
-4.2. Deploy application in tomcat
+#### 4.2. Deploy application in tomcat
 
 pacakge has created war file here: /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war
 
@@ -161,7 +161,7 @@ cp  /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war /home/u
 ```
 
    
-4.3. Complete pipeline configuration once again with deploy code
+#### 4.3. Complete pipeline configuration once again with deploy code
 ```
 pipeline{
     agent any
@@ -207,7 +207,7 @@ pipeline{
 }
 ```
 
-5. Try to access website: http://54.82.98.100:9090/addressbook/
+### 5. Try to access website: http://54.82.98.100:9090/addressbook/
 
-6. configure webhook for auto CI/CD
+### 6. configure webhook for auto CI/CD
    webhook document: https://github.com/pradeepviswa/notes/blob/main/2%20GIT%20%26%20JENKINS/DAY2.MD
