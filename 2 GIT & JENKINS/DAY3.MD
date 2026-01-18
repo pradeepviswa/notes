@@ -136,9 +136,13 @@ bash startup.sh
 ```
 
 4.1. Deploy application in tomcat
+
 pacakge has created war file here: /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war
+
 copy this  war file from jenkisn workpsace to tomcat location
+
 Jenkins location: /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war
+
 Tomcat locatioon: /home/ubuntu/apache-tomcat-9.0.113/webapps
 
 ```
