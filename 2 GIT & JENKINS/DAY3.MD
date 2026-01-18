@@ -2,7 +2,9 @@
 
 ## pre-requiestes
 Install Jenkins: https://github.com/pradeepviswa/deployment-scripts/blob/main/jenkins.sh
+
 maven build help document: https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+
 checkstyle tool used by maven for quality assurance: https://maven.apache.org/plugins/maven-checkstyle-plugin/
 
 ## steps
