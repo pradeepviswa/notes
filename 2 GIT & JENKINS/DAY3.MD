@@ -161,4 +161,50 @@ cp  /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war /home/u
 ```
 
    
-   
+4.3. Complete pipeline configuration once again with deploy code
+```
+pipeline{
+    agent any
+    stages{
+        stage("1: checkout the repo"){
+            steps{
+                git 'https://github.com/pradeepviswa/addressbook-cicd-project.git'
+                echo 'git repo cloned'
+            }
+        }//stage1
+        stage("2: Validate code"){
+            steps{
+                sh 'mvn validate'    
+            }
+        }//stage2
+        
+        stage("3: test the code"){
+            steps{
+                sh 'mvn test'
+            }
+        }//stage3
+        
+        stage("4: quality assurance"){
+            steps{
+                sh 'mvn checkstyle:checkstyle'
+                recordIssues sourceCodeRetention: 'LAST_BUILD', tools: [checkStyle()]
+            }
+        }//stage5
+        
+        stage("6: package"){
+            steps{
+                sh 'mvn package'
+            }
+        }//stage6
+        
+        stage("7: Deploy the project"){
+            steps{
+                sh 'sudo cp  /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war /home/ubuntu/apache-tomcat-9.0.113/webapps'
+            }
+        }//state 7
+    }//stages
+    
+}
+```
+
+5. Try to access website: http://54.82.98.100:9090/addressbook/
