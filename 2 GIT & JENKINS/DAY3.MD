@@ -133,9 +133,19 @@ cd bin
 # gieve read adn execute permission to all .sh files
 chmod 700 *.sh
 bash startup.sh 
+
+```
+4.1. we will copy war file from Jensins lcoation to tomcat webapp directory which is in root location
+
+```
+visudo
+#just under root enter below line
+jenkins ALL=(ALL:ALL) NOPASSWD: ALL
+#restart jenkins
+service jenkins restart
 ```
 
-4.1. Deploy application in tomcat
+4.2. Deploy application in tomcat
 
 pacakge has created war file here: /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war
 
@@ -145,6 +155,7 @@ Jenkins location: /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbo
 
 Tomcat locatioon: /home/ubuntu/apache-tomcat-9.0.113/webapps
 
+got o jenkins pipeline, configure
 ```
 cp  /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war /home/ubuntu/apache-tomcat-9.0.113/webapps
 ```
