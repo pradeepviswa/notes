@@ -208,3 +208,5 @@ pipeline{
 ```
 
 5. Try to access website: http://54.82.98.100:9090/addressbook/
+
+6. configure webhook for auto CI/CD
