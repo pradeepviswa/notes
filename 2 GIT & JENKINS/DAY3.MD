@@ -110,3 +110,32 @@ pipeline{
 }
 ```
 
+4. CD Part - Deploy.
+   Deploy it in localmachine using tomcat
+   Copy link address of tomcat zip file https://tomcat.apache.org/download-90.cgi
+   For now I am using: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.113/bin/apache-tomcat-9.0.113.zip
+   On Jenkisn machine
+   once below steps are done try to acess tompact at port 9090. Example http://54.82.98.100:9090
+```
+sudo su
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.113/bin/apache-tomcat-9.0.113.zip
+apt install unzip -y
+unzip apache-tomcat-9.0.113.zip
+#here tomcat and jenkins both using port 8080. Chagne the port for tomcat
+cd apache-tomcat-9.0.113/conf
+cd conf
+vi server.xml
+# seearch for this line
+#<Connector port="8081" protocol="HTTP/1.1" 
+# and repalce it to 9090. save and exit
+cd ..
+cd bin
+# gieve read adn execute permission to all .sh files
+chmod 700 *.sh
+bash startup.sh 
+
+```
+
+
+   
+   
