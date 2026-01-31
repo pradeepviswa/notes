@@ -72,8 +72,22 @@ ssh-keygen
 # (above command generate the key in master machine) 
 # (press enter three times)
 ```
+<img width="701" height="480" alt="image" src="https://github.com/user-attachments/assets/35bd69d9-4fd3-4bcf-b1ee-52829e60b5c0" />
 
 
+# Now we need to copy the keypair in the node 1 and node2 
+Go to Ansible-server(master) 
+```
+su - devops
+ls -a
+cd .ssh
+ssh-copy-id devops@privateipofnode1
+#ssh-copy-id devops@172.31.17.124
+#ssh-copy-id devops@172.31.20.227
+#In the password put the password which we set while creating the user devops
+```
+Similarly copy to the node2 as well
+<img width="1091" height="312" alt="image" src="https://github.com/user-attachments/assets/2221338e-3041-4a11-8963-db5d85c8f65b" />
 
 
 
