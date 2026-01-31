@@ -100,5 +100,32 @@ ansible all -a"ls"
 
  
 
+# adhoc commnad
+single line command which using ansible library to perform a task
+You can refer ansible official document for reference.
+Example: create a file, refer https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/file_module.html
+reference yaml block, let's create adhoc command using this block
+```
+- name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+  ansible.builtin.file:
+    path: /etc/foo.conf
+    state: touch
+    mode: u=rw,g=r,o=r
+```
+#### definition:
+all = in all machines mentioned in hosts file
+-b = become, run this command with root permission
+-m = module, here we are using file module
+-a = argument for module
+```
+#create file
+ansible all -b -m file -a "path=/home/devops/test.txt state=touch"
+
+# run ls command
+ansible all -b -m command -a"ls"
+
+# install apache
+ansible all -b -m package -a "name=httpd state=present"
+```
 
 
