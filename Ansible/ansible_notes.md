@@ -12,7 +12,7 @@ apt-get install -y software-properties-common
 apt-add-repository ppa:ansible/ansible
 apt-get update
 apt-get install -y ansible
-ansibole -version
+ansibole --version
 ```
 ## define the host
 This list will contain prod-machine1 and prod-machine2 VM IPs
