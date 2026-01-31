@@ -124,6 +124,8 @@ ansible all -b -m file -a "path=/home/devops/test.txt state=touch"
 # run ls command
 ansible all -b -m command -a"ls"
 
+#  update apt
+ansible all -b -m command -a "apt update -y"
 # install apache
 ansible all -b -m package -a "name=apache2 state=present"
 ```
