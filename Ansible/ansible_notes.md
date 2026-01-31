@@ -125,7 +125,7 @@ ansible all -b -m file -a "path=/home/devops/test.txt state=touch"
 ansible all -b -m command -a"ls"
 
 # install apache
-ansible all -b -m package -a "name=httpd state=present"
+ansible all -b -m package -a "name=apache2 state=present"
 ```
 
 
