@@ -91,7 +91,14 @@ Similarly copy to the node2 as well
 
 
 
+# Lets now check if we are able to see the create files in the nodes via ansible 
 
+```
+ansible all -a"ls"
+```
+<img width="477" height="196" alt="image" src="https://github.com/user-attachments/assets/93bb5fab-9407-49d9-9514-dd107b7884ad" />
 
  
+
+
 
