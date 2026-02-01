@@ -1,5 +1,5 @@
 
-# Format of Playbook to install apache2
+# Simple Playbook to install apache2
 ```
 # filename: playbook1.yml
 ---
@@ -20,12 +20,12 @@
         state: directory
         mode: '0755'
 ```
-# dry run
+#### dry run
 ```
  ansible-playbook playbook1.yml --check
 ```
 
-# run playbook
+#### run playbook
 ```
 ansible-playbook playbook1.yml
 ```
