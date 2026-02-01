@@ -1,4 +1,9 @@
-<!-- TOC -->
+## Table of Contents
+- [Reference](#reference)
+- [Install Ansible in AWS EC2 Machines](#install-ansible-in-aws-ec2-machines)
+
+---
+
 
 # Reference: 
 https://docs.google.com/document/d/1wcPTNRWPOloVWZtamJZZXWiTDrUgeZB6/edit
@@ -144,7 +149,6 @@ ansible all -b -m service -a "name=apache2 state=started enabled=yes"
 ```
 
 
-<!-- /TOC -->
 
 
 
