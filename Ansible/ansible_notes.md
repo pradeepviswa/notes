@@ -1,5 +1,4 @@
 <!-- TOC -->
-<!-- /TOC -->
 
 # Reference: 
 https://docs.google.com/document/d/1wcPTNRWPOloVWZtamJZZXWiTDrUgeZB6/edit
@@ -143,3 +142,16 @@ ansible all -b -m package -a "update_cache=yes"
 ansible all -b -m package -a "name=apache2 state=present"
 ansible all -b -m service -a "name=apache2 state=started enabled=yes"
 ```
+
+
+<!-- /TOC -->
+
+
+
+
+
+
+
+
+
+
