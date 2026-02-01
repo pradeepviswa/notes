@@ -43,10 +43,10 @@ ansible-playbook playbook1.yml
     package:
        name: apache2
        state: present
-  - name: restart apache2 service
+  - name: stop apache2 service
     ansible.buildin.service:
         name: apache2
-        state: restarted
+        state: stopped
   - name: delete existing web site files
     file:
       path: /var/www/html/
@@ -55,5 +55,9 @@ ansible-playbook playbook1.yml
     ansible.bnuiltin.git:
       repo: https://github.com/pradeepviswa/apachewebsite.git
       dest: /var/www/html/
+  - name: stop apache2 restart
+    ansible.buildin.service:
+        name: apache2
+        state: restarted
 
 ```
