@@ -133,3 +133,10 @@ ansible all -b -m package -a "name=apache2 state=present"
 ```
 
 
+# some usefule command sets
+- install apache2 on ubuntu
+- ```
+  ansible all -b -m package -a "update_cache=yes"
+ansible all -b -m package -a "name=apache2 state=present"
+ansible all -b -m service -a "name=apache2 state=started enabled=yes"
+  ```
