@@ -1,6 +1,7 @@
 
 # Format of Playbook to install apache2
 ```
+# filename: playbook1.yml
 ---
 - name: test deployment
   hosts: dev
@@ -15,6 +16,14 @@
         path: /home/devops/test_folder
         state: directory
         mode: '0755'
-        
-  
 ```
+# dry run
+```
+ ansible-playbook playbook1.yml --check
+```
+
+# run playbook
+```
+ansible-playbook playbook1.yml
+```
+
