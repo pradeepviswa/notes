@@ -11,12 +11,13 @@ https://docs.google.com/document/d/1wcPTNRWPOloVWZtamJZZXWiTDrUgeZB6/edit
 Refer: https://github.com/pradeepviswa/deployment-scripts/blob/main/install_ansible.sh
 ```
 # sudo su 
+export DEBIAN_FRONTEND=noninteractive
 apt update -y
-apt-get install -y software-properties-common
-apt-add-repository ppa:ansible/ansible
-apt-get update
-apt-get install -y ansible
-ansibole --version
+apt install -y software-properties-common
+apt-add-repository -y ppa:ansible/ansible
+apt update -y
+apt install -y ansible
+ansible --version
 ```
 ## define the host
 This list will contain prod-machine1 and prod-machine2 VM IPs
