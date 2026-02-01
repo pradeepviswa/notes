@@ -31,11 +31,12 @@ ansible-playbook playbook1.yml
 ```
 
 # Write a playbook to install apache web site which is in github
+#### without nofify
 ```
 - name: install apache from guthub
   hosts: all
   become: yes
-- tasks
+  tasks
   - name: update package
     package:
       update_cache: yes
@@ -61,3 +62,33 @@ ansible-playbook playbook1.yml
         state: restarted
 
 ```
+
+
+#### install apache with with nofify
+```
+- name: install apache from guthub
+  hosts: all
+  become: yes
+  tasks
+  - name: update package
+    package:
+      update_cache: yes
+  - name: install apache
+    package:
+       name: apache2
+       state: present
+    notify: restart apache2
+
+  handlers:
+    - name: restart apache2
+      ansible.buildin.service:
+        name: apache2
+        state: restarted
+
+```
+
+
+
+
+
+
