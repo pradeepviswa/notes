@@ -1,10 +1,6 @@
 
 # Simple Playbook to install apache2
 <!-- filename: playbook1.yml -->
-
-<div style="max-height: 200px; overflow-y: auto; border: 1px solid #ddd; padding: 8px;">
-
-```yaml
 ---
 - name: test deployment
   hosts: dev
@@ -22,7 +18,7 @@
         path: test_folder
         state: directory
         mode: '0755'
-</div> ```
+```
 
 #### dry run
 ```
