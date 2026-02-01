@@ -96,7 +96,7 @@ Similarly copy to the node2 as well
 # Lets now check if we are able to see the create files in the nodes via ansible 
 
 ```
-ansible all -a"ls"
+ansible all -m command -a "ls"
 ```
 <img width="477" height="196" alt="image" src="https://github.com/user-attachments/assets/93bb5fab-9407-49d9-9514-dd107b7884ad" />
 
@@ -124,7 +124,7 @@ all = in all machines mentioned in hosts file
 ansible all -b -m file -a "path=/home/devops/test.txt state=touch"
 
 # run ls command
-ansible all -b -m command -a"ls"
+ansible all -b -m command -a "ls"
 
 #  update apt
 ansible all -b -m command -a "apt update -y"
