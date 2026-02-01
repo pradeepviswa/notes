@@ -1,7 +1,7 @@
 
 # Simple Playbook to install apache2
-<!-- filename: playbook1.yml -->
 ---
+#playbook1.yml
 - name: test deployment
   hosts: dev
   become: true
