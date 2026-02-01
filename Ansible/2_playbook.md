@@ -10,7 +10,6 @@
     - name: Update apt cache
       ansible.builtin.package:
         update_cache: yes
-
     - name: Install apache2
       ansible.builtin.package:
         name: apache2
