@@ -8,8 +8,9 @@ https://docs.google.com/document/d/1wcPTNRWPOloVWZtamJZZXWiTDrUgeZB6/edit
    ssh -i key.pem ubuntu@ip
 
 # on ansible-server vm install ansible
+Refer: https://github.com/pradeepviswa/deployment-scripts/blob/main/install_ansible.sh
 ```
-sudo su 
+# sudo su 
 apt update -y
 apt-get install -y software-properties-common
 apt-add-repository ppa:ansible/ansible
