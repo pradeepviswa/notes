@@ -40,13 +40,12 @@ adduser devops
 ```
 
 # configure sshd configuration in master and node machines. Perform below steps on all 3 VMs
+- On line 42 change to PermitRootlogin yes and remove #
+- Remove # from line 47
+- On line 66 enable PasswordAuthentication as yes by removing #
+
 ```
 vi /etc/ssh/sshd_config
-
-On line 42 change to PermitRootlogin yes and remove #
-Remove # from line 47
-On line 66 enable PasswordAuthentication as yes by removing #
-
 ```
 # with latest ubuntu these steps need to be added up in master and nodes (all VMs)
 Change password authentication to yes
