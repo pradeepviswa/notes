@@ -49,7 +49,7 @@ ansible-playbook playbook1.yml
         state: restarted
   - name: delete existing web site files
     file:
-      path: /var/www/html/*
+      path: /var/www/html/
       state: absent
   - name: clone github repo
     ansible.bnuiltin.git:
