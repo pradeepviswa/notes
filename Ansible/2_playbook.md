@@ -30,6 +30,30 @@
 ansible-playbook playbook1.yml
 ```
 
-
 # Write a playbook to install apache web site which is in github
+```
+- name: install apache from guthub
+  hosts: all
+  become: yes
+- tasks
+  - name: update package
+    package:
+      update_cache: yes
+  - name: install apache
+    package:
+       name: apache2
+       state: present
+  - name: restart apache2 service
+    ansible.buildin.service:
+        name: apache2
+        state: restarted
+  - name: delete existing web site files
+    file:
+      path: /var/www/html/*
+      state: absent
+  - name: clone github repo
+    ansible.bnuiltin.git:
+      repo: https://github.com/pradeepviswa/apachewebsite.git
+      dest: /var/www/html/
 
+```
