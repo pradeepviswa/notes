@@ -59,15 +59,15 @@ service ssh restart
 ```
 
 # We will now give sudo permission to the “devops” user in ansible and the nodes
-Scroll down to user priviledge specification and add below line 
-devops ALL=(ALL:ALL) NOPASSWD: ALL
+- Scroll down to user priviledge specification and add below line 
+- devops ALL=(ALL:ALL) NOPASSWD: ALL
 ```
 visudo 
 ```
 
 # From  Ansible server we will generate the trust relationship with the nodes
-we will generate a key in the master and paste it in the ansible nodes to establish the ssh connection w/o putting password
-In Ansible-server (master machine):
+- we will generate a key in the master and paste it in the ansible nodes to establish the ssh connection w/o putting password
+- In Ansible-server (master machine):
 ```
 su – devops
 ssh-keygen 
@@ -103,10 +103,10 @@ ansible all -a"ls"
  
 
 # adhoc commnad
-single line command which using ansible library to perform a task
-You can refer ansible official document for reference.
-Example: create a file, refer https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/file_module.html
-reference yaml block, let's create adhoc command using this block
+- single line command which using ansible library to perform a task
+- You can refer ansible official document for reference.
+- Example: create a file, refer https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/file_module.html
+- reference yaml block, let's create adhoc command using this block
 ```
 - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
   ansible.builtin.file:
