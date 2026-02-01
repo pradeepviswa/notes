@@ -33,31 +33,39 @@ ansible-playbook playbook1.yml
 # Write a playbook to install apache web site which is in github
 #### without nofify
 ```
-- name: install apache from guthub
+---
+- name: install apache from github
   hosts: all
   become: yes
-  tasks
-  - name: update package
-    package:
-      update_cache: yes
-  - name: install apache
-    package:
-       name: apache2
-       state: present
-  - name: stop apache2 service
-    ansible.buildin.service:
+
+  tasks:
+    - name: update package cache
+      ansible.builtin.package:
+        update_cache: yes
+
+    - name: install apache
+      ansible.builtin.package:
+        name: apache2
+        state: present
+
+    - name: stop apache2 service
+      ansible.builtin.service:
         name: apache2
         state: stopped
-  - name: delete existing web site files
-    file:
-      path: /var/www/html/
-      state: absent
-  - name: clone github repo
-    ansible.bnuiltin.git:
-      repo: https://github.com/pradeepviswa/apachewebsite.git
-      dest: /var/www/html/
-  - name: stop apache2 restart
-    ansible.buildin.service:
+
+    - name: delete existing website files
+      ansible.builtin.file:
+        path: /var/www/html
+        state: absent
+
+    - name: clone github repo
+      ansible.builtin.git:
+        repo: https://github.com/pradeepviswa/apachewebsite.git
+        dest: /var/www/html
+        force: yes
+
+    - name: start apache2 service
+      ansible.builtin.service:
         name: apache2
         state: restarted
 
