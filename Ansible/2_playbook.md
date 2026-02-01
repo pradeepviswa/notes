@@ -30,3 +30,6 @@
 ansible-playbook playbook1.yml
 ```
 
+
+# Write a playbook to install apache web site which is in github
+
