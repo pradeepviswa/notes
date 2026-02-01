@@ -101,6 +101,48 @@ ansible-playbook playbook1.yml
          state: restarted:
 ```
 
+#### using variable
+```
+---
+- name: install apache from github
+  hosts: all
+  become: yes
+
+
+  vars:
+    web_package: apache2
+    web_service: apache2
+    web_root: /var/www/html/
+    git_repo: https://github.com/pradeepviswa/apachewebsite.git
+
+  tasks:
+    - name: update package cache
+      ansible.builtin.package:
+        update_cache: yes
+
+    - name: install apache
+      ansible.builtin.package:
+        name: "{{ web_package }}"
+        state: present
+      notify: restart service
+
+    - name: delete existing website files
+      ansible.builtin.file:
+        path: "{{ web_root }}"
+        state: absent
+
+    - name: clone github repo
+      ansible.builtin.git:
+        repo: "{{ git_repo }}"
+        dest: "{{ web_root }}"
+        force: yes
+
+  handlers:
+     - name: restart service
+       ansible.builtin.service:
+         name: "{{ web_service }}"
+         state: restarted
+```
 
 
 
