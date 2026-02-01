@@ -2,8 +2,8 @@
 # Simple Playbook to install apache2
 ```
 # filename: playbook1.yml
-<div style="max-height: 200px; overflow-y: auto; border: 1px solid #ddd; padding: 8px;">
----
+
+---<div style="max-height: 200px; overflow-y: auto; border: 1px solid #ddd; padding: 8px;">
 - name: test deployment
   hosts: dev
   become: true
@@ -20,8 +20,8 @@
         path: test_folder
         state: directory
         mode: '0755'
-```
-</div>
+</div>```
+
 #### dry run
 ```
  ansible-playbook playbook1.yml --check
