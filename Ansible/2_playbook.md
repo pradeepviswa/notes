@@ -48,10 +48,40 @@ ansible-playbook playbook1.yml
         name: apache2
         state: present
 
-    - name: stop apache2 service
+    - name: start apache2 service
       ansible.builtin.service:
         name: apache2
-        state: stopped
+        state: restarted
+
+    - name: delete existing website files
+      ansible.builtin.file:
+        path: /var/www/html
+        state: absent
+
+    - name: clone github repo
+      ansible.builtin.git:
+        repo: https://github.com/pradeepviswa/apachewebsite.git
+        dest: /var/www/html
+        force: yes
+```
+
+
+#### install apache with with nofify
+```
+- name: install apache from github
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: update package cache
+      ansible.builtin.package:
+        update_cache: yes
+
+    - name: install apache
+      ansible.builtin.package:
+        name: apache2
+        state: present
+      notify: restart service
 
     - name: delete existing website files
       ansible.builtin.file:
@@ -64,35 +94,11 @@ ansible-playbook playbook1.yml
         dest: /var/www/html
         force: yes
 
-    - name: start apache2 service
-      ansible.builtin.service:
-        name: apache2
-        state: restarted
-
-```
-
-
-#### install apache with with nofify
-```
-- name: install apache from guthub
-  hosts: all
-  become: yes
-  tasks
-  - name: update package
-    package:
-      update_cache: yes
-  - name: install apache
-    package:
-       name: apache2
-       state: present
-    notify: restart apache2
-
   handlers:
-    - name: restart apache2
-      ansible.buildin.service:
-        name: apache2
-        state: restarted
-
+     - name: restart service
+       ansible.builtin.service:
+         name: apache2
+         state: restarted:
 ```
 
 
