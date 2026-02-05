@@ -30,6 +30,10 @@ and add node IPs
 [dev]
 172.16.32.1
 172.16.32.2
+
+[self]
+localhost ansible_connection=local
+
 ```
 
 # create common user in Ansible-Server, PROD1 and PROD2 VMs. Keep same password
