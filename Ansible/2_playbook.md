@@ -144,6 +144,26 @@ ansible-playbook playbook1.yml
          name: "{{ web_service }}"
          state: restarted
 ```
+# ansible facts
+- we can rollect detail like OS, RAM, CPU, Storage,IP, etc
+- example: ansible_os_family
+```
+---
+- name: print operating system
+  hosts: dev
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Print OS Family
+      debug:
+        msg: "OS family is {{ ansible_os_family }}"
+    - name: Pirnt OS
+      debug:
+        msg: "OS is {{ ansible_facts['distribution'] }}"
+```
+
+  # ansible loop
+  
 
 
 
