@@ -166,11 +166,11 @@ ansible-playbook playbook1.yml
   # ansible loop
   - repeat same task
   - ex. create 5 files
-  - simple code
+- write a playbook whtich will create 5 files with loop
 ```
 # loop.yml
 ---
-- name: use loop to create 5 files
+- name: - write a playbook whtich will create 5 files with loop
   hosts: dev
   become: yes
   gather_facts: no
@@ -186,7 +186,7 @@ ansible-playbook playbook1.yml
         - file4.txt
         - file5.txt
 ```
-- using variable
+- write a playbook whtich will create 5 files with loop using variable
 ```
 ---
 - name: use loop to create 5 files
@@ -210,4 +210,20 @@ ansible-playbook playbook1.yml
     
 
 
-
+- write a playbook to install wget, unzip, apache2 using loop
+```
+---
+- name: write a playbook to install roles
+  hosts: dev
+  become: true
+  tasks:
+    - name: install services
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - wget
+        - unzip
+        - apache2
+```
