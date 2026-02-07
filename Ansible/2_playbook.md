@@ -166,8 +166,7 @@ ansible-playbook playbook1.yml
   # ansible loop
   - repeat same task
   - ex. create 5 files
-|simple loop|using variable|
-|
+  - simple code
 ```
 # loop.yml
 ---
@@ -187,10 +186,28 @@ ansible-playbook playbook1.yml
         - file4.txt
         - file5.txt
 ```
-||
+- using variable
+```
+---
+- name: use loop to create 5 files
+  hosts: dev
+  become: yes
+  gather_facts: no
+  vars:
+    file_list:
+        - file1.txt
+        - file2.txt
+        - file3.txt
+        - file4.txt
+        - file5.txt
+  tasks:
+    - name: creating blank files
+      ansible.builtin.file:
+        path: "/tmp/{{ item }}"
+        state: touch
+      loop: "{{ file_list }}"
+```
     
-
-
 
 
 
