@@ -61,12 +61,12 @@ pipeline{
 ```
 
 ### 3. generage reports
-   manage -> plugins -> warning plugin install
-   pipeline suyntax: 
-  recordIssues: record compiler warning
-  tool: checkstyle
-  generate pipelien script
-  updatd code with checkstyle recordIssue
+- manage -> plugins -> warning plugin install
+- pipeline syntax: 
+- recordIssues: record compiler warning
+- tool: checkstyle
+- generate pipelien script
+- updatd code with checkstyle recordIssue
 ```
 pipeline{
   agent any
