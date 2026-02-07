@@ -1,7 +1,7 @@
 # groovy script
 
 ## pre-requiestes
-Install Jenkins: https://github.com/pradeepviswa/deployment-scripts/blob/main/jenkins.sh
+Install Jenkins: https://github.com/pradeepviswa/deployment-scripts/blob/main/install_jenkins_ubuntu.sh
 
 maven build help document: https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
 
