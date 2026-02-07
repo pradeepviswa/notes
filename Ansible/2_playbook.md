@@ -148,6 +148,7 @@ ansible-playbook playbook1.yml
 - we can rollect detail like OS, RAM, CPU, Storage,IP, etc
 - example: ansible_os_family
 ```
+# os.yml
 ---
 - name: print operating system
   hosts: dev
@@ -163,7 +164,29 @@ ansible-playbook playbook1.yml
 ```
 
   # ansible loop
-  
+  - repeat same task
+  - ex. create 10 files
+```
+# loop.yml
+---
+- name: use loop to create 5 files
+  hosts: dev
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: creating blank files
+      ansible.builtin.file:
+        path: "/tmp/{{ item }}"
+        state: touch
+      loop:
+        - file1.txt
+        - file2.txt
+        - file3.txt
+        - file4.txt
+        - file5.txt
+```
+
+    
 
 
 
