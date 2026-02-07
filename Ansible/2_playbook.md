@@ -166,6 +166,8 @@ ansible-playbook playbook1.yml
   # ansible loop
   - repeat same task
   - ex. create 5 files
+|simple loop|using variable|
+|
 ```
 # loop.yml
 ---
@@ -185,7 +187,7 @@ ansible-playbook playbook1.yml
         - file4.txt
         - file5.txt
 ```
-
+||
     
 
 
