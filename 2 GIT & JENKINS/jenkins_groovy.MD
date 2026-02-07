@@ -198,7 +198,7 @@ pipeline{
         
         stage("7: Deploy the project"){
             steps{
-                sh 'sudo cp  /var/lib/jenkins/workspace/web-app-pipeline-2/target/addressbook.war /home/ubuntu/apache-tomcat-9.0.113/webapps'
+                sh 'sudo cp  /var/lib/jenkins/workspace/test1/target/addressbook.war /home/ubuntu/apache-tomcat-9.0.113/webapps'
             }
         }//state 7
     }//stages
