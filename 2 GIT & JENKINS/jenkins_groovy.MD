@@ -125,7 +125,7 @@ cd apache-tomcat-9.0.113/conf
 cd conf
 vi server.xml
 # seearch for this line
-#<Connector port="8081" protocol="HTTP/1.1" 
+#<Connector port="8080" protocol="HTTP/1.1" 
 # and repalce it to 9090. save and exit
 cd ..
 cd bin
