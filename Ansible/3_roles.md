@@ -2,7 +2,11 @@
 - structured way to organize the playbook
 - format
 ```
-.
+
+
+| col1 | col2 | col3 |
+|:-----|:----:|-----:|
+| .
 └── role1
     ├── README.md
     ├── defaults
@@ -20,9 +24,5 @@
     │   └── test.yml
     └── vars
         └── main.yml
-```
-
-| col1 | col2 | col3 |
-|:-----|:----:|-----:|
-| left | mid  | right|
+``` | mid  | right|
 
