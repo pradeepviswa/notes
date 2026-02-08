@@ -70,11 +70,6 @@ dependencies: []
   become: true
   roles:
     - role: minrole
-      
-      # (optional) override defaults here
-      # minrole_message: "Custom message!"
-      # minrole_pkg: httpd
-      # minrole_service: httpd
 ```
 
 4) Run the Playbook
