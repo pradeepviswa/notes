@@ -136,11 +136,16 @@ output "instance_id" {
 
 # data
 - scenario:
-- - AMI ID will change for each region.
+  - AMI ID will change for each region.
   - Manually go and pick AMI IDs is tedious task.
   - data will pick latest ami id of given region. Example latest AMI ID of Ubuntu
   - data is used to fetch ami id only
 ```
+variable "inst_type" {
+  default = "t3.micro"
+
+}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -156,13 +161,17 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
-
-resource "aws_instance" "example" {
+resource "aws_instance" "id1" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = var.inst_type
+  count = 1
 
   tags = {
-    Name = "HelloWorld"
+    Name = "HelloWorld-autoami"
   }
+}
+
+output "instance_id" {
+    value = aws_instance.id1[*].id
 }
 ```
