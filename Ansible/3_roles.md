@@ -21,3 +21,6 @@
     └── vars
         └── main.yml
 ```
+
+|col1|col2|col3|
+|aaa|bbb|ccc|
