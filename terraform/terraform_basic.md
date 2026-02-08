@@ -104,3 +104,65 @@ terraform destroy -target=aws_instance.id1[1]
 ```
 terraform apply -replace=aws_instance.id1[1]
 ```
+
+
+# variable use
+- declare variable and call its value
+
+```
+variable "inst_type"{
+  default = "t3.micro"
+
+}
+
+variable "ami_id"{
+   default = "ami-0b6c6ebed2801a5cb"
+}
+
+resource "aws_instance" "id1" {
+  ami           = var.inst_type
+  instance_type = var.ami_id
+  count = 3
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+output "instance_id" {
+    value = aws_instance.id1[*].id
+}
+```
+
+# data
+- scenario:
+- - AMI ID will change for each region.
+  - Manually go and pick AMI IDs is tedious task.
+  - data will pick latest ami id of given region. Example latest AMI ID of Ubuntu
+  - data is used to fetch ami id only
+```
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+
+resource "aws_instance" "example" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+```
