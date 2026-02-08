@@ -19,6 +19,15 @@ sudo apt update && sudo apt install terraform
 # Lab
 - create file **connection.tf**
 ```
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "6.31.0"
+    }
+  }
+}
+
 provider "aws" {
   # Configuration options
   region = "us-east-1"
@@ -35,6 +44,17 @@ resource "aws_instance" "id1" {
 
   tags = {
     Name = "HelloWorld"
+  }
+}
+```
+- create file **mys3.tf**
+```
+resource "aws_s3_bucket" "mys3" {
+  bucket = "my-tf-test-bucket-pv2123"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
   }
 }
 ```
