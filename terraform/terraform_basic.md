@@ -17,7 +17,7 @@ sudo apt update && sudo apt install terraform
 ```
 
 # Lab
-- create file connection.tf
+- create file **connection.tf**
 ```
 provider "aws" {
   # Configuration options
@@ -27,7 +27,7 @@ provider "aws" {
 }
 ```
 
-- create file vm.tf. Take help from document: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+- create file **vm.tf**. Take help from document: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 ```
 resource "aws_instance" "id1" {
   ami           = "ami-0b6c6ebed2801a5cb"
@@ -39,7 +39,7 @@ resource "aws_instance" "id1" {
 }
 ```
 
-- run below commands
+- run below **commands**
 ```
 terraform apply --auto-approve
 ```
