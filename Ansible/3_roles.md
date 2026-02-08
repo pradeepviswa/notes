@@ -1,7 +1,7 @@
 # ansible roles
 - structured way to organize the playbook
 - format
-```
+
 
 
 | col1 | col2 | col3 |
@@ -24,5 +24,5 @@
     │   └── test.yml
     └── vars
         └── main.yml
-``` | mid  | right|
+| mid  | right|
 
