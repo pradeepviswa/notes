@@ -48,6 +48,7 @@ minrole_message: "Hello from minrole!"
 ```
 
 - vi minrole/tasks/install.yml
+```
 ---
 - name: Install web server
   package:
