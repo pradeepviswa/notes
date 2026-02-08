@@ -16,7 +16,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashi
 sudo apt update && sudo apt install terraform
 ```
 
-# Lab
+# Simple Lab
 - create file **connection.tf**
 ```
 terraform {
@@ -61,6 +61,46 @@ resource "aws_s3_bucket" "mys3" {
 
 - run below **commands**
 ```
+terraform init
 terraform apply --auto-approve
 ```
+- destroy resource
+```
+terrafrom destroy --auto-approve
+```
 
+# Create multiple VMs
+- create 3 vms with output message
+```
+resource "aws_instance" "id1" {
+  ami           = "ami-0b6c6ebed2801a5cb"
+  instance_type = "t3.micro"
+  count = 3
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+output "instance_id" {
+    value = aws_instance.id1[*].id
+}
+```
+- list down all created resources
+```
+terraform state list
+```
+- detail of particular resource
+```
+state show aws_s3_bucket.mys3
+```
+
+- delete particular instance
+```
+terraform destroy -target=aws_instance.id1[1]
+```
+
+- Recreate (replace) a specific instance
+```
+terraform apply -replace=aws_instance.id1[1]
+```
