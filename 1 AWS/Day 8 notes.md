@@ -1,15 +1,16 @@
 1. IAM
-   custom user is called IAM user. IAM is global.
-   Create user, don't create any group, create user.
-   Create group
+   - custom user is called IAM user. IAM is global.
+   - Create user, don't create any group, create user.
+   - Create group
 
-   user <----- attach---- Group <---- attach ---- policy
+   - user <----- attach---- Group <---- attach ---- policy
 
 2. Lambda Function - PAAS (platform as a service)
-   Scenario
-   a) upload a file in S3 bucket
-   b) file name should be saved in DynamoDB
-   steps:
+  - Scenario
+   -- upload a file in S3 bucket
+   -- file name should be saved in DynamoDB
+   -- steps:
+    ```
    LAMBDA FUNCTION <---attach--- ROLE <---attach--- POLICY FOR DYNAMO DB FULL ACCESS
 				S3 bucket
 			     /
@@ -18,6 +19,7 @@
 	 ROLE		      DYNAMO DB
         /
       POLICY
+	  
     a) create s3 bucket
     b) create IAM role - PradeepLBRole
          policy - AmazonDymamoDBFullAccess
@@ -34,7 +36,9 @@
         partition key: unique
      f) click on --> code. Paste below code
 	click on deploy button first -> then test button
-####################################
+	```
+# Lambda Function code
+```
 import boto3
 from uuid import uuid4
 def lambda_handler(event, context):
@@ -49,7 +53,7 @@ def lambda_handler(event, context):
         dynamoTable = dynamodb.Table('newtable')
         dynamoTable.put_item(
             Item={'unique': str(uuid4()), 'Bucket': bucket_name, 'Object': object_key,'Size': size, 'Event': event_name, 'EventTime': event_time})
-####################################
+```
 
     g) add a file in s3 bucket
     h) DynamoDB -> explore tables
@@ -136,4 +140,5 @@ def lambda_handler(event, context):
   this should stop the instance
 
 # Homework
+
   create a lambda function to start the instacne
