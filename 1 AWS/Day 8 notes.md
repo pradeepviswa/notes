@@ -58,10 +58,9 @@ def lambda_handler(event, context):
     h) DynamoDB -> explore tables
        refresh and see one entry has been made in table.
 
-***************************************************************
-real time example
------------------
-
+# real time example
+## policy contents
+```
 POLICY:
 Version: policy language version example "2012-10-17"
 ID: identification (optional)
@@ -73,8 +72,9 @@ Principle: account / user role
 Action: list of action policies allows / denies
 resources: List of AWS resources to which the action applied to
 Condition: Conditions when the policy will effect (optional)
-
-'''
+```
+## s3 access policy
+```
 AmazonS3FullAccess
 {
     "Version": "2012-10-17",
@@ -89,9 +89,10 @@ AmazonS3FullAccess
         }
     ]
 }
-'''
+```
 
 # Create a custom policy
+```
 IAM -> create policy
 ec2
 write: select - startintance, stopinstance
@@ -99,12 +100,14 @@ resources: add ARN
 	   region: us-east-1
 	   resource: i-0cc8e0b2382fb1e59 [copied from instance created]
 	   Resource ARN: this will be created automatically
-
+```
 
 # create a lambda role and attach the policy
+  ```
   python 3.11
-code:
-'''
+```
+## code:
+```
 N. Virginia
 us-east-1
 
@@ -116,13 +119,14 @@ ec2 = boto3.client('ec2', region_name=region)
 def lambda_handler(event, context):
     ec2.stop_instances(InstanceIds=instances)
     print('stopped your instances: ' + str(instances))
-
+```
 
 
 ======================================================
 
 
-Start the instances:-
+# Start the instances:-
+```
 import boto3
 region = 'us-east-1'
 instances = ['i-054d04aae37dcb581']
@@ -131,16 +135,17 @@ ec2 = boto3.client('ec2', region_name=region)
 def lambda_handler(event, context):
     ec2.start_instances(InstanceIds=instances)
     print('started your instances: ' + str(instances))
-'''
+```
 
 # click on deploy
 # click on test
-  create test case, save it and invoke it
-  this should stop the instance
+  - create test case, save it and invoke it
+  - this should stop the instance
 
-# Homework
+# Assignment
 
   create a lambda function to start the instacne
+
 
 
 
