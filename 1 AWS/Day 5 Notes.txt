@@ -6,7 +6,7 @@ A. Directly not possible. Follow below steps
    Select Image --> Actions --> Image and Template --> Create Image --> Image Name set and click on Create Image
    
 3. Copy this custom AMI from one region to another region
-   select new AMI --> Action --> Copy AMI --> select OHIO region
+   select new Images -> AMI --> Action --> Copy AMI --> select OHIO region
    
 4. Create a new Instance in new Region from this AMI 
    
@@ -18,3 +18,4 @@ in ohio:
 in n-virgenia:
  delete ec2
  delete AMI image
+
