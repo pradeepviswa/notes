@@ -9,7 +9,7 @@
    -- upload a file in S3 bucket
    -- file name should be saved in DynamoDB
    -- steps:
-    ```
+```
    LAMBDA FUNCTION <---attach--- ROLE <---attach--- POLICY FOR DYNAMO DB FULL ACCESS
 				S3 bucket
 			     /
@@ -35,7 +35,7 @@
         partition key: unique
      f) click on --> code. Paste below code
 	click on deploy button first -> then test button
-	```
+```
 # Lambda Function code
 ```
 import boto3
@@ -141,5 +141,6 @@ def lambda_handler(event, context):
 # Homework
 
   create a lambda function to start the instacne
+
 
 
