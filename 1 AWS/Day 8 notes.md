@@ -2,7 +2,6 @@
    - custom user is called IAM user. IAM is global.
    - Create user, don't create any group, create user.
    - Create group
-
    - user <----- attach---- Group <---- attach ---- policy
 
 # Lambda Function - PAAS (platform as a service)
@@ -142,4 +141,5 @@ def lambda_handler(event, context):
 # Homework
 
   create a lambda function to start the instacne
+
 
