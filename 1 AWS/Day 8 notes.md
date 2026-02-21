@@ -1,11 +1,11 @@
-1. IAM
+# IAM
    - custom user is called IAM user. IAM is global.
    - Create user, don't create any group, create user.
    - Create group
 
    - user <----- attach---- Group <---- attach ---- policy
 
-2. Lambda Function - PAAS (platform as a service)
+# Lambda Function - PAAS (platform as a service)
   - Scenario
    -- upload a file in S3 bucket
    -- file name should be saved in DynamoDB
@@ -142,3 +142,4 @@ def lambda_handler(event, context):
 # Homework
 
   create a lambda function to start the instacne
+
