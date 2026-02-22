@@ -3,7 +3,7 @@
 ## pre-requisites
 - s3 bucket should be present
 - Bucket name exactly matches your domain name
-- bucket name: www.my-bucket-demo-1919.com
+- bucket name: my-bucket-demo-1919.com
 - Allow public access
 
 
@@ -85,6 +85,7 @@ ns-1585.awsdns-06.co.uk
 
 
   
+
 
 
 
