@@ -67,11 +67,20 @@ ns-97.awsdns-12.com
 ns-672.awsdns-20.net
 ns-1585.awsdns-06.co.uk
 ```
+- For a domain to work:
+```
+Buy/Register domain
+   ↓
+Point domain → Route53 nameservers
+   ↓
+Route53 → S3 website
+```
 
   
 
 
   
+
 
 
 
