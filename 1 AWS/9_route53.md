@@ -45,6 +45,9 @@
 - <img width="503" height="404" alt="image" src="https://github.com/user-attachments/assets/26c74bbc-85b0-48ca-b3f4-e8a793a83f6e" />
 - In our case we are using s3 bucket so use below settings. Alias -> route traffic to s3 -> region us-east-1 -> s3 endpoint will appear automatically, select and Create Record.
 - <img width="1350" height="512" alt="image" src="https://github.com/user-attachments/assets/9bf81d45-b9cd-4963-a389-486aeb60df87" />
+- Final output
+- <img width="1382" height="468" alt="image" src="https://github.com/user-attachments/assets/fc90664a-5fc2-4a91-9ea2-3a953713a6ac" />
+
 
 
 ## next steps
@@ -69,6 +72,7 @@ ns-1585.awsdns-06.co.uk
 
 
   
+
 
 
 
