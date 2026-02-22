@@ -88,13 +88,13 @@
 
 ### Configure Web Site
 - run below code on web1 and web2 servers. Update echo statemetn on web2
-  ```
+```
 sudo apt update -y
 sudo apt install apache2  -y
 sudo rm /var/www/html/index.html
 echo "<h1> this is web 1 </h1>" | sudo tee /var/www/html/index.html  # make it web2 for secode server
 sudo service apache2 restart
-  ```
+```
   
 
 
