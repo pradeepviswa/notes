@@ -26,7 +26,7 @@
 }
 ```
 
-# Route 53
+# Route 53 Configure
 ## create a hosted zone
 - route 53 -> create hostesd zone
 - <img width="456" height="392" alt="image" src="https://github.com/user-attachments/assets/c307bac7-7421-4725-9dc1-ee3b1df6c509" />
@@ -43,6 +43,7 @@
 
 
   
+
 
 
 
