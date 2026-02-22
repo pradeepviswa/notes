@@ -45,7 +45,7 @@
 - Create Route Table
 - Actions --> Edit Subnet Association
 - Select both subnets
--- <img width="244" height="178" alt="image" src="https://github.com/user-attachments/assets/a3c858c1-ddeb-4be2-8722-e958e67be1e4" />
+- <img width="244" height="178" alt="image" src="https://github.com/user-attachments/assets/a3c858c1-ddeb-4be2-8722-e958e67be1e4" />
 - Save Association
 - Under Routes --> Edit routes --> Add route
   - Destination: 0.0.0.0/0
