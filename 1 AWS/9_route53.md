@@ -51,24 +51,25 @@
 - Creating a hosted zone in Amazon Route 53 is not enough.
 - Your domain registrar must point to Route 53.
 - Now check where you bought the domain
-  ```
+```
 GoDaddy
 Namecheap
 Google Domains
 etc.
-  ```
+```
 - Check in Route 53 → Hosted Zone → NS record
-  ```
+```
 ns-1371.awsdns-43.org
 ns-97.awsdns-12.com
 ns-672.awsdns-20.net
 ns-1585.awsdns-06.co.uk
-  ```
+```
 
   
 
 
   
+
 
 
 
