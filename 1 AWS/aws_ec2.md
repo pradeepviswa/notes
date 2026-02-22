@@ -3,9 +3,6 @@
 ## Table of contents
 
 - [Contigure Networking](#contigure-networking)
-  - [Create VPC](#create-vpc)
-  - [Create Subnet](#create-subnet)
-  - [Create Route Table](#create-route-table)
 - [Create EC2 Instance](#create-ec2-instance)
 - [Create custome AMI image](#create-custome-ami-image)
 - [Copy AMI to different region and create an EC2 instance](#copy-ami-to-different-region-and-create-an-ec2-instance)
@@ -58,8 +55,35 @@
 
 ## Create EC2 Instance
 ### crate key pair
+- EC2 --> Network & Security --> Key Pairs
+- Create Key Pair
+- Name: key1
+- Create key parir 
 ### create security group
+- EC2 --> Network & Security --> Security Groups
+- Create Security Group
+- Security group name: sg1
+- Description: sg1
+- Inbound Rules
+  - Add rule: allow port 22, 80 and ICMP
+  - <img width="747" height="264" alt="image" src="https://github.com/user-attachments/assets/1696a62d-e0de-41f8-91bb-af6117ed90f4" />
+  - Create Security Group
 ### create instance
+- EC2 --> Instances --> Instances
+- Launch Instance
+- Name: web1
+- OS Image: ubuntu
+- instance type: t3.micro
+- key pair: key1
+- Network Settings:
+  - VPC: vpc1
+  - subnet: subnet1
+  - Auto assign public IP: Enable
+  - Firewall (seciruty group)
+    - select existing security group\
+    - Common security groups: sg1
+- Launch instance
+  
 
 
 ## Create custome AMI image
