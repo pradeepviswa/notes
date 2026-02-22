@@ -1,1 +1,0 @@
-From Nikhil you used private ip of Prasenjit. I know public IP won't work. Just want to know how network traffic will flow if we use public IP.
