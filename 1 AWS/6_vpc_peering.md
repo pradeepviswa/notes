@@ -1,3 +1,5 @@
+<a href="1_create_network.md">Prev</a> | <a href=3_app_load_balancer.md>Next<a>
+
 # Peer vpc1 in us-east-1 region with vpc2 in us-east-2 region
 After followign below steps, ec2 instances created in us-east-1 (vpc1) and us-east2 (vpc2) will communicate with each other
 
