@@ -1,4 +1,3 @@
-<a href="1_create_network.md">Prev</a> | <a href=3_app_load_balancer.md>Next<a>
 
 ## Create custom AMI image
 - Instances > select web1
