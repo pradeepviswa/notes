@@ -1,4 +1,4 @@
-<a href="https://github.com/pradeepviswa/notes/blob/3eeb9dfce827da42cd916fb63a3439129df7f169/1%20AWS/2_ec2.md">Next</a>
+<a href="https://github.com/pradeepviswa/notes/blob/main/1%20AWS/2_ec2.md">Next</a>
 # Create Network Infrastructure
 
 ## Configure Networking
