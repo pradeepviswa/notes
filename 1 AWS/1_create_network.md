@@ -1,3 +1,4 @@
+[Next]([url](https://github.com/pradeepviswa/notes/blob/4306a8ba3d14b5bd6d1752bc2e0ab76a7f94188a/1%20AWS/2_ec2.md))
 # Create Network Infrastructure
 
 ## Configure Networking
