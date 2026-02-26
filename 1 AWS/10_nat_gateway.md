@@ -1,3 +1,4 @@
+# NAT 
 # provide internet access to private subnet via NAT
 -------------------------------------------------
 Network Address Translation
@@ -32,5 +33,6 @@ Lab Deletion Steps:
 NAT Gateway - > delete NAT Gateway
 Elastic IPs -> delete after 3 mins
 EC2 Instances -> terminate
+
 
 
