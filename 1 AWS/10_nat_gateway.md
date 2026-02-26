@@ -1,5 +1,5 @@
-# NAT 
-# provide internet access to private subnet via NAT
+# NAT Gateway
+## provide internet access to private subnet via NAT
 -------------------------------------------------
 Network Address Translation
 1. NAT always sit in public subnet,
@@ -7,7 +7,7 @@ Network Address Translation
 2. An Elastic IP is required 
    while we are creating NAT
  
-@ Practical
+## Practical
 --------------
 VPC --> NAT Gateway
 create nat gateway -> 
@@ -22,7 +22,7 @@ Click on CREATE NAT
 This will take approx. 4 mins to create
 ______________________________________________
 
-# VPC --> route table
+## VPC --> route table
   private Route table --> edit
   Edit route table
   0.0.0.0/0  -> select NAT Gateway --> select My-NAT
@@ -33,6 +33,7 @@ Lab Deletion Steps:
 NAT Gateway - > delete NAT Gateway
 Elastic IPs -> delete after 3 mins
 EC2 Instances -> terminate
+
 
 
 
