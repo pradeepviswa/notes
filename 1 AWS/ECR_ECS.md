@@ -103,27 +103,86 @@ docker build -t img1 .
 docker tag img1:latest 471112878240.dkr.ecr.us-east-1.amazonaws.com/img1:latest
 docker push 471112878240.dkr.ecr.us-east-1.amazonaws.com/img1:latest
 ```
-- refresh img1
-- authenticate EC2 machine to push command
-- aws configure
-- [account - se credential - create access key]
-- key and secret
-- region: ECR region (ex. ap-south-1)
-- format: json (or yaml)
-- for this use push command, run 4 commands
-- connect ecr command
-- docker build -t sl-repo .
-- tag image
-- push image
+- refresh img1, newly uploaded image will appear  here
 
-- copy image url from AWS ECR
-
-- Crete docker env to run ECR image
-# In ECS create cluster
-- AWS Fargate - it is adv version of ec2, it is serverless
-- task def - create a new task
--  	deploy-run task, select cluster on which thie task should run
+#### Create ECS Service Linked Role (GUI) — Create Role
+1) Open Amazon Web Services Console
+2) Search → AWS Identity and Access Management (IAM)
+3) Left side → Roles
+4) Click Create role
+  - Choose: Trusted entity → AWS service
+  - Use case: Select Elastic Container Service
+5) Select: Elastic Container Service
+6) Role name: ecs-role
+7) Click Next → Create role
 
 
-# Host a website using AWS
-- EC2 instance, install docker
+#### Create ECS Cluster
+1) AWS Console → ECS
+2) Click Clusters
+3) Click Create cluster
+4) Choose:
+  - Fargate (serverless) → easiest
+5) Cluster name → img1-cluster-1
+6) Click Create
+
+✅ Wait until created
+
+#### Create Task Definition (Your Container Setup)
+- This tells ECS which Docker image to run.
+- Go to:
+```
+AWS Console → ECS → Task definitions → Create new task definition
+```
+- Choose: Launch type → Fargate
+- Basic configuration
+  - Task definition name → img1-task
+  - CPU → 0.5 vCPU (default ok)
+  - Memory → 1GB (default ok)
+
+- Container configuration
+  - Click Add container:
+  - Container name → img1-container
+```
+471112878240.dkr.ecr.us-east-1.amazonaws.com/img1:latest
+```
+  - click Create
+
+#### Run Your Container in Cluster
+- Go to:
+```
+ECS → Clusters → img1-cluster-1
+```
+
+- Click Run new task
+  - Choose:Launch type → Fargate
+  - Task definition → img1-task
+- Networking:
+  - Select VPC (default ok)
+  - Select subnet
+  - Auto assign public IP → ENABLED (important for testing)
+- Click Run task
+
+#### ECS task must allow incoming traffic.
+- Go to
+```
+ECS → Cluster → Task → Networking → Security group → Click it
+```
+- Add inbound rule:
+```
+Custom TCP → 8080 → 0.0.0.0/0
+```
+### browse website
+```
+Go to:
+Amazon Elastic Container Service
+Clusters
+img1-cluster-1
+Tasks
+e17798c4b96848e085a5a42647a0a1cd
+Configuration
+
+Note down Public IP
+
+http://public-ip:80
+```
