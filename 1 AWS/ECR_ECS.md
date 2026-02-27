@@ -1,23 +1,3 @@
-## Topics
-- Container
-- Docker Installation and usage on ec2
-- ECR
-- ECS
-- Project work
-
-# Docker
-- container
-- docker image can be downloaded from hub.docker.com
-- Docker commands
-```
-docker images
-docker pull ubuntu
-docker run ubuntu
-docker run -it ubuntu /bin/bash # interactive
-docker run nginx
-docker run -d -p 8080:80 nginx
-```
-
 # Run docker in EC2 instance
 ## Install docker on Ubuntu
 ```
@@ -43,14 +23,49 @@ sudo usermod -aG docker ec2-user
 docker --version
 ```
 
-# Dockerfile
+# Docker Command
+- docker image can be downloaded from hub.docker.com
 ```
-#Dockerfile
+docker images
+docker pull ubuntu
+docker run ubuntu
+docker run -it ubuntu /bin/bash # interactive
+docker run nginx
+docker run -d -p 8080:80 nginx
+```
+
+
+
+# Dockerfile
+#### dockerfile
+```
+# dockerfile
 FROM httpd
 WORKDIR /usr/local/apache2/htdocs/
 COPY index.html .
-COPY about.html .
 ```
+#### index.html
+```
+# index.html
+<html>
+<center> <h1>
+  This is my test wesite
+</center> </h1>
+</html>
+````
+#### build command
+```
+docker build -t img:1 .
+```
+#### run docker image
+```
+docker run -d -p 80:80 img:1
+```
+
+#### browse website
+htttp://<public-ip-of-ec2-instance>
+
+
 
 # Elastic container registry
 - push docker image to ECT, terminal need to authenticate. how?
