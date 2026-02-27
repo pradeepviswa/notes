@@ -2,6 +2,7 @@
 ## Install docker on Ubuntu
 ```
 sudo apt update
+sudo snap install aws-cli --classic
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -11,6 +12,24 @@ sudo apt install docker-ce docker-ce-cli containerd.io
 
 sudo systemctl start docker
 sudo systemctl enable docker
+```
+
+
+#### Concreate a new role
+```
+IAM> Roles > Create role
+Trusted entity type: AWS service
+Service or use case: EC2
+Add permissions: AmazonEC2ContainerRegistryFullAccess
+Role name → EC2-ECR-Access
+```
+#### Attach Role to Your EC2
+```
+Go → EC2 → Instances
+Select your instance
+Actions → Security → Modify IAM role
+Choose EC2-ECR-Access
+Save
 ```
 
 ## Install docker on Amazon Linux
@@ -34,9 +53,7 @@ docker run nginx
 docker run -d -p 8080:80 nginx
 ```
 
-
-
-# Dockerfile
+# Build Image Dockerfile
 #### dockerfile
 ```
 # dockerfile
@@ -63,17 +80,30 @@ docker run -d -p 80:80 img:1
 ```
 
 #### browse website
+```
 htttp://<public-ip-of-ec2-instance>
-
+```
 
 
 # Elastic container registry
 #### crate registry
 ```
-Amazon Elastic Container Service > Express Mode
-
+Amazon ECR > Private registry > Repositories > Create private repository
+name: img1
+create
 ```
-- push docker image to ECT, terminal need to authenticate. how?
+#### push docker image to ECT
+- select img1 repository
+- click on "View Push Commands"
+- <img width="652" height="529" alt="image" src="https://github.com/user-attachments/assets/54b2d608-ac28-4bca-a434-123344ddbe5f" />
+```
+# belose commands will not work for all becuase ecr ID is used here. Shown just for reference
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471112878240.dkr.ecr.us-east-1.amazonaws.com
+docker build -t img1 .
+docker tag img1:latest 471112878240.dkr.ecr.us-east-1.amazonaws.com/img1:latest
+docker push 471112878240.dkr.ecr.us-east-1.amazonaws.com/img1:latest
+```
+- refresh img1
 - authenticate EC2 machine to push command
 - aws configure
 - [account - se credential - create access key]
