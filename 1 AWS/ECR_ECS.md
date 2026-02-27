@@ -24,7 +24,7 @@ docker --version
 ```
 
 # Docker Command
-- docker image can be downloaded from hub.docker.com
+#### docker image can be downloaded from hub.docker.com
 ```
 docker images
 docker pull ubuntu
@@ -68,6 +68,11 @@ htttp://<public-ip-of-ec2-instance>
 
 
 # Elastic container registry
+#### crate registry
+```
+Amazon Elastic Container Service > Express Mode
+
+```
 - push docker image to ECT, terminal need to authenticate. how?
 - authenticate EC2 machine to push command
 - aws configure
