@@ -54,12 +54,25 @@ docker stop c01
 
 #### start a container
 ```
-docker exec -it c02 /bin/bash
+docker start c01
 ```
 
 #### enter running container
 ```
-docker exec -it c02 /bin/bash
+docker exec -it c01 /bin/bash
+```
+
+#### stop a running container
+````
+docker stop c01
+````
+
+#### remove a stopped container
+docker rm c01
+
+#### remove image
+```
+docker rmi ubuntu
 ```
 
 
