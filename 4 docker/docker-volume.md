@@ -40,12 +40,18 @@ docker run -it -v vol1:/log2 ubuntu /bin/bash
 ```
 docker run -it -v vol1:/log2:ro ubuntu /bin/bash
 ```
-#### More advanced mount options (recommended method)
+#### Example — multiple volumes
 ```
 docker run -it \
-  --mount source=vol1,target=/log2,readonly \
+  -v vol1:/log1 \
+  -v vol2:/log2:ro \
+  -v /host/data:/app/data \
   ubuntu /bin/bash
 ```
+- **What happens here:**
+  - vol1:/log1 → volume vol1 mounted to /log1 (read-write)
+  - vol2:/log2:ro → volume vol2 mounted to /log2 (read-only)
+  - /host/data:/app/data → host folder mounted to container
 
 | Option | Meaning               |
 | ------ | --------------------- |
@@ -53,3 +59,10 @@ docker run -it \
 | `rw`   | Read-write (default)  |
 | `z`    | Shared SELinux label  |
 | `Z`    | Private SELinux label |
+
+#### More advanced mount options (recommended method)
+```
+docker run -it \
+  --mount source=vol1,target=/log2,readonly \
+  ubuntu /bin/bash
+```
