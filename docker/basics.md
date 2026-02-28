@@ -74,5 +74,9 @@ docker rm c01
 ```
 docker rmi ubuntu
 ```
-
+#### force deletre all container with force parameter
+```
+docker rm $(docker ps -a -q ) -f
+```
+####
 
