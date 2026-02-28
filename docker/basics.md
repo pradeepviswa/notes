@@ -1,5 +1,8 @@
 # docker
 
+### docker images available here
+https://hub.docker.com/
+
 ## install docker
 ```
 # install docker in ubuntu machine
@@ -15,7 +18,7 @@ or
 docker image ls
 ```
 
-#### run a container
+#### run a container in interactive mode
 - run: run the container
 - it: run in iteractive mode
 - c01: name of container. no capital letter
@@ -25,8 +28,35 @@ docker image ls
 ```
 docker run -it -name c01 ubuntu /bin/bash
 ```
-#### or
+#### run a container in detached mode
 ```
 docker run -dt -name c01 ubuntu
 ```
 - dt: run in detached mode
+
+#### come out of container
+```
+ctrl + pq
+p: save the process
+q: quit the process
+```
+
+#### show running containers
+```
+# ps means process
+docker ps
+```
+
+#### stop a running container
+```
+docker stop c01
+```
+
+#### start a container
+```
+docker start c01
+```
+
+####
+
+
