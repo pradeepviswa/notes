@@ -36,3 +36,20 @@ cd to mountpoint dir and run ls. all files created inside container will be pres
 docker run -it -v vol1:/log2 ubuntu /bin/bash
 # files will be present in /log2 folder.
 ```
+#### Use Docker’s read-only mount flag :ro when attaching the volume.
+```
+docker run -it -v vol1:/log2:ro ubuntu /bin/bash
+```
+#### More advanced mount options (recommended method)
+```
+docker run -it \
+  --mount source=vol1,target=/log2,readonly \
+  ubuntu /bin/bash
+```
+
+| Option | Meaning               |
+| ------ | --------------------- |
+| `ro`   | Read-only             |
+| `rw`   | Read-write (default)  |
+| `z`    | Shared SELinux label  |
+| `Z`    | Private SELinux label |
