@@ -54,9 +54,12 @@ docker stop c01
 
 #### start a container
 ```
-docker start c01
+docker exec -it c02 /bin/bash
 ```
 
-####
+#### enter running container
+```
+docker exec -it c02 /bin/bash
+```
 
 
