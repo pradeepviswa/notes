@@ -39,7 +39,7 @@ RUN git clone https://github.com/pradeepviswa/apachewebsite.git  /var/www/html/
 #### build and run
 ```
 #build cmd
-docker build -t apache1 .
+docker build --no-cache -t apache1 .
 
 # run container
 docker run -dt -p 1234:80  img1
