@@ -18,3 +18,9 @@ git clone https://github.com/pradeepviswa/apachewebsite.git .
 git clone  https://github.com/pradeepviswa/apachewebsite.git /usr/local/apache2/htdocs
 # press ctrl+pq
 ```
+
+#### Pull Jenkins image
+```
+docker pull jenkins/jenkins:latest
+docker run -d -p 9090:8080 jenkins/jenkins:latest
+```
