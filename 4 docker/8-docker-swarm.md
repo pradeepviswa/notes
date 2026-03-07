@@ -30,7 +30,15 @@
   # this will show join command
   # run docker swarm join command on worker nodes
   ```
+  <img width="1215" height="122" alt="image" src="https://github.com/user-attachments/assets/500ea9f5-448b-4afd-b289-f772bd97ae6e" />
+
 - if you miss docker swarm join command, get it from 
   ```
   docker swarm join-token worker
   ```
+  <img width="1214" height="89" alt="image" src="https://github.com/user-attachments/assets/214d5c35-3818-4967-b392-b3ffa590d10d" />
+
+
+- run docker swarm join command in node1 and node2
+  <img width="1431" height="66" alt="image" src="https://github.com/user-attachments/assets/ab1cb8c0-21af-40e6-9fac-119061ca159e" />
+
