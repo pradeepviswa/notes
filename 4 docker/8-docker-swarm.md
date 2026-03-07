@@ -103,3 +103,6 @@
   docker service create --name globalexample --mode global -dt ubuntu
   docker service create --name globalex --mode global -p 9090:80 nginx
   ```
+- summary
+  <img width="1301" height="460" alt="image" src="https://github.com/user-attachments/assets/ba1d8565-f699-4f08-8f7a-23e84e85db77" />
+
