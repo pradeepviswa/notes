@@ -95,9 +95,8 @@ docker inspect c01
   c03: 172.18.0.2
   ```
 - how it works
-  ```
-  I connected c03, from here I am able to ping c02 using container name.
-  Using IP address it doesn't work.
+- I connected c03, from here I am able to ping c02 using container name.
+- Using IP address it doesn't work.
   ```
   <img width="581" height="237" alt="image" src="https://github.com/user-attachments/assets/b25784b3-8c99-4f34-9980-8d09d3d4ba20" />
 
