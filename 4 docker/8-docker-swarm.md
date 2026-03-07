@@ -106,3 +106,20 @@
 - summary
   <img width="1301" height="460" alt="image" src="https://github.com/user-attachments/assets/ba1d8565-f699-4f08-8f7a-23e84e85db77" />
 
+#### drain node
+- drain a node, it means it is now safe to remove that node from cluster
+- this is useful during maintenance. change the state to "drain" later switch it back to "active".
+```
+docker node update --availability drain <nodeID>
+docker node ls
+#containers will automatically move on to next available nodes. check container status using below command
+docker service ps web1
+#activae
+docker node update --availability active <nodeID>
+```
+<img width="978" height="119" alt="image" src="https://github.com/user-attachments/assets/ce5e91d2-47bd-4bcf-8aa4-a17b2a729db4" />
+
+
+
+
+
