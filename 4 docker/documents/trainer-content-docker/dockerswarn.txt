@@ -1,0 +1,17 @@
+This setup requires 3 separate instances: 1 Manager node and 2 Worker nodes.
+sudo apt-get update
+sudo apt install docker.io
+
+1. Create 3 ubuntu instance on AWS with Docker engine installed on them
+2. docker swarm init --advertise-addr <MANAGER-IP>
+3. docker swarm join-token worker
+4. docker node ls
+
+
+Deploy a Service in Swarm
+
+1)docker service create --name mysvc --replicas 4 -p 8006:8080 tomcat
+2) docker service ls
+3) docker service ps <serviceName>
+4) docker service rm <serviceName>
+

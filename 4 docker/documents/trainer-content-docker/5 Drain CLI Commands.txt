@@ -1,0 +1,12 @@
+Drain CLI Commands
+Change the Node Availability to Drain
+
+	docker node update --availability drain swarm03
+
+Verify Node status
+
+	docker node ls
+
+Change the Node Availability To Active
+
+	docker node update --availability active swarm03

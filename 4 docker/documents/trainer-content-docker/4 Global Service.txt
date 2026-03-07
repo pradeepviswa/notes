@@ -1,0 +1,9 @@
+Global Service
+
+	docker service create --name antivirus --mode global -dt ubuntu
+
+	docker service ps antivirus
+
+Replicated Service
+
+	docker service create --name myreplica --replicas 1 nginx

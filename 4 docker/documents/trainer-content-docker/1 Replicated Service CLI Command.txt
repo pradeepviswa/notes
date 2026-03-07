@@ -1,0 +1,8 @@
+Replicated Service CLI Command
+Create a new docker service:
+
+docker service create --name webserver --replicas 1 nginx
+
+Verify service status:
+
+docker service ps webserver
