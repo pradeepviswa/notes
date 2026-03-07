@@ -86,7 +86,7 @@ docker inspect c01
   ```
 - install ping
   ```
- apt install iputils-ping -y
+   apt install iputils-ping -y
   ```
 - my scenario
 ```
