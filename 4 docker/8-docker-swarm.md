@@ -101,4 +101,5 @@
 - command
   ```
   docker service create --name globalexample --mode global -dt ubuntu
+  docker service create --name globalex --mode global -p 9090:80 nginx
   ```
