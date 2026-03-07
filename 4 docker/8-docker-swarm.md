@@ -10,3 +10,27 @@
 
 - It only works with docker containers only. 
 - rocker and container-d these are competitors of docker. 
+
+
+### lab
+- create 3 ec2 instances, ubuntu, t3.medium
+- scenario
+  ```
+  docker manager: 3.218.72.233
+  docker node1: 13.216.1.228
+  docker node2: 100.54.104.255
+  ```
+- commands on docker manager
+  ```
+  # install docker
+  apt update -y
+  apt install docker.io -y
+  # docker swarm initialize
+  docker swarm init --advertise-addr <manager-ip>
+  # this will show join command
+  # run docker swarm join command on worker nodes
+  ```
+- if you miss docker swarm join command, get it from 
+  ```
+  docker swarm join-token worker
+  ```
