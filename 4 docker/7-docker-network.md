@@ -76,7 +76,7 @@ docker inspect c01
   docker inspect mynetwork
   ```
 
-- establish communicaiton between
+#### establish communicaiton between two networks
 - connect c01 and try to ping ip of c02. it will ping
 - connect c01 and try to ping c03, it will ping.
 - from c03, neither c01 and c02 will conenct
@@ -86,8 +86,22 @@ docker inspect c01
   ```
 - install ping
   ```
-  apt install iputils-ping -y
+ apt install iputils-ping -y
   ```
+- my scenario
+  ```
+  c01: 172.17.0.2
+  c02: 172.17.0.3
+  c03: 172.18.0.2
+  ```
+- how it works
+  ```
+  I connected c03, from here I am able to ping c02 using container name.
+  Using IP address it doesn't work.
+  ```
+  <img width="581" height="237" alt="image" src="https://github.com/user-attachments/assets/b25784b3-8c99-4f34-9980-8d09d3d4ba20" />
 
   <img width="852" height="623" alt="image" src="https://github.com/user-attachments/assets/cde18e45-ac35-4dc0-adca-63621a2e02fc" />
+
+
 
