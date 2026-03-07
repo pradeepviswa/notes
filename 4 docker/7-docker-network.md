@@ -35,3 +35,12 @@ docker inspect c01
 
 #### host network 
 - container directlly uses host network without isolation
+- Port mapping: in container, exposed port is accessed via host network.
+- here in below container, via host network, port 1234 is accessed inside container
+
+  ```
+  docker run -dt -p 1234:80 nginx:latest
+  ```
+#### overlay network
+- this is used in docker swarm
+- 
