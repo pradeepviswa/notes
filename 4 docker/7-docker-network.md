@@ -89,11 +89,11 @@ docker inspect c01
  apt install iputils-ping -y
   ```
 - my scenario
-  ```
-  c01: 172.17.0.2
-  c02: 172.17.0.3
-  c03: 172.18.0.2
-  ```
+```
+c01: 172.17.0.2
+c02: 172.17.0.3
+c03: 172.18.0.2
+```
 - how it works
 - I connected c03, from here I am able to ping c02 using container name.
 - Using IP address it doesn't work.
