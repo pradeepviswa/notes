@@ -11,7 +11,7 @@
 3. dst=/var/run/docker.sock → mounted inside container
 
 
-#### Example
+#### Example mount a file
 ```
 docker service create \
   --name=viz \
@@ -19,4 +19,10 @@ docker service create \
   --constraint=node.role==manager \
   --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
   dockersamples/visualizer
+```
+#### Example mount a directory
+```
+docker run -it \
+--mount type=bind,src=/tmp/,dst=/tmp/tmp-pradeep \
+--name c03 ubuntu /bin/bash
 ```
