@@ -45,7 +45,7 @@ docker swarm init --advertise-addr 172.31.70.132
 
 
 ## join  node1 and node2 in swarm cluster
-- run below command on both nodes
+- run below command on both nodes, node1 and node2
   ```
   docker swarm join --token SWMTKN-1-1s3jiuk6saa2ps6h5602zdz2gko6sfgusm2nx7n2d4jq9aftt6-0zjceti04fntt7j3dwft5pmzx 172.31.70.132:2377
   ```
