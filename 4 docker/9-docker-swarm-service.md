@@ -1,12 +1,12 @@
 
 # docker swarm service
 - In docker swarm, service is a way to run and manage containers ina cluster
-- command to create service
+- Docker service manages:
   - which container to run
   - how many containrs to run
   - where to run them in the cluster
 - docker swarm then automatically creates and manages the containers
-- run below command on leader node
+- run below command from leader node to create a service
   ```
   docker service create --name web -p 8080:80 nginx
   ```
