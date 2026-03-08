@@ -20,6 +20,7 @@ smoothly in a production environment.
 ```
 ## Create EC2 instances
 |node|public-ip|private-ip|
+|----|---------|----------|
 |master|100.54.98.51|172.31.70.132|
 |ndoe1|3.238.241.115|172.31.72.215|
 |node2|3.237.27.49|172.31.75.77|
