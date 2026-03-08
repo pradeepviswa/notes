@@ -18,4 +18,24 @@ microservice, providing real-time insights. This setup simplifies the
 deployment process, enhances scalability, and ensures the application runs
 smoothly in a production environment.
 ```
+## Create EC2 instances
+|node|public-ip|private-ip|
+|master|100.54.98.51|172.31.70.132|
+|ndoe1|3.238.241.115|172.31.72.215|
+|node2|3.237.27.49|172.31.75.77|
+<img width="1633" height="264" alt="image" src="https://github.com/user-attachments/assets/c27afc2d-2fe9-4ff3-ac72-ad3aaabbe931" />
 
+## Install docker on all 3 instances
+```
+sudo su
+apt update -y
+apt install docker.io -y
+```
+
+## Install docker swarm on master node
+```
+# master: 100.54.98.51
+
+
+
+```
