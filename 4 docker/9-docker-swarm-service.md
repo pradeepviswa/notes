@@ -41,7 +41,7 @@
   docker service create --name service01 --replicas 1 -p 8080:80 nginx
   docker service ps # show containers
   docker service ls # show service itself
-  docker service scale 
+  docker service scale service01=5
   ```
 
 #### global service
