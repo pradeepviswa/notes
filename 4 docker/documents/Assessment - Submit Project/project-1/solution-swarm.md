@@ -51,4 +51,62 @@ docker swarm init --advertise-addr 172.31.70.132
   ```
   <img width="1471" height="96" alt="image" src="https://github.com/user-attachments/assets/f72eeb2d-8e8d-4c82-ab33-e6d382314d08" />
 
-## On manager node create images
+## design
+| Service    | Technology         | Purpose                   |
+| ---------- | ------------------ | ------------------------- |
+| Voting App | Python             | Users vote through web UI |
+| Redis      | In-memory database | Stores temporary votes    |
+| Worker     | .NET / Node / Java | Processes votes           |
+| PostgreSQL | Database           | Stores final results      |
+| Result App | Node.js            | Displays voting results   |
+
+#### Architecture
+User
+ │
+ ▼
+Voting App (Python)
+ │
+ ▼
+Redis
+ │
+ ▼
+Worker
+ │
+ ▼
+PostgreSQL
+ │
+ ▼
+Result App
+
+#### Flow of Data
+1. User opens Voting App in browser.
+2. User votes (e.g., Cats vs Dogs).
+3. Vote goes to Redis.
+4. Worker service reads vote from Redis.
+5. Worker stores final vote in PostgreSQL.
+6. Result App reads from PostgreSQL and shows results.
+
+
+Redis
+docker run -d --name redis redis
+
+Database
+docker run -d \
+--name db \
+-e POSTGRES_USER=postgres \
+-e POSTGRES_PASSWORD=postgres \
+postgres
+
+Vote App
+docker run -d -p 5000:80 --name vote dockersamples/examplevotingapp_vote
+
+Worker
+docker run -d --name worker dockersamples/examplevotingapp_worker
+
+Result App
+docker run -d -p 5001:80 --name result dockersamples/examplevotingapp_result
+
+5️⃣ Ports
+Service	Port
+Vote App	5000
+Result App	5001
