@@ -1,4 +1,4 @@
-# docker volume
+# Docker Named Volume
 
 #### Meaning
 - persistant storage is a directory which resides outside container
