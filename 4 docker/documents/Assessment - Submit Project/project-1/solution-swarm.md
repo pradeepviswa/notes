@@ -32,11 +32,23 @@ sudo su
 apt update -y
 apt install docker.io -y
 ```
-
 ## Install docker swarm on master node
 ```
 # master: 100.54.98.51
-
-
-
+docker swarm init --advertise-addr 172.31.70.132
 ```
+- node join command
+  ```
+  docker swarm join --token SWMTKN-1-1s3jiuk6saa2ps6h5602zdz2gko6sfgusm2nx7n2d4jq9aftt6-0zjceti04fntt7j3dwft5pmzx 172.31.70.132:2377
+  ```
+<img width="1465" height="218" alt="image" src="https://github.com/user-attachments/assets/afbe8469-47f1-49b5-987b-8fd6bee0cd6a" />
+
+
+## join  node1 and node2 in swarm cluster
+- run below command on both nodes
+  ```
+  docker swarm join --token SWMTKN-1-1s3jiuk6saa2ps6h5602zdz2gko6sfgusm2nx7n2d4jq9aftt6-0zjceti04fntt7j3dwft5pmzx 172.31.70.132:2377
+  ```
+  <img width="1471" height="96" alt="image" src="https://github.com/user-attachments/assets/f72eeb2d-8e8d-4c82-ab33-e6d382314d08" />
+
+## On manager node create images
