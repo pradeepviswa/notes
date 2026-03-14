@@ -1,7 +1,7 @@
 # install kubernetes
 in AWS, create 3 ec2 instances with t3.medium configuration
 ```
-Control-place
+Control-plane
 node1
 node2
 ```
