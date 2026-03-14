@@ -1,7 +1,6 @@
-#create a pod and use apache to host a website
-
+# create a pod and use apache to host a website
+#### myfirstpod.yml
 ```
-#myfirstpod.yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -12,7 +11,6 @@ spec:
        image: httpd
        ports:
          - containerPort: 80
-
 ```
 
 ## description
