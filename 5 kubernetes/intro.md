@@ -23,7 +23,14 @@
 - k8s should be used with simple and complex architecture 
 
 # k8s architecture
-- there are 3 offices
+- kubectl(ceo) gives instruction to create 2 pods (resources).
+- request goes to apiserver(senior mgmt.).
+- scheduler (hr) decides which node (team name) pod has to be created in. Example node1
+- api server instructs kubelet (team lead) in node 1 to create 2 pods
+- container runtime (sme) cretes the resources
+- kubelet sends regular information to apiserver which is stored in etcd (account), which stores resources specifications like cpu ram, etc.
+- controller manager (client) makes sure desired state is available. if any resource goes down, controller manager instructs api server to create one more pod
+
 
 # Basic Architecture Questions
 
