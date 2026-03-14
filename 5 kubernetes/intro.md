@@ -32,3 +32,7 @@
 - kubelet sends regular information to apiserver which is stored in etcd (account), which stores resources specifications like cpu ram, etc.
 - controller manager (client) makes sure desired state is available. if any resource goes down, controller manager instructs api server to create one more pod
   
+| Example Architecture | Actual Architecture |
+|----------------------|---------------------|
+| <img src="img/ref_arch.png" width="400"> | <img src="img/architecture.png" width="400"> |
+  
