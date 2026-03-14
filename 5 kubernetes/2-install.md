@@ -8,4 +8,4 @@ node2
 #### follow steps mentioned here
 https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 
-<img src=img/master-members.png>
+<img src=img/master-members.png size=400>
