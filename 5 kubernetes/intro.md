@@ -1,3 +1,4 @@
+
 # why kubernetes
 - docker has swarm, it is fase.
 - difficult to manage multiple containers.
@@ -30,16 +31,4 @@
 - container runtime (sme) cretes the resources
 - kubelet sends regular information to apiserver which is stored in etcd (account), which stores resources specifications like cpu ram, etc.
 - controller manager (client) makes sure desired state is available. if any resource goes down, controller manager instructs api server to create one more pod
-
-
-# Basic Architecture Questions
-
-#### What are the main components of Kubernetes architecture?
-
-#### What is the difference between Control Plane and Worker Nodes?
-
-#### Why is the API Server considered the central component?
-
-#### What is stored inside etcd, and why is it critical?
-
-#### What happens if etcd goes down?
+  
