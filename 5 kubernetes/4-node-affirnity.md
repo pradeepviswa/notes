@@ -1,4 +1,5 @@
-# 
+# node affinity
+- means creation of node in specify node set. example, pod should be created prod env only.
 - scheduler decides whether nodes1 or node2 to be used.
 - Now I want to create the pod in production node only. Here the concept of node affinity comes up.
 - node affinity is a kubernetes scheduling feature that tells the scheduler which node a pod should run based on node label.
