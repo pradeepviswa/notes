@@ -19,23 +19,22 @@ vi rs.yml
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: myreplica # name of replica set
+  name: myreplica               # name of replica set
 spec:
-  replicas: 5 # we want 5 replica pods
+  replicas: 5                   # we want 5 replica pods
   selector:
     matchLabels:
-      company: test # replica pods will be created from the template with label company:test
-   # here onwards is the template
-   template:
-     metadata:
-       labels:
-         company: test   # pick template with label company: test
-     spec:
-       containers:
-         - name: c01
-           image: httpd
-           ports:
-             - containerPort: 80
+      company: test             # replica pods will be created from the template with label company:test
+  template:                     # here onwards is the template
+    metadata:
+      labels:
+        company: test          # pick template with label company: test 
+    spec:
+      containers:
+        - name: c0q
+          image: httpd
+          ports:
+            - containerPort: 80
 ```
 #### apply
 ```
