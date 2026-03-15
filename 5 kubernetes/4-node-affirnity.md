@@ -38,53 +38,22 @@ ip-172-31-6-244   Ready    <none>          37m   v1.29.15   beta.kubernetes.io/a
 #### now write a script in the node with label 'env=prod'
 
 vi node-affinity.yml
-
 ```
 apiVersion: v1
 kind: Pod
 metadata:
-  # creating a pod with name nginx-affinity
-  name: nginx-affinity
+  name: nginx-affinity                                     # creating a pod with name nginx-affinity
 spec:
-  # we are using pod scheudling rule in node-affinity. 
-  # we are preparing a scheduling. 
-  # we are saying we are in node affinity group. 
-  # we want to create in a specific node
-  affinity:
-    nodeAffinity:
-     # we are creating a  pod scheduling rule. when creating pod, that time check the label of node. later if node label is changed, it doesn't matter.
-      requiredDuringSchedulingIngoreDuringExecution:
-       # if node label matches 'env=prod'.
-        nodeSelectorTerms:
-          - matchExpressions:
-            - key: env
-              operator: In
-              value:
-              - prod
-  # just under affinity
-  containers:
-     - name: nginx
-       image: nginx
-
-```
-
-#### cleaner version
-```
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx-affinity
-spec:
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
+  affinity:                                               # we are using pod scheudling rule in node-affinity. preparing a scheduling. 
+    nodeAffinity:                                         # we are saying we are in node affinity group. 
+      requiredDuringSchedulingIgnoredDuringExecution:     # creating a  pod scheduling rule. when creating pod, check the label of node. later if node label is changed, it doesn't matter.
+        nodeSelectorTerms:                               # if node label matches 'env=prod'.
         - matchExpressions:
           - key: env
             operator: In
             values:
             - prod
-  containers:
+  containers:                                          # create it just under affinity
     - name: nginx
       image: nginx
 
