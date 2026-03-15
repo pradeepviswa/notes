@@ -1,4 +1,4 @@
-# deployment controllers
+# Deployment controller
 - it is elder brother of replicaset
 - ensures that minimum number of pods are always running
 - comes with additional features
