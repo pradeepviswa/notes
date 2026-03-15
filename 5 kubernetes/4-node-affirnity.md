@@ -25,7 +25,15 @@ kubectl label node ip-172-31-1-248 env=prod
 ```
 kubectl get nodes --show-labels
 ```
-<img src=img/show-label.png>
+#### output
+```
+root@ip-172-31-1-248:/home/ubuntu# kubectl get nodes --show-labels
+NAME              STATUS   ROLES           AGE   VERSION    LABELS
+ip-172-31-1-248   Ready    control-plane   38m   v1.29.15   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-172-31-1-248,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=,node.kubernetes.io/exclude-from-external-load-balancers=
+ip-172-31-5-213   Ready    <none>          36m   v1.29.15   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,env=prod,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-172-31-5-213,kubernetes.io/os=linux
+ip-172-31-6-244   Ready    <none>          37m   v1.29.15   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-172-31-6-244,kubernetes.io/os=linux
+
+```
 
 #### now write a script in the node with label 'env=prod'
 
