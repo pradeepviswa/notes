@@ -43,10 +43,13 @@ spec:
           command: ["/bin/bash", "-c", "while true; do echo hello world; sleep 5; done"]   # creating an infinite loop till the time container is running. this is because ubuntu image doesn't have anything to run by default.
 
 ```
-
+#### apply v1 of app
+```
 kubectl apply -f version1-app.yml
 kubectl get deploy
 kubectl delete pods --all
+```
+
 #### see deployment
 kubectl get deploy
 
