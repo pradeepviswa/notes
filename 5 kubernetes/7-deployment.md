@@ -121,3 +121,4 @@ kubectl get rs
 kubectl get pods
 kubectl logs -f <podid>
 ```
+
