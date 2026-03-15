@@ -25,6 +25,7 @@ kubectl label node ip-172-31-1-248 env=prod
 ```
 kubectl get nodes --show-labels
 ```
+<img src=img/show-label.png>
 
 #### now write a script in the node with label 'env=prod'
 
@@ -56,6 +57,28 @@ spec:
   containers:
      - name: nginx
        image: nginx
+
+```
+
+#### cleaner version
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: env
+            operator: In
+            values:
+            - prod
+  containers:
+    - name: nginx
+      image: nginx
 
 ```
 
