@@ -1,5 +1,5 @@
 
-### replicaSet
+### ReplicaSet
 - it maintains the number of pods.
 - if due to any reason if a pod is deleted, the replicase will create a new pod immediately.
 
