@@ -20,7 +20,7 @@ if we realise there is issue with newer version, we can easily rollback
 - at the time of rollback, new replicaset with older config willbe creted, traffic will be lmvoed to nthis verison. 
 
 ### example: copy code from rs.yml and modify as below
-#### version1-app.yml
+#### v1-app.yml
 ```
 apiVersion: apps/v1             # api version depend on kind
 kind: Deployment
@@ -45,7 +45,7 @@ spec:
 ```
 #### apply v1 of app
 ```
-kubectl apply -f version1-app.yml
+kubectl apply -f v1-app.yml
 kubectl get deploy
 kubectl delete pods --all
 ```
@@ -61,7 +61,7 @@ kubectl get pods
 
 #### see the logs
 kubectl logs <podid>
-#### launch new version of application, version2-app.yml, only echo command updated, rest all same
+#### launch new version of application, v2-app.yml, only echo command updated, rest all same
 
 ```
 apiVersion: apps/v1             # api version depend on kind
@@ -87,7 +87,7 @@ spec:
 ```
 #### apply second version of deployment
 ```
-kubectl apply -f version2-app.yml
+kubectl apply -f v2-app.yml
 ```
 
 #### see deployment name again, it will remain same
