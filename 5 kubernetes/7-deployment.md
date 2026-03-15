@@ -22,7 +22,7 @@ if we realise there is issue with newer version, we can easily rollback
 ### example: copy code from rs.yml and modify as below
 #### v1-app.yml
 ```
-apiVersion: apps/v1             # api version depend on kind
+apiVersion: apps/v1             # api version depends on kind
 kind: Deployment
 metadata:
   name: mydep                   # name of deployment
@@ -30,19 +30,20 @@ spec:
   replicas: 2                   # we want 2 replica pods
   selector:
     matchLabels:
-      name: deployment          # replica pods will be created from the template with label 'deployment'
-  template:                     # here onwards is the template
-    name: testpod               # optional. creating a template with name testpod 
+      name: deployment          # deployment manages pods with this label
+  template:                     # pod template
     metadata:
-      labels:                   # with label name as deployment
-        name: deployment        # pick template with label company: test 
+      labels:
+        name: deployment        # pods will be created with this label
     spec:
       containers:
         - name: c01
           image: ubuntu
-          command: ["/bin/bash", "-c", "while true; do echo hello world; sleep 5; done"]   # creating an infinite loop till the time container is running. this is because ubuntu image doesn't have anything to run by default.
+          command: ["/bin/bash", "-c", "while true; do echo hello world; sleep 5; done"]  # creating an infinite loop till the time container is running. this is because ubuntu image doesn't have anything to run by default.
 
 ```
+
+#### try using below if above code fails
 #### apply v1 of app
 ```
 kubectl apply -f v1-app.yml
