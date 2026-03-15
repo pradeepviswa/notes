@@ -31,3 +31,13 @@ spec:
         image: nginx
        
 ```
+
+#### check DaemonSet
+```
+kubnectl get ds
+```
+
+#### check pods in each node
+```
+kubectl get pods -w wide
+```
