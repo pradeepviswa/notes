@@ -3,9 +3,9 @@
 - it maintains the number of pods.
 - if due to any reason if a pod is deleted, the replicase will create a new pod immediately.
 
-= new imsges created from template.
-= I will create a template, this will be stored in etcd.
-= template is a readonly blueprint of pod from which replica pods are created.
+- new imsges created from template.
+- I will create a template, this will be stored in etcd.
+- template is a readonly blueprint of pod from which replica pods are created.
 
 #### how it works
 - we will label the template
