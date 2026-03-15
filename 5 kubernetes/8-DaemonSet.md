@@ -1,7 +1,7 @@
 # DaemonSet
 - in deployment we created 2 pos. it is not necessary that they will always be created in separate node.
 - they can be created in one node also.
-- no need to specify replicaset, one pod will be created in each node
+- here in daemonset, no need to specify replicaset, one pod will be created in each node
 
 #### requirement is
 always pod should be created in both nodes.
