@@ -54,7 +54,7 @@ docker swarm init --advertise-addr 172.31.70.132
 
 # voting-app
 
-## Below is a simple working example of a voting website with:
+## Below is an overview of voting website:
 
 - Home page with 4 political party buttons
 - Vote page that saves the vote in a free MySQL database
