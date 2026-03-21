@@ -18,8 +18,8 @@ https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 
 vi deploy.yml
 ```
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: mydeployment
 spec:
