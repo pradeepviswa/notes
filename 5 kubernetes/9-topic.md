@@ -52,6 +52,7 @@ spec:
       targetPort: 80
   type: ClusterIP
 ```
+
 #### apply script
 ```
 kubectl apply -f deploy.yml
@@ -80,6 +81,33 @@ curl curl 10.97.17.190:8080
 ```
 kubectl delete pods --all
 ```
+#### create nodeport service file
+
+vi service-nodeport.yml
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: myservice
+spec:
+  selector:
+    name: deployment1
+  ports:
+    - port: 8080
+      targetPort: 80
+  type: NodePort
+```
+#### apply nodeport service file
+```
+kubectl apply -f service-nodeport.yml
+```
+#### see all services
+```
+kubectl get svc
+```
+- This will create a random port number which can be used to access applicaiton via internet.
+- example: http://44.202.24.232:30352/
+  <img width="911" height="95" alt="image" src="https://github.com/user-attachments/assets/f3c75e70-0061-4905-9cdd-6e3479ed8385" />
 
 ## service types
 #### cluster IP (Default service)
