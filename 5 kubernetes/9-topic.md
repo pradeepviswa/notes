@@ -43,7 +43,7 @@ vi service.yml
 apiVersion: v1
 kind: Service
 metadata:
-  name: myservices
+  name: myservice
 spec:
   selector:
     name: deployment1
@@ -51,6 +51,34 @@ spec:
     - port: 8080
       targetPort: 80
   type: ClusterIP
+```
+#### apply script
+```
+kubectl apply -f deploy.yml
+kubectl apply -f service.yml
+```
+#### see the pods
+```
+kubectl get pods -o wide
+```
+#### access app using pod IP
+later delete the pod and and try usign same IP, it will not work
+```
+curl  192.168.42.1:80
+```
+#### see the service
+```
+kubectl get service
+#or
+kubectl get svc
+```
+#### access app using service IP
+```
+curl curl 10.97.17.190:8080
+```
+#### delete all pods and retry accessing app using service IP, this time it will work
+```
+kubectl delete pods --all
 ```
 
 ## service types
