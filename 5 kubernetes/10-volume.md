@@ -49,17 +49,21 @@ kubectl get pods
 
 
 #### enter the container and check the logs
+```
 kubectl exec -it empty-dir -c c01 -- sh
 cat /data/file1.txt
-
+```
 #### now since we have mapped data with shared-volume then, from c02 also we should be able to see /data/file1.txt
+```
 kubectl exec -it empty-dir -c c01 -- sh
+```
 
 #### check c02 container logs
+```
 kubectl logs emptydir-demo -c c02
-
+```
 #### if pod is restarted, data is gone.
-### Persistent volume and Persistent volume claim
-
 <img width="961" height="385" alt="image" src="https://github.com/user-attachments/assets/39cb3488-4bb5-4478-a0b6-2340e8709c74" />
+
+### Persistent volume and Persistent volume claim
 
