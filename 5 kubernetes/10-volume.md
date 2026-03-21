@@ -34,4 +34,5 @@ spec:
           mountPath: /data
           
 ```
+<img width="961" height="385" alt="image" src="https://github.com/user-attachments/assets/39cb3488-4bb5-4478-a0b6-2340e8709c74" />
 
