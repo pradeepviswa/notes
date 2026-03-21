@@ -1,12 +1,10 @@
 ### create lab first - follow stesp here and create the  lab
 https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 
-# agenda
-- services
+# services
   - ClusterIP
   - NodePort
-- Taints and tolerations
-- Volumes
+
 
 # service
 - pod is accessed via ip address
