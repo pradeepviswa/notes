@@ -3,6 +3,8 @@ https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 
 # agenda
 - services
+  - ClusterIP
+  - NodePort
 - Taints and tolerations
 - Volumes
 
