@@ -43,7 +43,7 @@ vi service.yml
 apiVersion: v1
 kind: Service
 metadata:
-  name: demoservices
+  name: myservices
 spec:
   selector:
     name: deployment1
