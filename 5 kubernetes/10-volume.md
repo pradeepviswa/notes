@@ -1,5 +1,11 @@
-# Volume
+### create lab first - follow stesp here and create the  lab
+https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 
+# Volume
+- EmptryDir
+- Persistent volume and Persistent volume claim
+
+  
 ## why do we need volume
 - containers are temporary
 - if a container restarts, data is deleted
