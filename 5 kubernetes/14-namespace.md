@@ -27,6 +27,7 @@ apiVersion: v1
 kind: Pod
 metadata:
    name: myfirstpod
+   namespace: production
 spec:
    containers:
      - name: apachecontainer
@@ -37,29 +38,42 @@ spec:
 ```
 #### run the script
 ```bash
+#if namespace NOT metnioned in metadata
 kubectl apply -f pod.yml -n production
+
+#if namespace mentioned in metadata
+kubectl apply -f pod.yml
+
+# see all pods in namespace
 kubectl get pods -n produciton
+
+# pods in default namespace
 kubectl get pods 
 
-kubectl get pods -n production
-
+# get deployments in namespace
 kubectl get deploy -n production
 
+# kubectl see contexts
 kubectl config get-contexts
 
+# kubectl set context
 kubectl config set-context --current --namespace=production
 
-
+# kubectl set context again
 kubectl config get-contexts
 
+# see pods of all namespaces
 kubectl get pods --all-namespaces
 
-kubectl get pods   #now the default command will change for namespace production
+#now the default command will change for namespace production
+kubectl get pods   
 
 ##creating namespace by cli
 
+# create namespace via cli
 kubectl create namespace development 
 
+# see new namesapce
 kubectl get ns
 
 ```
