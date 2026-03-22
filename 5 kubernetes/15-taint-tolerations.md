@@ -16,9 +16,9 @@ kubectl get nodes
 
 #### you will get the list of the node. copy the node which you want to taint
 
-#### run below command to taint a node. this is manual process
+#### run below command to taint a node. this is manual process. you can provide FQDN of server as well
 ```
-kubectl taint node ip-172-31-1-239.us-west-1.compute.internal  env=prod:NoSchedule
+kubectl taint node ip-172-31-82-97  env=prod:NoSchedule
 ```
 vi pod1.yml
 ```
