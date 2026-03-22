@@ -168,7 +168,7 @@ kubectl get pods
 ## 🔧 Test Data Persistence
 
 ```bash
-kubectl exec -it pvc-pod -- /bin/bash
+kubectl exec -it pvc-pod -c myvolume-container -- /bin/bash
 cd /usr/local/tomcat/logs
 touch file1 file2
 exit
