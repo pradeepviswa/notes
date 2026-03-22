@@ -40,14 +40,14 @@ kind: PersistentVolume
 metadata:
   name: my-pv
 spec:
-  storageClassName: standard
+  storageClassName: standard                # it tell k8s what type is storage you want. standard, premium, fast ssd.  no cost associated, no speed difference. use any.
   persistentVolumeReclaimPolicy: Recycle
   capacity:
-    storage: 1000Mi
+    storage: 1000Mi                        # Mebibype = 1024 KB, Gi = Gibibyte = 1024 Mi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /tmp/pvdata
+    path: /tmp/pvdata                     # data will be visible in this location in container.
 ```
 
 ---
@@ -111,9 +111,9 @@ metadata:
   name: my-pvc
 spec:
   storageClassName: standard
-  accessModes:
-    - ReadWriteOnce
-  resources:
+  accessModes:                   # below is the find conditions. we are saying search pv PV which is of type standard, access mode is ReadWriteOnce and size is more than 500 Mi
+    - ReadWriteOnce             # that means if we have more than one PV with same size, any one will be picked by PVC.
+  resources:  
     requests:
       storage: 500Mi
 ```
