@@ -71,5 +71,5 @@ kubectl logs emptydir-demo -c c02
 #### if pod is restarted, data is gone.
 <img width="961" height="385" alt="image" src="https://github.com/user-attachments/assets/39cb3488-4bb5-4478-a0b6-2340e8709c74" />
 
-### Persistent volume and Persistent volume claim
+
 
