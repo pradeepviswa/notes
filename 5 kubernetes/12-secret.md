@@ -21,8 +21,8 @@ kubectl describe secret dev-secret
 
 vi cpod.yml
 ```
-kind: Pod
 apiVersion: v1
+kind: Pod
 metadata:
   name: cm-pod
 spec:
@@ -32,13 +32,14 @@ spec:
       ports:
         - containerPort: 80
       volumeMounts:
-        - name: html-from-cm
+        - name: html-from-secret
           mountPath: /usr/share/nginx/html/
           readOnly: true
+
   volumes:
-      - name: html-from-cm
-        secret:
-          name: dev-html
+    - name: html-from-secret
+      secret:
+        secretName: dev-secret
 ```
 check the data
 ```
