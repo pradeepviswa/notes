@@ -6,7 +6,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: dev-secret
-StringData:
+stringData:
   index.html: |
     <H1> Hello secret </H1>
 ```
