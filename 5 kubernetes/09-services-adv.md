@@ -98,8 +98,7 @@ spec:
 In AWS Route 53:
 - Go to Hosted Zone → mycompany.com
 - Create record:
-- 
-| Field | Value                 |
+- | Field | Value                 |
 | ----- | --------------------- |
 | Type  | A                     |
 | Name  | mycompany.com         |
