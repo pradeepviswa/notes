@@ -54,8 +54,9 @@ spec:
       emptyDir: {}     
 ```
 #### see all pods
+```bash
 kubectl get pods
-
+```
 
 #### enter the container and check the logs
 ```bash
