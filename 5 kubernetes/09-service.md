@@ -48,8 +48,8 @@ spec:
   selector:
     name: deployment1
   ports:
-    - port: 8080
-      targetPort: 80
+    - port: 8080                # Service port (inside cluster / NodePort mapping base)
+      targetPort: 80            # Pod container port
   type: ClusterIP
 ```
 
@@ -126,3 +126,5 @@ kubectl get svc
 - example 
   - Pradeep.com
   - map with Pradeep.com/products
+
+
