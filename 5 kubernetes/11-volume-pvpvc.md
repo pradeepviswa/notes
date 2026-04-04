@@ -55,7 +55,7 @@ spec:
 
 Defines the **type of storage** to be used.
 
-> 👉 This **DOES matter** in real world  
+> 👉 This **DOES matter** in real world which storage class is selected 
 > 👉 Different classes = different **speed, cost, and backend**
 
 ### 📌 Examples
