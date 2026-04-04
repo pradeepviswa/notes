@@ -50,7 +50,6 @@ spec:
     path: /tmp/pvdata                     # data will be visible in this location in container.
 ```
 
----
 ## storageClassName
 ✅ storageClassName: standard
 Defines type of storage
@@ -63,6 +62,12 @@ Examples:
 standard → normal disk
 gp2/gp3 → AWS EBS
 premium → SSD
+
+✅ capacity
+```yaml
+storage: 1000Mi
+```
+- Total size of this volume = **1 GB**
 
 ## ♻️ Reclaim Policy
 
