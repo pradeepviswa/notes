@@ -56,7 +56,12 @@ spec:
 Defines the **type of storage** to be used.
 
 > 👉 This **DOES matter** in real world which storage class is selected 
+> standard, premium, fast, etc., These names come from the storage provider (AWS, Azure, GCP, on-prem, etc.)
 > 👉 Different classes = different **speed, cost, and backend**
+> AWS (EBS) - gp3, gp2
+> Azure (Azure Disk) - standard,premium,standardssd,ultra
+> GCP (Persistent Disk) - standard,balanced,ssd
+> Local / Lab (like your setup): standard,local-storage,manual
 
 ### 📌 Examples
 
@@ -69,6 +74,25 @@ Defines the **type of storage** to be used.
 storage: 1000Mi
 ```
 - Total size of this volume = **1 GB**
+
+### 🔍 How to check in YOUR cluster
+```bash
+kubectl get storageclass
+```
+Example output:
+```
+NAME                 PROVISIONER
+gp3 (default)        ebs.csi.aws.com
+standard             kubernetes.io/aws-ebs
+```
+
+### ⚡ Important Real-World Notes
+> One cluster can have multiple StorageClasses
+> One is usually marked as default
+> PVC without storageClassName → uses default
+
+
+
 
 ## ♻️ Reclaim Policy
 
