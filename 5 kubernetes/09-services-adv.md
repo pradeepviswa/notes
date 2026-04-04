@@ -1,6 +1,6 @@
 # real world scenario
 
-## Your goal:
+## 🎯 Your Goal
 ```
 http://mycompany.com
 ```
@@ -18,8 +18,10 @@ Service (ClusterIP)
 Pods (httpd)
 ```
 
-## ✅ Step-by-Step Implementation
-```
+# ✅ Step-by-Step Implementation
+
+## 🔹 Step 1: Create Deployment
+```yaml
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -42,7 +44,7 @@ spec:
 ```
 ## 🔹 Step 2: Fix Service (IMPORTANT ⚠️)
 👉 In real-world, Service should be ClusterIP on port 80
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -65,6 +67,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main
 ```bash
 kubectl get svc -n ingress-nginx
 ```
+> ⚠️ Note: It may take 2–5 minutes for the LoadBalancer external IP/DNS to be assigned.
 
 You’ll see:
 ```
@@ -76,12 +79,13 @@ a1b2c3d4.elb.amazonaws.com
 ```
 
 ## 🔹 Step 5: Create Ingress YAML
-```
+```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: myingress
 spec:
+  ingressClassName: nginx
   rules:
     - host: mycompany.com
       http:
@@ -111,6 +115,11 @@ In AWS Route 53:
 
 > 💡 Tip: If available, enable **Alias = Yes** and select the Load Balancer directly.
 
+## 7. Optional (Nice improvement)
+```bash
+kubectl get ingress
+```
+
 ## 🔥 FINAL RESULT
 After DNS propagation:
 ```
@@ -123,7 +132,7 @@ http://mycompany.com
 
 ## 🔐 (Optional but Real World MUST) Add HTTPS
 Install cert-manager and use Let's Encrypt:
-```YAML
+```yaml
 tls:
   - hosts:
       - mycompany.com
