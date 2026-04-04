@@ -18,6 +18,9 @@ https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 
 
 ## different types of kubernetes volume
+- Empty Dir
+- Persistent Volume and Persistent Volume Claim
+
 ### Empty Dir
 - Volume is created inside the pod, not inside node
 - it will be deleted when pod is removed
