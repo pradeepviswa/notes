@@ -28,7 +28,7 @@ https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 - temporary drive which is mapped with our container
 - <img width="313" height="245" alt="image" src="https://github.com/user-attachments/assets/d900d906-4399-4f81-907c-1d0fba799c4c" />
 #### emptydir.yml
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -58,17 +58,17 @@ kubectl get pods
 
 
 #### enter the container and check the logs
-```
+```bash
 kubectl exec -it empty-dir -c c01 -- sh
 cat /data/file1.txt
 ```
 #### now since we have mapped data with shared-volume then, from c02 also we should be able to see /data/file1.txt
-```
+```bash
 kubectl exec -it empty-dir -c c01 -- sh
 ```
 
 #### check c02 container logs
-```
+```bash
 kubectl logs emptydir-demo -c c02
 ```
 #### if pod is restarted, data is gone.
