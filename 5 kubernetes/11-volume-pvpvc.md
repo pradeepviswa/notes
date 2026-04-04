@@ -49,19 +49,21 @@ spec:
   hostPath:
     path: /tmp/pvdata                     # data will be visible in this location in container.
 ```
-
 ## storageClassName
-✅ storageClassName: standard
-Defines type of storage
-⚠️ Correction to your comment:
-👉 This DOES matter in real world
-👉 Different classes = different speed, cost, backend
 
-Examples:
+### ✅ storageClassName: standard
 
-standard → normal disk
-gp2/gp3 → AWS EBS
-premium → SSD
+Defines the **type of storage** to be used.
+
+> ⚠️ **Correction to your comment:**  
+> 👉 This **DOES matter** in real world  
+> 👉 Different classes = different **speed, cost, and backend**
+
+### 📌 Examples
+
+- **standard** → normal disk  
+- **gp2 / gp3** → AWS EBS  
+- **premium** → SSD
 
 ✅ capacity
 ```yaml
