@@ -40,7 +40,7 @@ kind: PersistentVolume
 metadata:
   name: my-pv
 spec:
-  storageClassName: standard                # it tell k8s what type is storage you want. standard, premium, fast ssd.  no cost associated, no speed difference. use any.
+  storageClassName: standard                # it tell k8s what type is storage you want. standard, premium, fast ssd.  no cost associated, use any. Different classes = different speed, cost, backend
   persistentVolumeReclaimPolicy: Recycle
   capacity:
     storage: 1000Mi                        # Mebibype = 1024 KB, Gi = Gibibyte = 1024 Mi
@@ -51,6 +51,18 @@ spec:
 ```
 
 ---
+## storageClassName
+✅ storageClassName: standard
+Defines type of storage
+⚠️ Correction to your comment:
+👉 This DOES matter in real world
+👉 Different classes = different speed, cost, backend
+
+Examples:
+
+standard → normal disk
+gp2/gp3 → AWS EBS
+premium → SSD
 
 ## ♻️ Reclaim Policy
 
