@@ -62,8 +62,7 @@ Run:
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
 ```
 ## 🔹 Step 4: Check External IP
-kubectl get svc -n ingress-nginx
-```
+```bash
 kubectl get svc -n ingress-nginx
 ```
 
