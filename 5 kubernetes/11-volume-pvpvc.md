@@ -55,7 +55,6 @@ spec:
 
 Defines the **type of storage** to be used.
 
-> ⚠️ **Correction to your comment:**  
 > 👉 This **DOES matter** in real world  
 > 👉 Different classes = different **speed, cost, and backend**
 
