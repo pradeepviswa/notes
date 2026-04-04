@@ -95,16 +95,21 @@ spec:
                   number: 80
 ```
 ## 🔹 Step 6: Configure Route 53 (VERY IMPORTANT)
+
 In AWS Route 53:
-- Go to Hosted Zone → mycompany.com
-- Create record:
-- | Field | Value                 |
-| ----- | --------------------- |
+
+- Go to **Hosted Zone → mycompany.com**
+- Click **Create record**
+
+### Record Details
+
+| Field | Value                 |
+|-------|-----------------------|
 | Type  | A                     |
 | Name  | mycompany.com         |
-| Value | ALB DNS (from step 4) |
+| Value | ALB DNS (from Step 4) |
 
-👉 Use Alias = YES if available
+> 💡 Tip: If available, enable **Alias = Yes** and select the Load Balancer directly.
 
 ## 🔥 FINAL RESULT
 After DNS propagation:
