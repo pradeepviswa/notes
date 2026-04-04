@@ -1,3 +1,6 @@
+### create lab first - follow stesp here and create the  lab
+https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
+
 # DaemonSet
 - in deployment we created 2 pos. it is not necessary that they will always be created in separate node.
 - they can be created in one node also.

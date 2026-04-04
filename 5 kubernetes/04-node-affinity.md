@@ -1,3 +1,6 @@
+### create lab first - follow stesp here and create the  lab
+https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
+
 # node affinity
 - means creation of node in specify node set. example, pod should be created prod env only.
 - scheduler decides whether nodes1 or node2 to be used.

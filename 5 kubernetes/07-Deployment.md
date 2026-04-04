@@ -1,3 +1,6 @@
+### create lab first - follow stesp here and create the  lab
+https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
+
 # Deployment controller
 - it is elder brother of replicaset
 - ensures that minimum number of pods are always running

@@ -1,3 +1,5 @@
+### create lab first - follow stesp here and create the  lab
+https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 
 ### ReplicaSet
 - it maintains the number of pods.
