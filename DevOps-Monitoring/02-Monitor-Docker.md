@@ -121,45 +121,7 @@
   - <img width="792" height="710" alt="image" src="https://github.com/user-attachments/assets/9e2c6aec-ffab-44da-82d2-dff038a753a9" />
   - Here you need to import dashboard id:
   - <img width="645" height="457" alt="image" src="https://github.com/user-attachments/assets/d428338f-b5b2-4e95-a780-159f79c84af8" />
-  ```
-  id: 21040
-  select the prometheus as data source and load 
-  ```
 
+  > id: **21040**
+  > select the prometheus as data source and load 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-browse grafana site
-add data soruce > select prometheus
-name: my-data-source
-URL: promethus URL http://ip:9090
-create dashboard
-add a panel
-select data source: my-data-source
-metrics broser: copy promethues query language for runnign container
-what i  need to monitor
-naem runnign container
-select chart
-
-create dasboard for stiopped container
-
-
-now create soem more contianers
-
-we can downlaod grafana dasboard for docker from grafana site
-we copy dasbbopard IP
-in local grafana server, import and enter ID
