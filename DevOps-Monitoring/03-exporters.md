@@ -44,7 +44,7 @@
   targets: localhost:9100
   ```
 - open promethues report
-  <img width="795" height="336" alt="image" src="https://github.com/user-attachments/assets/eedc22c8-8adf-40e4-ae81-4099fbc9c610" />
+- <img width="795" height="336" alt="image" src="https://github.com/user-attachments/assets/eedc22c8-8adf-40e4-ae81-4099fbc9c610" />
 
 ## grafana to show dashboard on node exporter
 - https://grafana.com/grafana/dashboards/1860-node-exporter-full/
