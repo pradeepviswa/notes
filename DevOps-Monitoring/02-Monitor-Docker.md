@@ -79,13 +79,13 @@
   ```
 - enter
   ```
-- job_name: "docker"
-
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-
-    static_configs:
-      - targets: ["localhost:9323"]
+  - job_name: "docker"
+  
+      # metrics_path defaults to '/metrics'
+      # scheme defaults to 'http'.
+  
+      static_configs:
+        - targets: ["localhost:9323"]
   ```
   > just take care of one thing that – job_name should be exactly the job_name of the Prometheus
   <img width="815" height="352" alt="image" src="https://github.com/user-attachments/assets/a62259f0-f69b-429c-8bd6-e0fe38f8f1cc" />
