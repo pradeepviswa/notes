@@ -122,6 +122,6 @@
   - Here you need to import dashboard id:
   - <img width="645" height="457" alt="image" src="https://github.com/user-attachments/assets/d428338f-b5b2-4e95-a780-159f79c84af8" />
 
-  > id: **21040**
+  > id: **21040**.
   > select the prometheus as data source and load 
 
