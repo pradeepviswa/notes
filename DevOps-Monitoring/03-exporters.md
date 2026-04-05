@@ -43,7 +43,8 @@
   jobname: "nodeexporter"
   targets: localhost:9100
   ```
-  <img width="1178" height="557" alt="image" src="https://github.com/user-attachments/assets/097c06ae-9d6d-47fb-a282-9398cfe5d4f0" />
+  <img width="1040" height="467" alt="image" src="https://github.com/user-attachments/assets/617c2a31-17a9-44b8-8b1d-37a9ea31fd7c" />
+
 
 - open promethues report
 - <img width="795" height="336" alt="image" src="https://github.com/user-attachments/assets/eedc22c8-8adf-40e4-ae81-4099fbc9c610" />
@@ -51,8 +52,7 @@
 ## grafana to show dashboard on node exporter
 - https://grafana.com/grafana/dashboards/1860-node-exporter-full/
 - in grafana import **id: 1860**
--  
-- 
+   
 
 
 
