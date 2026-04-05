@@ -26,4 +26,32 @@
 - what is cpu utilization
 - Real time dashbvoard can be generated via grafana
 - tools example: **Prometheuse** for monitoring and **grafana** for visualizing
-- 
+
+# Tools going to cover
+1. Prometheus
+2. Grafana
+3. Alert manager (for sending alerts)
+
+   
+## Promethues
+- It is a open source monitoring and alerting tool
+- It is used to collect and store matrics from systems and applications
+- It monitors system continuously and sends logs to grafana
+
+### key components of prometheus
+- need one prometheus server (main brain)
+- it collects and stores metrics
+- it uses Exporters, it helps to collect data from systems
+  - example Node Exporter, it is used to collect server metrics like CPU< RAM utilization
+- TSDB (Time series database)
+  - It stores data as time based metrics
+  - example at 9 am CPU was 85%, 9:01, i tis 70%, 9:05 it is 50%, it creates a graph based on time series
+
+ ## Grafana
+ -  it is for visualization
+ -  we can create good dasbboards
+ -  we can visualize the metrics
+ -  we can analyse the trends
+ - visit, grafana.com to see dashboards
+
+
