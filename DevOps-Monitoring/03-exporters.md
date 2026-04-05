@@ -13,11 +13,11 @@
 > On prometheus install exporter
 
 ## types of exporters
-1. node exporter: thsi will collect server level metrics like CPU, RAM, DISK
-2. Database exporter: this is used to monitor databases. for this we have exporters like
+1. **node exporter**: thsi will collect server level metrics like CPU, RAM, DISK
+2. **Database exporter**: this is used to monitor databases. for this we have exporters like
    -  MySQL exporter
    -  MongoDB exporter
-3. Blackvbox exporter: this checks endpoint availability. It checks whether website up or down, API working or not, etc.
+3. **Blackbox exporter**: this checks endpoint availability. It checks whether website up or down, API working or not, etc.
 
 
 ## node exporter
