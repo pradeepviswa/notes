@@ -5,7 +5,7 @@
 
 # Types
 1. Infrastructure monitoring
-2. og Moniroting
+2. Application Moniroting
 3. Real Time Monitoring
 ## 1. Infrastructure monitoring
 - CPU
@@ -32,6 +32,10 @@
 2. Grafana
 3. Alert manager (for sending alerts)
 
+## ports
+1. promethus nodeport: **9090**
+2. node-export: **9100**
+3. grafana: **3000**
    
 ## Promethues
 - It is a open source monitoring and alerting tool
