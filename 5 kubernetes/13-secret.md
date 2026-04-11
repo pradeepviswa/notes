@@ -65,6 +65,13 @@ kubectl exec -it cm-pod -- /bin/bash
 
 
 ## other example of secret
+**secret** accepts **base64** secure-string only. This is how we can encode and decode a plain-text.
+```bash
+echo example-user | base64
+echo ZXhhbXBsZS11c2Vy | base64 --decode
+
+```
+
 ```
 apiVersion: v1
 kind: Secret
