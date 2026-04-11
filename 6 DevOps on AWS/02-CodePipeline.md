@@ -30,8 +30,33 @@ new role: this will create a new role in IAM
 - for docker image select amazon ECR
 - select github (via o-auth app) for current scenario
 - click on github authorize aws button. 
+- after authorization it will show all repos, select oru repo "**apachewebsite**"
+- branch: master
+
+# skip build step
+becasue tyhis build step will be included later in pipeline.
+
+# add deploy stage
+- Deplopy provider: elastic Beanstalk
+
+#### what is elastic beanstalk
+- deploy the applicatio without worring about infrastructure like ec2, security group, load balancer, Autop scalign group, etc.
+- AWS will servers, scaling, load balacing, deployment.
+- configure cloud watch
+- create security group
+- 
 
 
-
-
-
+# select elastic beanstalk
+- environment tier: we server environment
+- Applicatiion name: test-app
+- domain: apacheapp (check avialability)
+- platform: PHP
+- Applicaiton code: sample applicaiton (becuase app git location will be selected later in separate stage)
+- Presets: single intance (9free tier elibile)
+- Next
+- create a role, new role. trust entitiy type: AWS service
+- **setup network ing database tags**
+    - select enable public ip
+    - select all availablity zones
+- General purposse ssd
