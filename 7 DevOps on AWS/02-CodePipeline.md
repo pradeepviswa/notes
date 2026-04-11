@@ -90,7 +90,7 @@ becasue tyhis build step will be included later in pipeline.
 - open elastic beanstalk in new tab and "create applicaiton"
 - <img width="1156" height="226" alt="image" src="https://github.com/user-attachments/assets/7881d6d8-9b06-4938-bf35-1a542f808694" />
 - configure env as below
-- <img width="886" height="850" alt="image" src="https://github.com/user-attachments/assets/bc54e180-cb1f-439c-b497-6f10895cad56" />
+- <img width="1318" height="856" alt="image" src="https://github.com/user-attachments/assets/1bc4d2f1-868e-4908-96e5-19e7b1fc8b48" />
 - under eac role, create a new role with default value
 - <img width="1342" height="423" alt="image" src="https://github.com/user-attachments/assets/303d6b45-564e-4386-85a2-8e1411092488" />
 - enable public ip and select all AZs
