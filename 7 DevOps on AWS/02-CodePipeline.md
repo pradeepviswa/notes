@@ -64,25 +64,25 @@ becasue tyhis build step will be included later in pipeline.
 
 
 # lab
-Create pipeline
-<img width="293" height="206" alt="image" src="https://github.com/user-attachments/assets/dacc93df-1c85-4e6b-bd75-c3923764c880" />
-custrom pipeline
-<img width="676" height="239" alt="image" src="https://github.com/user-attachments/assets/45d0fa25-4c55-4873-a28c-4556e191f7ac" />
-pipelien name. role name will auto populate
-<img width="670" height="618" alt="image" src="https://github.com/user-attachments/assets/2b4d9e2f-15f0-4e57-9fc8-ea297e9635ee" />
-GitHub via oAuth app. 
-<img width="666" height="445" alt="image" src="https://github.com/user-attachments/assets/593f9c5b-c130-40ce-a28c-f41dd02e24f8" />
-connec GitHub. Authorise AWS-codesuit
-<img width="608" height="640" alt="image" src="https://github.com/user-attachments/assets/3596867c-1068-430e-a704-671386ac89b8" />
-Aithorise - confirm
-<img width="601" height="661" alt="image" src="https://github.com/user-attachments/assets/fe3f164c-bf06-453b-a61f-861405e904bd" />
-select  branch
-<img width="601" height="661" alt="image" src="https://github.com/user-attachments/assets/2e736309-09ff-483a-9532-b1db941e923b" />
-skip build stage
-<img width="669" height="299" alt="image" src="https://github.com/user-attachments/assets/9dd626d7-416d-4aad-a9f3-bd8dbc058075" />
-skip test stage
-<img width="655" height="262" alt="image" src="https://github.com/user-attachments/assets/9421450a-b091-4740-8206-509e6d24032f" />
-deploy - AWS Elastic Beanstalk
+- Create pipeline
+- <img width="293" height="206" alt="image" src="https://github.com/user-attachments/assets/dacc93df-1c85-4e6b-bd75-c3923764c880" />
+- custrom pipeline
+- <img width="676" height="239" alt="image" src="https://github.com/user-attachments/assets/45d0fa25-4c55-4873-a28c-4556e191f7ac" />
+- pipelien name. role name will auto populate
+- <img width="670" height="618" alt="image" src="https://github.com/user-attachments/assets/2b4d9e2f-15f0-4e57-9fc8-ea297e9635ee" />
+- GitHub via oAuth app. 
+- <img width="666" height="445" alt="image" src="https://github.com/user-attachments/assets/593f9c5b-c130-40ce-a28c-f41dd02e24f8" />
+- connec GitHub. Authorise AWS-codesuit
+- <img width="608" height="640" alt="image" src="https://github.com/user-attachments/assets/3596867c-1068-430e-a704-671386ac89b8" />
+- Aithorise - confirm
+- <img width="601" height="661" alt="image" src="https://github.com/user-attachments/assets/fe3f164c-bf06-453b-a61f-861405e904bd" />
+- select  branch
+- <img width="601" height="661" alt="image" src="https://github.com/user-attachments/assets/2e736309-09ff-483a-9532-b1db941e923b" />
+- skip build stage
+- <img width="669" height="299" alt="image" src="https://github.com/user-attachments/assets/9dd626d7-416d-4aad-a9f3-bd8dbc058075" />
+- skip test stage
+- <img width="655" height="262" alt="image" src="https://github.com/user-attachments/assets/9421450a-b091-4740-8206-509e6d24032f" />
+- deploy - AWS Elastic Beanstalk
 
 ### deploy the sample php application on elastic beanstalk
 
@@ -90,6 +90,12 @@ deploy - AWS Elastic Beanstalk
 - <img width="1156" height="226" alt="image" src="https://github.com/user-attachments/assets/7881d6d8-9b06-4938-bf35-1a542f808694" />
 - configure env as below
 - <img width="886" height="850" alt="image" src="https://github.com/user-attachments/assets/bc54e180-cb1f-439c-b497-6f10895cad56" />
+- under eac role, create a new role with default value
+- <img width="1342" height="423" alt="image" src="https://github.com/user-attachments/assets/303d6b45-564e-4386-85a2-8e1411092488" />
+- enable public ip and select all AZs
+- <img width="1085" height="694" alt="image" src="https://github.com/user-attachments/assets/91cef579-6a2e-4b84-ac1a-e19445252760" />
+- 
+
 
 
 
