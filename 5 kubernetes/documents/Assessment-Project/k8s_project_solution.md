@@ -44,10 +44,10 @@ You understand scaling and self-healing
   - Install commands for master and node to configure k8s cluster: https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
   - **run below cluster join command on node1 and node2.**
     > This unique command is generated as part of cluster installation commnd which was executed on master n ode
-     ```
+     ```bash
      sudo kubeadm join 172.31.32.15:6443 --token b7cz8o.3zodxe3yu6lmov0u  --discovery-token-ca-cert-hash sha256:53412b32bb5e817895da9b3d561772ad4a6518402aea8736450fa32a5f1b347a
      ```
-   <img width="1342" height="368" alt="image" src="https://github.com/user-attachments/assets/245c1c40-6475-4af3-8503-62541486eeca" />
+     <img width="1342" height="368" alt="image" src="https://github.com/user-attachments/assets/245c1c40-6475-4af3-8503-62541486eeca" />
   
   #### **run below command on master node to check cluster status**
      ```
