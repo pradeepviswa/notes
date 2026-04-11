@@ -40,6 +40,7 @@ becasue tyhis build step will be included later in pipeline.
 - Deplopy provider: elastic Beanstalk
 - select test-app  created below using beanstalk
 
+- settings : service role : elasticbeansetalkfullpermission : add permission
 
 #### what is elastic beanstalk
 - deploy the applicatio without worring about infrastructure like ec2, security group, load balancer, Autop scalign group, etc.
