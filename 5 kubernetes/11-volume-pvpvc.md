@@ -47,7 +47,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /tmp/pvdata                     # data will be visible in this location in container.
+    path: /tmp/pvdata                     # data will be visible in this location in node.
 ```
 ## storageClassName
 
