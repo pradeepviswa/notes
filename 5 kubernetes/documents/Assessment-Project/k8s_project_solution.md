@@ -48,6 +48,7 @@ You understand scaling and self-healing
    sudo kubeadm join 172.31.32.15:6443 --token b7cz8o.3zodxe3yu6lmov0u         --discovery-token-ca-cert-hash sha256:53412b32bb5e817895da9b3d561772ad4a6518402aea8736450fa32a5f1b347a
    ```
  <img width="1342" height="368" alt="image" src="https://github.com/user-attachments/assets/245c1c40-6475-4af3-8503-62541486eeca" />
+
 #### **run below command on master node to check cluster status**
    kubectl get nodes
    <img width="772" height="130" alt="image" src="https://github.com/user-attachments/assets/be0b5c4c-1431-496f-b8db-4dc3d94af69d" />
