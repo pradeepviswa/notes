@@ -34,5 +34,5 @@
   
 | Example Architecture | Actual Architecture |
 |----------------------|---------------------|
-| <img src="img/ref_arch.jpg" width="400"> | <img src="img/architecture.png" width="400"> |
+| <img width="1111" height="732" alt="image" src="https://github.com/user-attachments/assets/1ce20422-ff65-4d3c-99d8-acd509109bc0" /> | <img width="1132" height="567" alt="image" src="https://github.com/user-attachments/assets/e31b3540-bb9c-41d3-8c73-64a514d3a550" /> |
   
