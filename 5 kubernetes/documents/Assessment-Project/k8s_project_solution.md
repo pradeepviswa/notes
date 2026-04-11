@@ -21,7 +21,22 @@ roles, storage, service verification, and data management.
 8. Create a configmap for WordPress deployment to store non-sensitive information
 
 
-# Get started with pods, services, and deployments
+# 1. Get started with pods, services, and deployments
+```
+What is expected:
+
+Understand the basic building blocks of Kubernetes
+You should be able to:
+Create a Pod (single container)
+Create a Deployment (manages replicas, updates)
+Understand why Deployment is preferred over Pod
+Expose your app using a Service
+
+👉 Outcome:
+
+You can run an application inside Kubernetes
+You understand scaling and self-healing
+```
 ## Create 3 ec2 instances in AWS
 <img width="556" height="127" alt="image" src="https://github.com/user-attachments/assets/2446015e-7253-4184-a00d-49300c6782e3" />
 
@@ -198,8 +213,57 @@ sudo kubeadm join 172.31.32.15:6443 --token b7cz8o.3zodxe3yu6lmov0u         --di
 
 -----
 # 2. Create and verify the service
+```
+👉 What is expected:
+
+Expose your application using a Service
+Understand types:
+ClusterIP (internal)
+NodePort (external access)
+LoadBalancer (cloud)
+Verify:
+Service is reachable
+Traffic is routed to Pods
+
+👉 Outcome:
+
+You can access your app (internally or externally)
+```
+
 # 3. Create a token and work on a dashboard
+```
+👉 What is expected:
+
+Enable Kubernetes Dashboard
+Create:
+ServiceAccount
+Role / ClusterRole
+Token
+Use token to log into dashboard UI
+
+👉 Outcome:
+
+You can visually monitor:
+Pods
+Deployments
+Services
+```
+
 # 4. Configure the NFS-server for MySQL and WordPress deployment
+```
+What is expected:
+
+Set up shared storage using:
+Traditional NFS OR
+Cloud NFS like Amazon EFS
+Understand:
+Why MySQL needs persistent storage
+Why WordPress needs shared storage
+
+👉 Outcome:
+
+A central storage system accessible from multiple pods
+```
 **create PersistentVolume** 
 ```yaml
 apiVersion: v1
@@ -218,8 +282,66 @@ spec:
 <img width="1147" height="782" alt="image" src="https://github.com/user-attachments/assets/9e3afe6c-ff07-4695-aa3e-f9325416a75b" />
 
 # 5. Set up the NFS client side
+```
+What is expected:
+
+Configure Kubernetes nodes (or pods) to:
+Connect to NFS server
+Mount the shared storage
+Understand:
+Mounting concept
+Network connectivity (port 2049)
+
+👉 Outcome:
+
+Your pods can read/write to shared storage
+```
 # 6. Create and verify the PV
+```
+👉 What is expected:
+
+Create a PersistentVolume (PV) that:
+Points to your NFS storage
+Create a PersistentVolumeClaim (PVC) that:
+Requests storage
+Bind PV ↔ PVC
+
+👉 Outcome:
+
+Kubernetes can manage storage independently of pods
+```
 # 7. Create a secret for MySQL deployments secret data
+```
+👉 What is expected:
+
+Store sensitive info like:
+MySQL root password
+Database credentials
+Use Secret object
+Understand:
+Base64 encoding
+How pods consume secrets (env or volume)
+
+👉 Outcome:
+
+Secure handling of credentials (not hardcoded)
+```
 # 8. Create a configmap for WordPress deployment to store non-sensitive
+```
+👉 What is expected:
+
+Store configuration like:
+DB host
+DB name
+App settings
+Use ConfigMap
+Inject into pods:
+Environment variables OR files
+
+👉 Outcome:
+
+Decoupled configuration from application
+```
+
 
 
