@@ -9,7 +9,6 @@
 - Automation:
 - custome pipeline
 
-
 # build custom pipeline
 - enter pipeline name
 - exeuction maodes
@@ -24,6 +23,15 @@
     -  developer1 code and developer2 codes, both will build at the same time.
     -  multiple runs at the same time.
    
+# serivce role: 
+new role: this will create a new role in IAM
+
+# add source storage
+- for docker image select amazon ECR
+- select github in current case
+- select github
+
+
 
 
 
