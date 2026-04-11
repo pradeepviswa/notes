@@ -49,7 +49,7 @@ You understand scaling and self-healing
      ```
      <img width="1342" height="368" alt="image" src="https://github.com/user-attachments/assets/245c1c40-6475-4af3-8503-62541486eeca" />
 
-
+    #### check cluster status
      ```bash
      kubectl get nodes
      ```
