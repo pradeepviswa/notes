@@ -195,3 +195,31 @@ sudo kubeadm join 172.31.32.15:6443 --token b7cz8o.3zodxe3yu6lmov0u         --di
 > **run below command on master node to check cluster status**
 <img width="772" height="130" alt="image" src="https://github.com/user-attachments/assets/be0b5c4c-1431-496f-b8db-4dc3d94af69d" />
 
+
+1. Get started with pods, services, and deployments
+2. Create and verify the service
+3. Create a token and work on a dashboard
+# 4. Configure the NFS-server for MySQL and WordPress deployment
+<img width="1147" height="782" alt="image" src="https://github.com/user-attachments/assets/b801360f-ce8f-4c68-886f-b3c998544835" />
+
+5. Set up the NFS client side
+6. Create and verify the PV
+7. Create a secret for MySQL deployments secret data
+8. Create a configmap for WordPress deployment to store non-sensitive
+**create PersistentVolume** 
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efs-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /
+    server: fs-xxxxxx.efs.ap-south-1.amazonaws.com
+```
+<img width="1147" height="782" alt="image" src="https://github.com/user-attachments/assets/9e3afe6c-ff07-4695-aa3e-f9325416a75b" />
+
