@@ -94,7 +94,48 @@ becasue tyhis build step will be included later in pipeline.
 - <img width="1342" height="423" alt="image" src="https://github.com/user-attachments/assets/303d6b45-564e-4386-85a2-8e1411092488" />
 - enable public ip and select all AZs
 - <img width="1085" height="694" alt="image" src="https://github.com/user-attachments/assets/91cef579-6a2e-4b84-ac1a-e19445252760" />
-- 
+- select **general purpose 3 SSD **
+- <img width="1093" height="246" alt="image" src="https://github.com/user-attachments/assets/957d8e40-51f7-4fdb-92f5-ad6efffdc916" />
+- 2 times next button with default values and then **create**
+- <img width="1093" height="246" alt="image" src="https://github.com/user-attachments/assets/7b796ff6-62ef-4771-a8c9-432a1cdbd063" />
+
+### move back to code pipeline and we will deploy the code to the elastic beanstalk 
+- select beanstalk app newly created
+- <img width="647" height="741" alt="image" src="https://github.com/user-attachments/assets/37a50627-8daa-4e85-9a0e-716f1ebf7d48" />
+- create pipeline
+- <img width="632" height="391" alt="image" src="https://github.com/user-attachments/assets/701f3ac9-f900-4c55-9d10-d507ad28105c" />
+
+
+> Deployment  WILL FAIL. Lets solve the issue:If the Deployment fails this is because the IAM role does not have elastic beanstalk full permission. Select code pipeline and check the role attached to it…and now go to iam and search for the role and attach that specific role
+- click on Settings -> click on service role ARN
+- attach policies
+- <img width="1324" height="239" alt="image" src="https://github.com/user-attachments/assets/84763899-b9b9-4bc9-a29e-d56135e09dd3" />
+- assign permission: AdministratorAccess-AWSElasticBeanstalk
+- <img width="400" height="184" alt="image" src="https://github.com/user-attachments/assets/303b0be1-1855-4b90-9303-64c61ba81792" />
+- new permission list
+- <img width="619" height="285" alt="image" src="https://github.com/user-attachments/assets/b7c1a997-d69c-4d26-b78d-c4318540177b" />
+- Retry the failed stage
+- <img width="643" height="311" alt="image" src="https://github.com/user-attachments/assets/848c3e63-c4d8-406e-9764-42ad55f9e527" />
+- go back to beanstalk and click on domain url
+- <img width="633" height="223" alt="image" src="https://github.com/user-attachments/assets/27c8ee7e-08e7-4338-9958-dd7315074e06" />
+- wesite will open
+- <img width="1005" height="400" alt="image" src="https://github.com/user-attachments/assets/a068893a-f217-4f15-97c0-5990497474d5" />
+- if we update anything in the github repo automatically my pipeline should trigger: https://github.com/pradeepviswa/apachewebsite
+- <img width="841" height="656" alt="image" src="https://github.com/user-attachments/assets/74ae2a40-a197-4fd5-9730-c5fc5fee38d3" />
+- <img width="632" height="286" alt="image" src="https://github.com/user-attachments/assets/91f0be91-d3c9-41d6-9357-a12f5f11b8eb" />
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
