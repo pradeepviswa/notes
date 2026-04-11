@@ -77,8 +77,8 @@ becasue tyhis build step will be included later in pipeline.
 - <img width="608" height="640" alt="image" src="https://github.com/user-attachments/assets/3596867c-1068-430e-a704-671386ac89b8" />
 - Aithorise - confirm
 - <img width="601" height="661" alt="image" src="https://github.com/user-attachments/assets/fe3f164c-bf06-453b-a61f-861405e904bd" />
-- select  branch
-- <img width="601" height="661" alt="image" src="https://github.com/user-attachments/assets/2e736309-09ff-483a-9532-b1db941e923b" />
+- select  repo and branch
+- <img width="810" height="721" alt="image" src="https://github.com/user-attachments/assets/68cfc10e-8cec-48bf-80e0-6b3ce79c00fb" />
 - skip build stage
 - <img width="669" height="299" alt="image" src="https://github.com/user-attachments/assets/9dd626d7-416d-4aad-a9f3-bd8dbc058075" />
 - skip test stage
