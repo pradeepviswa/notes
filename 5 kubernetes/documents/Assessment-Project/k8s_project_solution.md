@@ -39,6 +39,7 @@ You understand scaling and self-healing
 ```
 #### Create 3 ec2 instances in AWS
 <img width="556" height="127" alt="image" src="https://github.com/user-attachments/assets/2446015e-7253-4184-a00d-49300c6782e3" />
+
 #### install kubernetes on ec2 instances and create cluster
 - Install commands for master and node to configure k8s cluster: https://github.com/pradeepviswa/deployment-scripts/blob/main/k8s.sh
 - **run below cluster join command on node1 and node2.**
