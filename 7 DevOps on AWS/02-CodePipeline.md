@@ -64,6 +64,7 @@ becasue tyhis build step will be included later in pipeline.
 
 
 # lab
+- trainer document: https://docs.google.com/document/d/1VLk5pPKyWzYz7sNHx_9nwZQM9nJeo7jb/edit?usp=sharing&ouid=103157204066713600014&rtpof=true&sd=true
 - Create pipeline
 - <img width="293" height="206" alt="image" src="https://github.com/user-attachments/assets/dacc93df-1c85-4e6b-bd75-c3923764c880" />
 - custrom pipeline
