@@ -28,8 +28,8 @@ new role: this will create a new role in IAM
 
 # add source storage
 - for docker image select amazon ECR
-- select github in current case
-- select github
+- select github (via o-auth app) for current scenario
+- click on github authorize aws button. 
 
 
 
