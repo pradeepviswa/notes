@@ -38,14 +38,14 @@ becasue tyhis build step will be included later in pipeline.
 
 # add deploy stage
 - Deplopy provider: elastic Beanstalk
+- select test-app  created below using beanstalk
+
 
 #### what is elastic beanstalk
 - deploy the applicatio without worring about infrastructure like ec2, security group, load balancer, Autop scalign group, etc.
 - AWS will servers, scaling, load balacing, deployment.
 - configure cloud watch
 - create security group
-- 
-
 
 # select elastic beanstalk
 - environment tier: we server environment
