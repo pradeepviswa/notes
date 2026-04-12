@@ -119,8 +119,23 @@ browse: http://publicip:8080
    - task roles: create a new IAM role with default values
    - Container -1
      - name: mycontainer   # task def will create container with this name in ECS cluster
-     - Image URI: <copy from image uri from ECR>
+     - Image URI: copy from image uri from ECR
      - container port: 8080
      - keep default value sand create
+    
+3. create cluster, go to aws ECS
+   - name: prod-ecs-app-cluster
+   - infra: fargate only
+   - create cluster
+   - in cluster > tasks > run a new task
+     - task def: select def created above
+     - task dev versi: 1
+     - desired tasks: 2 $ more number of tasks means more number of containers. this can be automated later
+     - compute options (default)
+     - launch type
+     - in networking ? create new security group, allow all traffic so that i can acces my tasks
+     - create task
+    
+   - click on any task and copy public ip and browse http://publicip:8080
 
 
