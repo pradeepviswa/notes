@@ -1,6 +1,9 @@
 # ECS
 Fully manged container orchestration service provided by AWS that helps to run, manage and scale Docker containers.
 
+# trainer document
+https://docs.google.com/document/d/1r1zpm_9IOBJO6rah7xOTs_Or0wCp7lOpZpQ4gNsJMts/edit?usp=sharing
+
 # What ECS do?
 - ECS runs docker on server
 - keeps them helathy
@@ -111,7 +114,7 @@ browse: http://publicip:8080
       - we can create to expire an image after certain days
      
 ### 5. deploy the image from ECS
-1. in AWS, go to ECS
+1. in AWS, go to ECS -> task definition > create new task definition
 2. create new task definition
    - task denifition family:escprojecttaskdefinition
    - infra requirment: AWS Fargate
@@ -123,7 +126,7 @@ browse: http://publicip:8080
      - container port: 8080
      - keep default value sand create
     
-3. create cluster, go to aws ECS
+3. create cluster, go to aws ECS > cluster > create cluster
    - name: prod-ecs-app-cluster
    - infra: fargate only
    - create cluster
