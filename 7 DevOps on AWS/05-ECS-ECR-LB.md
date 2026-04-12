@@ -1,8 +1,9 @@
-# ECS
+# ECS ECR Load Balancing
 Fully manged container orchestration service provided by AWS that helps to run, manage and scale Docker containers.
 
 # trainer document
-https://docs.google.com/document/d/1r1zpm_9IOBJO6rah7xOTs_Or0wCp7lOpZpQ4gNsJMts/edit?usp=sharing
+- https://docs.google.com/document/d/1r1zpm_9IOBJO6rah7xOTs_Or0wCp7lOpZpQ4gNsJMts/edit?usp=sharing
+- <a href="7 DevOps on AWS/documents/trainer docs/2 ECS and ECR using application lb.pdf>" document </a>
 
 # What ECS do?
 - ECS runs docker on server
