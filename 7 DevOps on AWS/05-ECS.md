@@ -26,10 +26,29 @@ Fully manged container orchestration service provided by AWS that helps to run, 
     - CPU and memory container will utiize
 -  **Task**: Running container inside the ECS cluster is task. It is created from Task Definition
 
+# launch typ in ECS. there are 2 ways
+- **use EC2 launch type**
+  - you manage the servers.
+  - you have more control over infrastructure
+  - you have more responsibolity
+  - AWS doesnot recoment this approach
+- **Fargate**
+  - THere is no server management
+  - it is fully serverless
+  - no security issues
+  - no pathcing
+  - no managment and administration work.
+  - it is pay per use basis. When container is running, pay for that time only.
+  - AWS recomends usign fargate.
 
 # lab scenario
-<img width="1220" height="636" alt="image" src="https://github.com/user-attachments/assets/48909150-e524-48f6-aedb-b535850f5c57" />
 <img width="1219" height="752" alt="image" src="https://github.com/user-attachments/assets/9133aa92-9afd-41b7-b578-e80be86ecf9f" />
+
+# deploy steps
+> we have spring boo applicaiton. wil ldeploy it via ECS
+
+# 
+
 
 
 
