@@ -139,11 +139,54 @@ browse: http://54.90.68.175:8080/LoginWebApp-1/
      - in networking ? create new security group, allow all traffic so that i can acces my tasks
      - create task
     
-   - click on any task and copy public ip and browse http://publicip:8080
+   - click on any task and copy public ip and browse http://32.192.193.116:8080/LoginWebApp-1/
   
 ### Service - robust system if task is deleted
 1. if task is deleted, application will also stop working
 2. I need a system, if task is deleted, new task should create again
 3. service ensures, minimum number of tasks are always running
-4. 
+4. select cluster > inside that click on **create service**
+5. Compute options: **Launch type**
+6. Deploymet configuration: **Replica**   # how many minimum numbe rof pods always be running
+7. Desired tasks: 3   # this means 3 containers will alwlays be running
+8. **turn on** Availability zone rebalancing    # task is distributred across the AZs
+9. Networking
+    - create a new secuirty group
+    - custome TCP: 8080
+  
+10. use serivce auto scaling
+    - 3min to 10max
+   
+11. service will create task, click on new task and again browse using IP. Problem agin.
+  
+12. what we have done till ow
+    - tassk gets public ip
+    - if task is restarted IP is changed
+13. create a load balancer and it will distribute the load amongh multiple task
+    - target groups
+      - type: ip address
+      - name: mytg
+      - protocol:http, port: 8080
+      - ip address: IPv4
+      - VPC: default
+      - helathcheck: /LoginWebApp-1/
+      - next
+      - ip address > ports: 8080 > next > create
+      
+    - select load balancer > **application load balancer**
+      - create
+      - name: dev-lb
+      - scheme: internet-facing
+      - Availabiliity zones: select all
+      - security groups: create new
+        - new=sg
+        - default vpc
+        - allow all ports or just 8080
+      - listeners adn routing, **http** and port **8080**
+      - target group: **mytg**
+      - **create load balancer** button
+      - in target no target is selected because we ECS will configure targes automatically
+     
+14. got to ecs
+    - 
 
