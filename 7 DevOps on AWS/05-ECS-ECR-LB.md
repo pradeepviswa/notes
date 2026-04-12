@@ -2,8 +2,7 @@
 Fully manged container orchestration service provided by AWS that helps to run, manage and scale Docker containers.
 
 # trainer document
-- https://docs.google.com/document/d/1r1zpm_9IOBJO6rah7xOTs_Or0wCp7lOpZpQ4gNsJMts/edit?usp=sharing
-- <a href="documents/trainer docs/2 ECS and ECR using application lb.pdf"> document </a>
+- <a href="documents/trainer docs/2 ECS and ECR using application lb.pdf" target="_blank"> 2 ECS and ECR using application lb.pdf </a>
 
 # What ECS do?
 - ECS runs docker on server
