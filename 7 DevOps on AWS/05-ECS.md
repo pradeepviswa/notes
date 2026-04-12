@@ -25,3 +25,9 @@ Fully manged container orchestration service provided by AWS that helps to run, 
     - port number at which applicaitohn will be running
     - CPU and memory container will utiize
 -  **Task**: Running container inside the ECS cluster is task. It is created from Task Definition
+
+
+# lab scenario
+<img width="1220" height="636" alt="image" src="https://github.com/user-attachments/assets/48909150-e524-48f6-aedb-b535850f5c57" />
+
+
