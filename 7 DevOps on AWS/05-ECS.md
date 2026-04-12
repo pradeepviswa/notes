@@ -46,9 +46,63 @@ Fully manged container orchestration service provided by AWS that helps to run, 
 
 # deploy steps
 > we have spring boo applicaiton. wil ldeploy it via ECS
+## steps
+### 1. create an EC2 instance as DEVELOPER MACHINE. This can be loptop also
+```
+name: developer-machine
+type: t3.medium
+SG allo ports: 8080
+HDD: 20GB
+```
+### 2. clone gitbub repo
+```
+sudo apt update
+sudo apt install git -y
+sudo apt install docker.io -y
+sudo apt install unzip -y
+aws 
+git clone https://github.com/pradeepviswa/ECS-AWS-LAB.git
+cd ECS-AWS-LAB
+```
+### 3. build dockerfile to create custom image (test step)
+> this is just for testing docker imatge whether it is workign as expected
+```
+docker build -t ecslab .
+docker images
+docker run -dt -p 8080:8080 ecslab:latest
+```
+browse: http://publicip:8080
 
-# 
+### 4. push this image to ECR (Elastic Container Registry)
+1. in aws open ECR
+2. create a repo:
+   - **namespace**:
+     - suppose I have 3 images
+     - PROD image, TET image, DEVELOP image
+     - these imagers i will isolate using namespace. logical isolation.
+     - like **prod** namespace, **test** namespace, **dev** namespace
+   - image tag setting
+     - **mutable**: means we can overrite the tags.
+     - **immutable**: means we cannot overrite the tags.
+  3. go to reigistry, click on **push commands**
+  4. go to image where image is present
+  5. pre requisites
+     - make sure aws cli is installed
+     - go to IAM and genrate AWS access key and secret key and run below command
+       ```
+       # store aws credential lcoally
+       aws configure
+       # this willa sk for aws key and secret key
 
-
+      
+       ```
+  5. run push commands
+     - retrive auth
+     - build command is optional if not already built. we have already build it
+     - tag the image and push the image to repository
+       ```
+        docker tag ecslab:latest <copy tag uri from ECR>
+       ```
+   6. image is now available in ECR
 
 
