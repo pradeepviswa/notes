@@ -135,7 +135,7 @@ browse: http://publicip:8080
      - task dev versi: 1
      - desired tasks: 2 $ more number of tasks means more number of containers. this can be automated later
      - compute options (default)
-     - launch type
+     - Compute options: **launch type**
      - in networking ? create new security group, allow all traffic so that i can acces my tasks
      - create task
     
