@@ -140,5 +140,10 @@ browse: http://publicip:8080
      - create task
     
    - click on any task and copy public ip and browse http://publicip:8080
-
+  
+### Service - robust system if task is deleted
+1. if task is deleted, application will also stop working
+2. I need a system, if task is deleted, new task should create again
+3. service ensures, minimum number of tasks are always running
+4. 
 
