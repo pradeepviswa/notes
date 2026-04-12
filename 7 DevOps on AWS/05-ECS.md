@@ -29,5 +29,7 @@ Fully manged container orchestration service provided by AWS that helps to run, 
 
 # lab scenario
 <img width="1220" height="636" alt="image" src="https://github.com/user-attachments/assets/48909150-e524-48f6-aedb-b535850f5c57" />
+<img width="1219" height="752" alt="image" src="https://github.com/user-attachments/assets/9133aa92-9afd-41b7-b578-e80be86ecf9f" />
+
 
 
