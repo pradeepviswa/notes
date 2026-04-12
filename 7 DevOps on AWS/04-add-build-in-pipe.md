@@ -11,11 +11,16 @@
 - <img width="1244" height="883" alt="image" src="https://github.com/user-attachments/assets/f883d7e5-002c-4188-867b-96cd2f1158e1" />
 - save it
 - click on **release change** button
+- <img width="951" height="233" alt="image" src="https://github.com/user-attachments/assets/9fec05b1-0daa-4a25-b179-2dc35bc91640" />
+
+
+
+
 - if it fails
   - click on **settings** > **service role arn** > **attache plocy** > **AWSCodebuildAdminAccess**
   - <img width="785" height="281" alt="image" src="https://github.com/user-attachments/assets/ae0d1517-6742-474f-bcf8-31ef87cf9612" />
 
-- <img width="951" height="233" alt="image" src="https://github.com/user-attachments/assets/9fec05b1-0daa-4a25-b179-2dc35bc91640" />
+  
 
 
 
