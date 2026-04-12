@@ -60,7 +60,10 @@ sudo apt update
 sudo apt install git -y
 sudo apt install docker.io -y
 sudo apt install unzip -y
-aws 
+sudo apt install curl -y
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install 
 git clone https://github.com/pradeepviswa/ECS-AWS-LAB.git
 cd ECS-AWS-LAB
 ```
@@ -104,5 +107,20 @@ browse: http://publicip:8080
         docker tag ecslab:latest <copy tag uri from ECR>
        ```
    6. image is now available in ECR
+   7. create lifecycle policy rule of iamge in ECR
+      - we can create to expire an image after certain days
+     
+### 5. deploy the image from ECS
+1. in AWS, go to ECS
+2. create new task definition
+   - task denifition family:escprojecttaskdefinition
+   - infra requirment: AWS Fargate
+   - task size: 1 CPU, 3 GB memory
+   - task roles: create a new IAM role with default values
+   - Container -1
+     - name: mycontainer   # task def will create container with this name in ECS cluster
+     - Image URI: <copy from image uri from ECR>
+     - container port: 8080
+     - keep default value sand create
 
 
