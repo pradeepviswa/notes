@@ -194,8 +194,8 @@ browse: http://54.90.68.175:8080/LoginWebApp-1/
       - use load balacing checkbox **tick**
       - add load  balancer button
         - load balancer: **dev-lb**
-        - listener Http:8-8-
+        - listener Http:8080
         - target gropu: my-tg
         - udpate
        
-15. go to load balnacer > copy dns of load balancer
+15. go to load balnacer > copy dns of load balancer: http://dev-lb-2104725517.us-east-1.elb.amazonaws.com:8080/LoginWebApp-1/
