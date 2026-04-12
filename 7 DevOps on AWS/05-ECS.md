@@ -77,7 +77,7 @@ docker build -t ecslab .
 docker images
 docker run -dt -p 8080:8080 ecslab:latest
 ```
-browse: http://publicip:8080
+browse: http://54.90.68.175:8080/LoginWebApp-1/
 
 ### 4. push this image to ECR (Elastic Container Registry)
 1. in aws open ECR
