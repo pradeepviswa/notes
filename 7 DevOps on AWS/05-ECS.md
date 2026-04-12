@@ -187,6 +187,15 @@ browse: http://54.90.68.175:8080/LoginWebApp-1/
       - **create load balancer** button
       - in target no target is selected because we ECS will configure targes automatically
      
-14. got to ecs
-    - 
-
+14. configure load balancer in ecs
+    - got to ecs cluster > selct service
+    - select service > update
+    - load balancing
+      - use load balacing checkbox **tick**
+      - add load  balancer button
+        - load balancer: **dev-lb**
+        - listener Http:8-8-
+        - target gropu: my-tg
+        - udpate
+       
+15. go to load balnacer > copy dns of load balancer
