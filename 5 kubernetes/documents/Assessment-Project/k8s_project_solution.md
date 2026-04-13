@@ -289,7 +289,9 @@ spec:
         - name: mysql
           image: mysql:5.7
           env:
-            - name: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_USER
+              value: wordpress
+            - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-pass
@@ -337,7 +339,7 @@ data:
   WORDPRESS_ADMIN_EMAIL: "pradeep.viswa@gmail.com"
   WORDPRESS_DATABASE_HOST: "mysql"
   WORDPRESS_DATABASE_NAME: "wordpress"
-  WORDPRESS_DATABASE_USER: "root"
+  WORDPRESS_DATABASE_USER: "wordpress"
 ```
 <img width="1078" height="167" alt="image" src="https://github.com/user-attachments/assets/ca78f224-b76d-401d-81b8-f08f5df7aaac" />
 
