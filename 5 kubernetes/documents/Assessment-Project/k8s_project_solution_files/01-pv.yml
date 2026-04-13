@@ -6,7 +6,7 @@ metadata:
   name: manual-pv-mysql
 spec:
   capacity:
-    storage: 20Gi
+    storage: 30Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
@@ -24,7 +24,7 @@ metadata:
   name: manual-pv-wordpress
 spec:
   capacity:
-    storage: 20Gi
+    storage: 40Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
