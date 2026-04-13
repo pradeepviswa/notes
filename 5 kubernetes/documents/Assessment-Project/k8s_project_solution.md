@@ -151,22 +151,22 @@ kubectl -n kubernetes-dashboard create token admin-user
 ---
 
 #### 5: Access Dashboard
-
-**connect master node and connect via this command **
-```
- ssh -i .\Downloads\key.pem -L 8001:127.0.0.1:8001 ubuntu@3.81.80.19
-```
-**Start proxy:**
+**Terminal 1 (SSH Tunnel — on your laptop)**
 ```bash
-kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
-```
-
-**in labto run below command using master node public ip******
-``
 ssh -i key.pem -L 8001:127.0.0.1:8001 ubuntu@50.17.51.12
 ```
+> 👉 This creates the tunnel
+> 👉 Keep this OPEN (don’t run anything else here)
 
-**then browse below URL**
+**Terminal 2 (Run proxy — inside EC2)**
+```bash
+ssh -i key.pem ubuntu@50.17.51.12
+```
+then run
+```
+kubectl proxy
+```
+now browse this URL
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
