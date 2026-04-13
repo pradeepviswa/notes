@@ -99,7 +99,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/a
 #### 2: Create Service Account
 **service-account.yaml**
 ```yaml
-
+# service-account.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -116,7 +116,8 @@ kubectl apply -f service-account.yaml
 
 #### 3: Create ClusterRoleBinding (Admin Access)
 **cluster-role-binding.yaml**
-```
+```yaml
+# cluster-role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
