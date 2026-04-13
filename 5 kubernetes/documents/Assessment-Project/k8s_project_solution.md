@@ -153,7 +153,7 @@ kubectl -n kubernetes-dashboard create token admin-user
 #### 5: Access Dashboard
 **Terminal 1 (SSH Tunnel — on your laptop)**
 ```bash
-ssh -i key.pem -L 8001:127.0.0.1:8001 ubuntu@50.17.51.12
+ssh -i key.pem -L 8443:127.0.0.1:8443 ubuntu@50.17.51.12
 ```
 > 👉 This creates the tunnel
 > 👉 Keep this OPEN (don’t run anything else here)
@@ -163,12 +163,12 @@ ssh -i key.pem -L 8001:127.0.0.1:8001 ubuntu@50.17.51.12
 ssh -i key.pem ubuntu@50.17.51.12
 ```
 then run
-```
-kubectl proxy
+```bash
+kubectl port-forward -n kubernetes-dashboard svc/kubernetes-dashboard 8443:443
 ```
 now browse this URL
 ```
-http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+https://localhost:8443/
 ```
 
 ---
