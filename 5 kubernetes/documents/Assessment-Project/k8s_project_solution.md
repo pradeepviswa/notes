@@ -99,7 +99,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/a
 #### 2: Create Service Account
 **service-account.yaml**
 ```yaml
-
+# service-account.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -116,7 +116,8 @@ kubectl apply -f service-account.yaml
 
 #### 3: Create ClusterRoleBinding (Admin Access)
 **cluster-role-binding.yaml**
-```
+```yaml
+# cluster-role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -151,24 +152,24 @@ kubectl -n kubernetes-dashboard create token admin-user
 ---
 
 #### 5: Access Dashboard
-
-**connect master node and connect via this command **
-```
- ssh -i .\Downloads\key.pem -L 8001:127.0.0.1:8001 ubuntu@3.81.80.19
-```
-**Start proxy:**
+**Terminal 1 (SSH Tunnel — on laptop)**
 ```bash
-kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
+ssh -i key.pem -L 8443:127.0.0.1:8443 ubuntu@50.17.51.12
 ```
+> 👉 This creates the tunnel
+> 👉 Keep this OPEN (don’t run anything else here)
 
-**in labto run below command using master node public ip******
-``
-ssh -i key.pem -L 8001:127.0.0.1:8001 ubuntu@50.17.51.12
+**Terminal 2 (Run proxy — inside EC2)**
+```bash
+ssh -i key.pem ubuntu@50.17.51.12
 ```
-
-**then browse below URL**
+then run
+```bash
+kubectl port-forward -n kubernetes-dashboard svc/kubernetes-dashboard 8443:443
 ```
-http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+now browse this URL
+```
+https://localhost:8443/
 ```
 
 ---
@@ -291,7 +292,9 @@ spec:
         - name: mysql
           image: mysql:5.7
           env:
-            - name: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_USER
+              value: wordpress
+            - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-pass
@@ -339,7 +342,7 @@ data:
   WORDPRESS_ADMIN_EMAIL: "pradeep.viswa@gmail.com"
   WORDPRESS_DATABASE_HOST: "mysql"
   WORDPRESS_DATABASE_NAME: "wordpress"
-  WORDPRESS_DATABASE_USER: "root"
+  WORDPRESS_DATABASE_USER: "wordpress"
 ```
 <img width="1078" height="167" alt="image" src="https://github.com/user-attachments/assets/ca78f224-b76d-401d-81b8-f08f5df7aaac" />
 
@@ -449,5 +452,16 @@ spec:
 <img width="1057" height="407" alt="image" src="https://github.com/user-attachments/assets/5369d763-c3e6-4e23-8d79-0e5e1a6c99b0" />
 
 
+> success log of wordpress container
+<img width="1906" height="961" alt="image" src="https://github.com/user-attachments/assets/631aeff6-5d8f-435c-9e6f-ffa704a472a6" />
+
+> login to wordpress website
+<img width="1893" height="970" alt="image" src="https://github.com/user-attachments/assets/b2506ba3-8a1c-4b40-bcf9-bac0938d3299" />
 
 
+>posted some commemnt
+<img width="1693" height="957" alt="image" src="https://github.com/user-attachments/assets/3d987a0c-46fa-4b3a-b4ee-9492d5304ee9" />
+
+# dashboard view now
+> URL: https://localhost:8443/#/workloads?namespace=default
+<img width="1887" height="982" alt="image" src="https://github.com/user-attachments/assets/39864bb5-431c-4d22-8e7e-3e33b5733df8" />
