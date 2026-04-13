@@ -188,57 +188,106 @@ Click Sign In
 
 ---
 
-# 5. Configure the NFS-server for MySQL and WordPress deployment
-```
-What is expected:
-
-Set up shared storage using:
-Traditional NFS OR
-Cloud NFS like Amazon EFS
-Understand:
-Why MySQL needs persistent storage
-Why WordPress needs shared storage
-
-👉 Outcome:
-
-A central storage system accessible from multiple pods
-```
+# 5. Create Persistent Volume for MySQL and WordPress
 **create PersistentVolume** 
 ```yaml
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: efs-pv
+  name: manual-pv
 spec:
   capacity:
-    storage: 5Gi
+    storage: 40Gi
   accessModes:
-    - ReadWriteMany
-  nfs:
-    path: /
-    server: fs-xxxxxx.efs.ap-south-1.amazonaws.com
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
 ```
-<img width="1147" height="782" alt="image" src="https://github.com/user-attachments/assets/9e3afe6c-ff07-4695-aa3e-f9325416a75b" />
-#### dasbboard summary
-<img width="1908" height="946" alt="image" src="https://github.com/user-attachments/assets/bddc23c5-a636-45bf-b1f5-61411e80f79f" />
+<img width="1547" height="172" alt="image" src="https://github.com/user-attachments/assets/19d7b110-15e0-476b-8b0f-523dccb015d3" />
 
 ***
 
-# 6. Set up the NFS client side
+# 6. mysql deployment - create secret, PersistentVolumeClaim for mysql, deploy mysql and create service
 ```
-What is expected:
+---
+# create secret for mysql. create secure script using command: echo -n 'mysecretpassword' | base64
+# create secret option can be skipped if created manually: kubectl create secret generic mysql-pass --from-literal=password=mysecretpassword
 
-Configure Kubernetes nodes (or pods) to:
-Connect to NFS server
-Mount the shared storage
-Understand:
-Mounting concept
-Network connectivity (port 2049)
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: mysql-pass
+type: Opaque
+data:
+  password: bXlzZWNyZXRwYXNzd29yZA==
 
-👉 Outcome:
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
 
-Your pods can read/write to shared storage
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql     # this should match
+  template:
+    metadata:
+      labels:
+        app: mysql    # this should match
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:5.7
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-pass
+                  key: password
+            - name: MYSQL_DATABASE
+              value: wordpress
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-pv-claim
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+spec:
+  selector:
+    app: mysql
+  ports:
+    - port: 3306
 ```
+**apply**
+<img width="773" height="145" alt="image" src="https://github.com/user-attachments/assets/d0ad462c-dd86-4f4c-bf92-ed3f8e460ea4" />
+
 # 7. Create and verify the PV
 ```
 👉 What is expected:
