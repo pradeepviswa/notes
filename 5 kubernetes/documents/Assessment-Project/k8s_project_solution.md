@@ -234,6 +234,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
+  storageClassName: manual
   resources:
     requests:
       storage: 20Gi
@@ -285,55 +286,120 @@ spec:
   ports:
     - port: 3306
 ```
-**apply**
+#### apply
 <img width="773" height="145" alt="image" src="https://github.com/user-attachments/assets/d0ad462c-dd86-4f4c-bf92-ed3f8e460ea4" />
+#### commands to check
+```bash
+kubectl get secret
+kubectl get pvc
+kubectl get deploy
+kubectl get svc
+kubectl get pods
 
-# 7. Create and verify the PV
 ```
-👉 What is expected:
+<img width="1321" height="472" alt="image" src="https://github.com/user-attachments/assets/bb37409f-573d-4a26-8699-904f9a43406c" />
 
-Create a PersistentVolume (PV) that:
-Points to your NFS storage
-Create a PersistentVolumeClaim (PVC) that:
-Requests storage
-Bind PV ↔ PVC
 
-👉 Outcome:
 
-Kubernetes can manage storage independently of pods
+# 7. deploy wordpress - create secret, persistentVolumeClaim, configMap, deployment, service
 ```
-# 8. Create a secret for MySQL deployments secret data
+# deploy wordpress
+---
+# create a ConfigMap YAML file
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: wordpress-config
+data:
+  WORDPRESS_CONFIG_EXTRA: |
+    define('WP_DEBUG', true);
+    define('WP_POST_REVISIONS', 5);
+  WORDPRESS_SITE_TITLE: "My Demo Wordpress Site"
+  WORDPRESS_ADMIN_EMAIL: "pradeep.viswa@gmail.com"
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: wp-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 20Gi
+
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+        - name: wordpress
+          image: bitnami/wordpress:latest     # wordpress:latest alsowe can use
+          env:
+            - name: WORDPRESS_CONFIG_EXTRA
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_CONFIG_EXTRA
+            - name: WORDPRESS_SITE_TITLE
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_SITE_TITLE
+            - name: WORDPRESS_ADMIN_EMAIL
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_ADMIN_EMAIL
+            - name: WORDPRESS_DB_HOST
+              value: mysql
+            - name: WORDPRESS_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-pass
+                  key: password
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: wp-persistent-storage
+              mountPath: /var/www/html
+      volumes:
+        - name: wp-persistent-storage
+          persistentVolumeClaim:
+            claimName: wp-pv-claim
+
+---
+# Service to expose wordpress
+kind: Service
+apiVersion: v1
+metadata:
+  name: wordpress
+spec:
+  type: NodePort
+  selector:
+    app: wordpress
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30007
 ```
-👉 What is expected:
 
-Store sensitive info like:
-MySQL root password
-Database credentials
-Use Secret object
-Understand:
-Base64 encoding
-How pods consume secrets (env or volume)
+#### apply
+<img width="837" height="166" alt="image" src="https://github.com/user-attachments/assets/d96465da-8f25-40e6-bef2-d2a4b5d148a3" />
 
-👉 Outcome:
-
-Secure handling of credentials (not hardcoded)
-```
-# 9. Create a configmap for WordPress deployment to store non-sensitive
-```
-👉 What is expected:
-
-Store configuration like:
-DB host
-DB name
-App settings
-Use ConfigMap
-Inject into pods:
-Environment variables OR files
-
-👉 Outcome:
-
-Decoupled configuration from application
-```
-
+####
 
 
