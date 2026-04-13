@@ -11,17 +11,17 @@ roles, storage, service verification, and data management.
 ```
 
 # Steps
-1. Get started with pods, services, and deployments
-2. Create and verify the service
-3. Create a token and work on a dashboard
-4. Configure the NFS-server for MySQL and WordPress deployment
-5. Set up the NFS client side
-6. Create and verify the PV
-7. Create a secret for MySQL deployments secret data
-8. Create a configmap for WordPress deployment to store non-sensitive information
+1. Create kubernetes environment
+2. Get started with pods, services, and deployments
+3. Create and verify the service
+4. Create a token and work on a dashboard
+5. Configure the NFS-server for MySQL and WordPress deployment
+6. Set up the NFS client side
+7. Create and verify the PV
+8. Create a secret for MySQL deployments secret data
+9. Create a configmap for WordPress deployment to store non-sensitive information
 
-
-# 1. Get started with pods, services, and deployments
+# 1. Create kubernetes environment
 ```
 What is expected:
 
@@ -56,8 +56,9 @@ You understand scaling and self-healing
      <img width="772" height="130" alt="image" src="https://github.com/user-attachments/assets/be0b5c4c-1431-496f-b8db-4dc3d94af69d" />
 
 
-
-# 2. Create and verify the service
+# 2. Get started with pods, services, and deployments
+## create 
+# 3. Create and verify the service
 ```
 👉 What is expected:
 
@@ -75,7 +76,7 @@ Traffic is routed to Pods
 You can access your app (internally or externally)
 ```
 
-# 3. Create a token and work on a dashboard
+# 4. Create a token and work on a dashboard
 ```
 👉 What is expected:
 
@@ -94,7 +95,7 @@ Deployments
 Services
 ```
 
-# 4. Configure the NFS-server for MySQL and WordPress deployment
+# 5. Configure the NFS-server for MySQL and WordPress deployment
 ```
 What is expected:
 
@@ -126,7 +127,7 @@ spec:
 ```
 <img width="1147" height="782" alt="image" src="https://github.com/user-attachments/assets/9e3afe6c-ff07-4695-aa3e-f9325416a75b" />
 
-# 5. Set up the NFS client side
+# 6. Set up the NFS client side
 ```
 What is expected:
 
@@ -141,7 +142,7 @@ Network connectivity (port 2049)
 
 Your pods can read/write to shared storage
 ```
-# 6. Create and verify the PV
+# 7. Create and verify the PV
 ```
 👉 What is expected:
 
@@ -155,7 +156,7 @@ Bind PV ↔ PVC
 
 Kubernetes can manage storage independently of pods
 ```
-# 7. Create a secret for MySQL deployments secret data
+# 8. Create a secret for MySQL deployments secret data
 ```
 👉 What is expected:
 
@@ -171,7 +172,7 @@ How pods consume secrets (env or volume)
 
 Secure handling of credentials (not hardcoded)
 ```
-# 8. Create a configmap for WordPress deployment to store non-sensitive
+# 9. Create a configmap for WordPress deployment to store non-sensitive
 ```
 👉 What is expected:
 
