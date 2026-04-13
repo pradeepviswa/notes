@@ -459,4 +459,6 @@ spec:
 >posted some commemnt
 <img width="1693" height="957" alt="image" src="https://github.com/user-attachments/assets/3d987a0c-46fa-4b3a-b4ee-9492d5304ee9" />
 
-
+# dashboard view now
+> URL: https://localhost:8443/#/workloads?namespace=default
+<img width="1887" height="982" alt="image" src="https://github.com/user-attachments/assets/39864bb5-431c-4d22-8e7e-3e33b5733df8" />
