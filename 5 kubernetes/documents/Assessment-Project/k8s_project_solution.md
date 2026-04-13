@@ -447,5 +447,14 @@ spec:
 <img width="1057" height="407" alt="image" src="https://github.com/user-attachments/assets/5369d763-c3e6-4e23-8d79-0e5e1a6c99b0" />
 
 
+> success log of wordpress container
+<img width="1906" height="961" alt="image" src="https://github.com/user-attachments/assets/631aeff6-5d8f-435c-9e6f-ffa704a472a6" />
+
+> login to wordpress website
+<img width="1893" height="970" alt="image" src="https://github.com/user-attachments/assets/b2506ba3-8a1c-4b40-bcf9-bac0938d3299" />
+
+
+>posted some commemnt
+<img width="1693" height="957" alt="image" src="https://github.com/user-attachments/assets/3d987a0c-46fa-4b3a-b4ee-9492d5304ee9" />
 
 
