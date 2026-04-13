@@ -112,6 +112,8 @@ kubectl apply -f service-account.yaml
 ```
 <img width="593" height="83" alt="image" src="https://github.com/user-attachments/assets/d892c498-9076-4dfd-a4e0-df45e5de1774" />
 
+---
+
 #### 3: Create ClusterRoleBinding (Admin Access)
 **cluster-role-binding.yaml**
 ```
@@ -129,11 +131,15 @@ subjects:
   namespace: kubernetes-dashboard
 ```
 
+---
+
 **Apply**
 ```
 kubectl apply -f cluster-role-binding.yaml
 ```
 <img width="639" height="87" alt="image" src="https://github.com/user-attachments/assets/2b7fe5d2-2466-4e87-bf29-f4d94d4bba38" />
+
+---
 
 #### 4: Generate Token
 ```bash
@@ -141,6 +147,8 @@ kubectl -n kubernetes-dashboard create token admin-user
 ```
 > This will give you a Bearer Token. Copy it.
 <img width="777" height="120" alt="image" src="https://github.com/user-attachments/assets/2ae69e5f-c766-4e3f-b5ac-2411f2532d22" />
+
+---
 
 #### 5: Access Dashboard
 **Start proxy:**
@@ -153,7 +161,7 @@ kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
 # http://3.81.80.19:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
 ```
-
+---
 #### in laptop cun this command using ec2 master node public ip
 ```
  ssh -i .\Downloads\key.pem -L 8001:127.0.0.1:8001 ubuntu@3.81.80.19
@@ -163,6 +171,7 @@ kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
 
+---
 
 #### 6: Login
 ```
@@ -172,8 +181,12 @@ Click Sign In
 ```
 <img width="1867" height="719" alt="image" src="https://github.com/user-attachments/assets/172d97da-b620-4b61-bcd4-d39e0b38b59c" />
 
+---
 
+#### view dashboard
+<img width="1908" height="946" alt="image" src="https://github.com/user-attachments/assets/075f1408-8189-4b4f-9c19-fd28a98bf788" />
 
+---
 
 # 5. Configure the NFS-server for MySQL and WordPress deployment
 ```
