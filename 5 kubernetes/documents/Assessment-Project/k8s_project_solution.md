@@ -21,6 +21,8 @@ roles, storage, service verification, and data management.
 8. Create a secret for MySQL deployments secret data
 9. Create a configmap for WordPress deployment to store non-sensitive information
 
+---
+
 # 1. Create kubernetes environment
   #### Create 3 ec2 instances in AWS
   <img width="556" height="127" alt="image" src="https://github.com/user-attachments/assets/2446015e-7253-4184-a00d-49300c6782e3" />
@@ -40,6 +42,7 @@ roles, storage, service verification, and data management.
      ```
      <img width="772" height="130" alt="image" src="https://github.com/user-attachments/assets/be0b5c4c-1431-496f-b8db-4dc3d94af69d" />
 
+---
 
 # 2. Get started with pods, services, and deployments
 #### Deploy basic httpd service and access it 
@@ -90,6 +93,8 @@ spec:
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 ```
+<img width="1208" height="288" alt="image" src="https://github.com/user-attachments/assets/82c4f803-4990-4c23-984f-b737971d9036" />
+
 
 #### 2: Create Service Account
 **service-account.yaml**
@@ -105,6 +110,7 @@ metadata:
 ```bash
 kubectl apply -f service-account.yaml
 ```
+<img width="593" height="83" alt="image" src="https://github.com/user-attachments/assets/d892c498-9076-4dfd-a4e0-df45e5de1774" />
 
 #### 3: Create ClusterRoleBinding (Admin Access)
 **cluster-role-binding.yaml**
@@ -127,22 +133,36 @@ subjects:
 ```
 kubectl apply -f cluster-role-binding.yaml
 ```
+<img width="639" height="87" alt="image" src="https://github.com/user-attachments/assets/2b7fe5d2-2466-4e87-bf29-f4d94d4bba38" />
 
 #### 4: Generate Token
 ```bash
 kubectl -n kubernetes-dashboard create token admin-user
 ```
 > This will give you a Bearer Token. Copy it.
+<img width="777" height="120" alt="image" src="https://github.com/user-attachments/assets/2ae69e5f-c766-4e3f-b5ac-2411f2532d22" />
 
 #### 5: Access Dashboard
 **Start proxy:**
 ```bash
-kubectl proxy
+kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
 ```
 **Open in browser:**
 ```
+# due to security reason this will not work. HTTPS will work this way.
+# http://3.81.80.19:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+```
+
+#### in laptop cun this command using ec2 master node public ip
+```
+ ssh -i .\Downloads\key.pem -L 8001:127.0.0.1:8001 ubuntu@3.81.80.19
+```
+#### then browse below URL
+```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
+
 
 #### 6: Login
 ```
@@ -150,6 +170,9 @@ Choose Token
 Paste the token you generated
 Click Sign In
 ```
+<img width="1867" height="719" alt="image" src="https://github.com/user-attachments/assets/172d97da-b620-4b61-bcd4-d39e0b38b59c" />
+
+
 
 
 # 5. Configure the NFS-server for MySQL and WordPress deployment
@@ -183,6 +206,10 @@ spec:
     server: fs-xxxxxx.efs.ap-south-1.amazonaws.com
 ```
 <img width="1147" height="782" alt="image" src="https://github.com/user-attachments/assets/9e3afe6c-ff07-4695-aa3e-f9325416a75b" />
+#### dasbboard summary
+<img width="1908" height="946" alt="image" src="https://github.com/user-attachments/assets/bddc23c5-a636-45bf-b1f5-61411e80f79f" />
+
+***
 
 # 6. Set up the NFS client side
 ```
