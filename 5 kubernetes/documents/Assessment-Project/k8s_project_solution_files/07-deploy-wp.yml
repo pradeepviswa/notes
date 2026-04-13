@@ -44,7 +44,7 @@ spec:
                   name: mysql-pass
                   key: password
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           volumeMounts:
             - name: wp-persistent-storage
               mountPath: /var/www/html
@@ -64,6 +64,6 @@ spec:
   selector:
     app: wordpress
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 8080
+      targetPort: 8080
       nodePort: 30007
