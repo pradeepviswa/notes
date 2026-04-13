@@ -188,7 +188,9 @@ Click Sign In
 
 ---
 
-# 5. create persistent volume
+# create persistent volume
+**01-pv.yml**
+
 ```
 # create PersistentVolume for mysql
 ---
@@ -209,7 +211,7 @@ spec:
 
 ---
 # create PersistentVolume for wordpress
-**01-pv.yml**
+
 ---
 apiVersion: v1
 kind: PersistentVolume
