@@ -151,7 +151,7 @@ kubectl -n kubernetes-dashboard create token admin-user
 ---
 
 #### 5: Access Dashboard
-**Terminal 1 (SSH Tunnel — on your laptop)**
+**Terminal 1 (SSH Tunnel — on laptop)**
 ```bash
 ssh -i key.pem -L 8443:127.0.0.1:8443 ubuntu@50.17.51.12
 ```
