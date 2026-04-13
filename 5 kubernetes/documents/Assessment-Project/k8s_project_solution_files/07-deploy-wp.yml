@@ -32,12 +32,23 @@ spec:
                 configMapKeyRef:
                   name: wordpress-config
                   key: WORDPRESS_ADMIN_EMAIL
+
             - name: WORDPRESS_DATABASE_HOST
-              value: mysql
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_DATABASE_HOST
             - name: WORDPRESS_DATABASE_NAME
-              value: wordpress
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_DATABASE_NAME
             - name: WORDPRESS_DATABASE_USER
-              value: root
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_DATABASE_USER
+
             - name: WORDPRESS_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:

@@ -11,4 +11,6 @@ data:
     define('WP_POST_REVISIONS', 5);
   WORDPRESS_SITE_TITLE: "My Demo Wordpress Site"
   WORDPRESS_ADMIN_EMAIL: "pradeep.viswa@gmail.com"
-
+  WORDPRESS_DATABASE_HOST: "mysql"
+  WORDPRESS_DATABASE_NAME: "wordpress"
+  WORDPRESS_DATABASE_USER: "root"
