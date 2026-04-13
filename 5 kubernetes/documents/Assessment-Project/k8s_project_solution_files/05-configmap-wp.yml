@@ -1,0 +1,14 @@
+# deploy wordpress
+---
+# create a ConfigMap YAML file
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: wordpress-config
+data:
+  WORDPRESS_CONFIG_EXTRA: |
+    define('WP_DEBUG', true);
+    define('WP_POST_REVISIONS', 5);
+  WORDPRESS_SITE_TITLE: "My Demo Wordpress Site"
+  WORDPRESS_ADMIN_EMAIL: "pradeep.viswa@gmail.com"
+
