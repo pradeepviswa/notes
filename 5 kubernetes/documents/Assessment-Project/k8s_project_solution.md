@@ -151,22 +151,22 @@ kubectl -n kubernetes-dashboard create token admin-user
 ---
 
 #### 5: Access Dashboard
+
+**connect master node and connect via this command **
+```
+ ssh -i .\Downloads\key.pem -L 8001:127.0.0.1:8001 ubuntu@3.81.80.19
+```
 **Start proxy:**
 ```bash
 kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
 ```
-**Open in browser:**
-```
-# due to security reason this will not work. HTTPS will work this way.
-# http://3.81.80.19:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
+**in labto run below command using master node public ip******
+``
+ssh -i key.pem -L 8001:127.0.0.1:8001 ubuntu@50.17.51.12
 ```
----
-#### in laptop cun this command using ec2 master node public ip
-```
- ssh -i .\Downloads\key.pem -L 8001:127.0.0.1:8001 ubuntu@3.81.80.19
-```
-#### then browse below URL
+
+**then browse below URL**
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
@@ -188,32 +188,50 @@ Click Sign In
 
 ---
 
-# 5. Create Persistent Volume for MySQL and WordPress
-**create PersistentVolume** 
-```yaml
+# 5. create persistent volume
+```
+# create PersistentVolume for mysql
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: manual-pv
+  name: manual-pv-mysql
+spec:
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data/mysql
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+
+---
+# create PersistentVolume for wordpress
+**01-pv.yml**
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: manual-pv-wordpress
 spec:
   capacity:
     storage: 40Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /mnt/data
+    path: /mnt/data/wordpress
     type: DirectoryOrCreate
   persistentVolumeReclaimPolicy: Retain
   storageClassName: manual
-```
-<img width="1547" height="172" alt="image" src="https://github.com/user-attachments/assets/19d7b110-15e0-476b-8b0f-523dccb015d3" />
 
-***
-
-# 6. mysql deployment - create secret, PersistentVolumeClaim for mysql, deploy mysql and create service
 ```
----
+<img width="1677" height="197" alt="image" src="https://github.com/user-attachments/assets/de811516-d3da-442a-a1b6-6af1052d3dfe" />
+
+# create secret for mysql
+**02-mysql-secret.yml**
+```---
 # create secret for mysql. create secure script using command: echo -n 'mysecretpassword' | base64
 # create secret option can be skipped if created manually: kubectl create secret generic mysql-pass --from-literal=password=mysecretpassword
 
@@ -226,6 +244,13 @@ type: Opaque
 data:
   password: bXlzZWNyZXRwYXNzd29yZA==
 
+```
+<img width="1067" height="153" alt="image" src="https://github.com/user-attachments/assets/6eb2716f-d23e-4d86-a859-c3ecd2f79225" />
+
+
+# create persistent volume claim for mysql
+**03-mysql-pvc.yml**
+```
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -235,10 +260,16 @@ spec:
   accessModes:
     - ReadWriteOnce
   storageClassName: manual
+  volumeName: manual-pv-mysql
   resources:
     requests:
       storage: 20Gi
+```
+<img width="1370" height="142" alt="image" src="https://github.com/user-attachments/assets/5860da11-ab2f-44ca-897e-8b1d1fffac41" />
 
+# deploy mysql
+**04-deploy-mysql.yml**
+```
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -286,22 +317,10 @@ spec:
   ports:
     - port: 3306
 ```
-#### apply
-<img width="773" height="145" alt="image" src="https://github.com/user-attachments/assets/d0ad462c-dd86-4f4c-bf92-ed3f8e460ea4" />
-#### commands to check
-```bash
-kubectl get secret
-kubectl get pvc
-kubectl get deploy
-kubectl get svc
-kubectl get pods
+<img width="1107" height="336" alt="image" src="https://github.com/user-attachments/assets/10f3eb7c-895a-406d-bb56-0cd48b702cf8" />
 
-```
-<img width="1321" height="472" alt="image" src="https://github.com/user-attachments/assets/bb37409f-573d-4a26-8699-904f9a43406c" />
-
-
-
-# 7. deploy wordpress - create secret, persistentVolumeClaim, configMap, deployment, service
+# create configmap for wordpress
+**05-configmap-wp.yml**
 ```
 # deploy wordpress
 ---
@@ -316,7 +335,15 @@ data:
     define('WP_POST_REVISIONS', 5);
   WORDPRESS_SITE_TITLE: "My Demo Wordpress Site"
   WORDPRESS_ADMIN_EMAIL: "pradeep.viswa@gmail.com"
+  WORDPRESS_DATABASE_HOST: "mysql"
+  WORDPRESS_DATABASE_NAME: "wordpress"
+  WORDPRESS_DATABASE_USER: "root"
+```
+<img width="1078" height="167" alt="image" src="https://github.com/user-attachments/assets/ca78f224-b76d-401d-81b8-f08f5df7aaac" />
 
+# create persistent volume claim for wordpress
+**06-wp-pvc.yml**
+```
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -326,10 +353,16 @@ spec:
   accessModes:
     - ReadWriteOnce
   storageClassName: manual
+  volumeName: manual-pv-wordpress
   resources:
     requests:
       storage: 20Gi
+```
+<img width="1462" height="175" alt="image" src="https://github.com/user-attachments/assets/9df98b00-c825-46bd-b8bf-54710e05b187" />
 
+# deploy wordpress
+**07-deploy-wp.yml**
+```
 ---
 kind: Deployment
 apiVersion: apps/v1
@@ -364,15 +397,30 @@ spec:
                 configMapKeyRef:
                   name: wordpress-config
                   key: WORDPRESS_ADMIN_EMAIL
-            - name: WORDPRESS_DB_HOST
-              value: mysql
-            - name: WORDPRESS_DB_PASSWORD
+
+            - name: WORDPRESS_DATABASE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_DATABASE_HOST
+            - name: WORDPRESS_DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_DATABASE_NAME
+            - name: WORDPRESS_DATABASE_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_DATABASE_USER
+
+            - name: WORDPRESS_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-pass
                   key: password
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           volumeMounts:
             - name: wp-persistent-storage
               mountPath: /var/www/html
@@ -392,14 +440,12 @@ spec:
   selector:
     app: wordpress
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 8080
+      targetPort: 8080
       nodePort: 30007
 ```
+<img width="1057" height="407" alt="image" src="https://github.com/user-attachments/assets/5369d763-c3e6-4e23-8d79-0e5e1a6c99b0" />
 
-#### apply
-<img width="837" height="166" alt="image" src="https://github.com/user-attachments/assets/d96465da-8f25-40e6-bef2-d2a4b5d148a3" />
 
-####
 
 
