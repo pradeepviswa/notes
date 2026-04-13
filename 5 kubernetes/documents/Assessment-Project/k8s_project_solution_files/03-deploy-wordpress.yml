@@ -20,10 +20,11 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
+  storageClassName: manual
+  volumeName: manual-pv-wordpress
   resources:
     requests:
       storage: 20Gi
-
 ---
 kind: Deployment
 apiVersion: apps/v1

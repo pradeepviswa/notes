@@ -1,16 +1,34 @@
-# create PersistentVolume
+# create PersistentVolume for mysql
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: manual-pv
+  name: manual-pv-mysql
 spec:
   capacity:
-    storage: 40Gi
+    storage: 20Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /mnt/data
+    path: /mnt/data/mysql
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+
+---
+# create PersistentVolume for wordpress
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: manual-pv-wordpress
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data/wordpress
     type: DirectoryOrCreate
   persistentVolumeReclaimPolicy: Retain
   storageClassName: manual

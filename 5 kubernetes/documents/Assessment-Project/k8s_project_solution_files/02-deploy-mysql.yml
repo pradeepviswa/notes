@@ -19,6 +19,8 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
+  storageClassName: manual
+  volumeName: manual-pv-mysql
   resources:
     requests:
       storage: 20Gi
