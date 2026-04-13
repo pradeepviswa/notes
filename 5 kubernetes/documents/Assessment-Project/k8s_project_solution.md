@@ -22,21 +22,6 @@ roles, storage, service verification, and data management.
 9. Create a configmap for WordPress deployment to store non-sensitive information
 
 # 1. Create kubernetes environment
-```
-What is expected:
-
-Understand the basic building blocks of Kubernetes
-You should be able to:
-Create a Pod (single container)
-Create a Deployment (manages replicas, updates)
-Understand why Deployment is preferred over Pod
-Expose your app using a Service
-
-👉 Outcome:
-
-You can run an application inside Kubernetes
-You understand scaling and self-healing
-```
   #### Create 3 ec2 instances in AWS
   <img width="556" height="127" alt="image" src="https://github.com/user-attachments/assets/2446015e-7253-4184-a00d-49300c6782e3" />
   
@@ -57,43 +42,115 @@ You understand scaling and self-healing
 
 
 # 2. Get started with pods, services, and deployments
-## create 
-# 3. Create and verify the service
+#### Deploy basic httpd service and access it 
 ```
-👉 What is expected:
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mydep
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: httpd
+  template:
+    metadata:
+      labels:
+        app: httpd
+    spec:
+      containers:
+        - name: c01
+          image: httpd
+          ports:
+            - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: myservice
+spec:
+  selector:
+    app: httpd
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+```
+#### command line output
+<img width="822" height="655" alt="image" src="https://github.com/user-attachments/assets/5d51a0e2-f76e-46b3-af54-5ae448a48057" />
 
-Expose your application using a Service
-Understand types:
-ClusterIP (internal)
-NodePort (external access)
-LoadBalancer (cloud)
-Verify:
-Service is reachable
-Traffic is routed to Pods
+#### test from browse
+<img width="442" height="177" alt="image" src="https://github.com/user-attachments/assets/4e2d0f84-b8e1-4ce9-9cd2-f6f1633cff04" />
 
-👉 Outcome:
 
-You can access your app (internally or externally)
+# 3. Create a token and work on a dashboard
+#### 1: Deploy Kubernetes Dashboard
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 ```
 
-# 4. Create a token and work on a dashboard
+#### 2: Create Service Account
+**service-account.yaml**
+```yaml
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
 ```
-👉 What is expected:
-
-Enable Kubernetes Dashboard
-Create:
-ServiceAccount
-Role / ClusterRole
-Token
-Use token to log into dashboard UI
-
-👉 Outcome:
-
-You can visually monitor:
-Pods
-Deployments
-Services
+**apply**
+```bash
+kubectl apply -f service-account.yaml
 ```
+
+#### 3: Create ClusterRoleBinding (Admin Access)
+**cluster-role-binding.yaml**
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kubernetes-dashboard
+```
+
+**Apply**
+```
+kubectl apply -f cluster-role-binding.yaml
+```
+
+#### 4: Generate Token
+```bash
+kubectl -n kubernetes-dashboard create token admin-user
+```
+> This will give you a Bearer Token. Copy it.
+
+#### 5: Access Dashboard
+**Start proxy:**
+```bash
+kubectl proxy
+```
+**Open in browser:**
+```
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+```
+
+#### 6: Login
+```
+Choose Token
+Paste the token you generated
+Click Sign In
+```
+
 
 # 5. Configure the NFS-server for MySQL and WordPress deployment
 ```
