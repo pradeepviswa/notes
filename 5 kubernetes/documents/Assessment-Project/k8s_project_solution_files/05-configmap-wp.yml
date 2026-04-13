@@ -13,4 +13,4 @@ data:
   WORDPRESS_ADMIN_EMAIL: "pradeep.viswa@gmail.com"
   WORDPRESS_DATABASE_HOST: "mysql"
   WORDPRESS_DATABASE_NAME: "wordpress"
-  WORDPRESS_DATABASE_USER: "root"
+  WORDPRESS_DATABASE_USER: "wordpress"
