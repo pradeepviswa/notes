@@ -11,15 +11,18 @@ roles, storage, service verification, and data management.
 ```
 
 # Steps
-1. Create kubernetes environment
-2. Get started with pods, services, and deployments
-3. Create and verify the service
-4. Create a token and work on a dashboard
-5. Configure the NFS-server for MySQL and WordPress deployment
-6. Set up the NFS client side
-7. Create and verify the PV
-8. Create a secret for MySQL deployments secret data
-9. Create a configmap for WordPress deployment to store non-sensitive information
+1.	Create kubernetes environment
+2.	Get started with pods, services, and deployments
+3.	Create a token and work on a dashboard
+4.	create persistent volume
+5.	create secret for mysql
+6.	create persistent volume claim for mysql
+7.	deploy mysql
+8.	create configmap for wordpress
+9.	create persistent volume claim for wordpress
+10.	deploy wordpress
+11.	dashboard view check again
+
 
 ---
 
