@@ -56,4 +56,13 @@ Output
 
 
 
+# simple example to create bucket and show output
+<img width="332" height="250" alt="image" src="https://github.com/user-attachments/assets/0c39de3a-f7b4-4b00-a911-8b5a71204778" />
+
+
+# simple example to create bucket and show taking bucket name as an input from user in a Parameter
+<img width="403" height="340" alt="image" src="https://github.com/user-attachments/assets/1a87f8f9-06ff-4c8e-bbd1-31a13d84f824" />
+
+
+
 
