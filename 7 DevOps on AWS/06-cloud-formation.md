@@ -4,6 +4,7 @@
 - [Stack Set](#stack-set)
 - [Drift Detection](#drift-detection)
 - [Cloudformation workflow](#cloudformation-workflow)
+- [commands](#commands)
 
 # Cloud Formation
 It is an AWS service that lets us model, provision and manage aws and third party resourcs by reating infra as code
