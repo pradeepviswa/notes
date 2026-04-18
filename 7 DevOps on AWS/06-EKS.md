@@ -3,7 +3,7 @@
 
 
 # trainer docs
-<a href="documents/7 DevOps on AWS/documents/trainer docs/3 EKS.pdf"> EKS.pdf </a>
+<a href="https://github.com/pradeepviswa/notes/blob/main/7%20DevOps%20on%20AWS/documents/trainer%20docs/3%20EKS.pdf"> EKS.pdf </a>
 
 # k8s problem with master node architecture
 - admin nodes
