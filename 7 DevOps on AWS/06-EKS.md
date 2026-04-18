@@ -2,6 +2,8 @@
 > Managed k8s sericve provided by AWS that helps to run k8s without managing control plane
 
 
+# trainer docs
+<a href="/documents/trainer docs/3 EKS.pdf"> EKS.pdf </a>
 
 # k8s problem with master node architecture
 - admin nodes
