@@ -61,7 +61,25 @@ Output
 
 
 # simple example to create bucket and show taking bucket name as an input from user in a Parameter
-<img width="403" height="340" alt="image" src="https://github.com/user-attachments/assets/1a87f8f9-06ff-4c8e-bbd1-31a13d84f824" />
+```yaml
+# create a s3 bucket with name akshatg7657567
+#bucket name and bucket arn as output
+#parameter for bucket name
+Parameters:
+  BucketName:
+    Type: String
+    Default: akshatg7657567
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+Outputs:
+  BucketName:
+    Value: !Ref MyS3Bucket
+  BucketArn:
+    Value: !GetAtt MyS3Bucket.Arn
+```
 
 
 
