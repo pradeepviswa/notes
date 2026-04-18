@@ -81,6 +81,29 @@ Outputs:
     Value: !GetAtt MyS3Bucket.Arn
 ```
 
+# test drift, create a new ec2 instance with t3.micro
+```
+
+# create an ec2 instance with name pradeepec2instance for aws cloudformation tempalte. it should be ubuntu latest image with ty3.micro in n virgenia region
+Resources:
+  PradeepEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      ImageId: ami-0c94855ba95c71c99 # Ubuntu Server 20.04 LTS (HVM), SSD Volume Type
+      Tags:
+        - Key: Name
+          Value: pradeepec2instance
+
+
+```
+
+# now modify ec2 instance manually from t3.micro to t3.medium
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/ad0b12c5-beb2-4ad7-909a-8591a7e71b47" />
+
+# now detetct the drift
+<img width="1820" height="798" alt="image" src="https://github.com/user-attachments/assets/5d738fa3-1de9-4e8c-9271-8a97d731e504" />
+
 
 
 
