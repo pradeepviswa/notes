@@ -3,7 +3,10 @@
 - AZ-400
 
 
-microsoft.come
+# microsoft site document and trianing
+visit microsoft.com and go to azure. microsoft provided documents and videos are available there
+
+
 
 
 
