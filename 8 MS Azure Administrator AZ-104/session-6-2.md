@@ -21,4 +21,5 @@ Same way <br>
 change > select lower plan
 <br>
 we can change the region or resoruce group also from here <br>
-<img width="611" height="342" alt="image" src="https://github.com/user-attachments/assets/a4fdd0fa-2144-46d8-8f60-fca8275068fc" />
+<img width="611" height="342" alt="image" src="https://github.com/user-attachments/assets/8ae16c11-8eb2-45d7-8307-8cd86b2b8f4a" />
+
