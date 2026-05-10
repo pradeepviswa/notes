@@ -19,3 +19,6 @@ go back to overview
 Same way <br>
 <img width="832" height="387" alt="image" src="https://github.com/user-attachments/assets/07bae4a5-e3cc-40c3-90b9-5b4282d20aca" />
 change > select lower plan
+<br>
+we can change the region or resoruce group also from here <br>
+<img width="611" height="342" alt="image" src="https://github.com/user-attachments/assets/a4fdd0fa-2144-46d8-8f60-fca8275068fc" />
