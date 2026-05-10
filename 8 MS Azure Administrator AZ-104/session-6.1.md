@@ -38,6 +38,30 @@ webapp adn app servce are same
 Open url in new tab. this will load default python code and give place to put code path as a placeholder <br>
 <img width="641" height="307" alt="image" src="https://github.com/user-attachments/assets/17f0458e-f516-4594-9dfb-58a0a3ee6d5b" />
 <br> <br>
+**replace page with simple python code** <br>
+open cloudshell <br>
+<img width="810" height="390" alt="image" src="https://github.com/user-attachments/assets/c0c33054-8135-4272-800f-447fc8f24bf1" /> <br>
+```
+git clone https://github.com/Azure-Samples/msdocs-python-flask-webapp-quickstart
+cd msdocs-python-flask-webapp-quickstart
+az webapp up -n <webappname>
+```
+<img width="1181" height="402" alt="image" src="https://github.com/user-attachments/assets/c422704b-6b9e-498c-b954-6ac21606001a" />
+<br>
+new website <br>
+<img width="842" height="466" alt="image" src="https://github.com/user-attachments/assets/ae981c0f-9d32-414a-9665-b73d1fc8c401" />
+
+# how to map custom doamin with our own domain
+- got to webapp. copy default doamin name
+<img width="1002" height="280" alt="image" src="https://github.com/user-attachments/assets/e9da253d-5cbb-4de1-b5a7-8fd040505376" />
+
+<br>
+click on custom domains <br>
+<img width="337" height="211" alt="image" src="https://github.com/user-attachments/assets/859af963-408d-4216-8334-1f9e13ef8406" />
+<br>
+map it here <br>
+<img width="935" height="497" alt="image" src="https://github.com/user-attachments/assets/158843a3-9f48-4e17-8601-7a9b1a6ee871" />
+
 
 
 
