@@ -15,5 +15,7 @@ Create
 <br>
 brows using FQDN or IP <br>
 <img width="1007" height="496" alt="image" src="https://github.com/user-attachments/assets/4bcc50fe-33e1-4d3a-a803-b19e38e0743c" />
+<br>
+<img width="1102" height="305" alt="image" src="https://github.com/user-attachments/assets/88483000-d591-416b-a5a7-2a174347b651" />
 
 
