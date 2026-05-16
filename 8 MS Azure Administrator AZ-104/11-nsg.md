@@ -26,4 +26,6 @@ choose nsg created above <br>
 <img width="582" height="208" alt="image" src="https://github.com/user-attachments/assets/1e56b4ec-80e3-4236-954c-711936fcff51" />
 <br>
 craete inbound rule in in nsg and create inbound rule to allow port 3389
+<br>
+<img width="1348" height="653" alt="image" src="https://github.com/user-attachments/assets/fbfca07e-e371-4a82-9a84-c4eddb381310" />
 
