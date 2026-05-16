@@ -16,3 +16,13 @@ it creates new subnet automatically, this takes 5 mins approx
 <br>
 Bastion subnet has to be of /26. no other way
 <img width="1402" height="441" alt="image" src="https://github.com/user-attachments/assets/dadaf0be-7758-461d-9315-fe4879d3d861" />
+
+
+<br>
+
+Next, enter vm name and password, connect <br>
+
+<img width="1218" height="658" alt="image" src="https://github.com/user-attachments/assets/0997346c-463d-4490-828c-7aa312dbf160" />
+<br>
+Logged in to vm1 via browser <br>
+<img width="1376" height="720" alt="image" src="https://github.com/user-attachments/assets/87ec51bc-1a45-40f1-8e01-d5a8bc36ab7a" />
