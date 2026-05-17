@@ -27,6 +27,19 @@ all subnets <br>
 <br>
 using /16 we have created 4 subnets <br>
 
+wait for this to create before going on with bastion creation <br>
+<img width="1010" height="491" alt="image" src="https://github.com/user-attachments/assets/6f4cd5d4-cd26-4795-9093-a586eec4118b" />
 
+<br>
+create bastion <br>
+
+<img width="1056" height="292" alt="image" src="https://github.com/user-attachments/assets/ddc5f7a1-2cae-4c8e-a0ad-ce243a584519" />
+<br>
+same resource group <br>
+
+<img width="1060" height="605" alt="image" src="https://github.com/user-attachments/assets/498e581c-f2de-46fe-a2e5-531f50dd7e46" />
+
+
+<br>
 
 
