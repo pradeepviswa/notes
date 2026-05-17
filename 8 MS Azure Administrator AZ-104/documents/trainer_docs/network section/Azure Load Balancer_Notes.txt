@@ -1,0 +1,38 @@
+https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
+
+https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-connect-virtual-networks?tabs=portal
+
+
+
+What is Azure Load Balancer?
+
+https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
+
+Create a public load balancer to load balance VMs using the Azure portal:
+
+https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-portal?source=recommendations
+
+Create a public load balancer to load balance VMs using the Azure CLI:
+https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-cli
+
+
+What is Azure Bastion?
+
+https://learn.microsoft.com/en-us/azure/bastion/bastion-overview
+
+
+ALB IP: 20.115.97.4 (myPublicIP)
+
+
+
+
+
+
+
+
+
+
+20.115.97.4 - vm2
+20.115.97.4 - vm1
+
+http://20.115.97.4

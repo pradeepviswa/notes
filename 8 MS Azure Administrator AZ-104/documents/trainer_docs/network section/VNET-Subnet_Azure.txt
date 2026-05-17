@@ -1,0 +1,1159 @@
+az login
+
+az account set --subscription "<subscriptionID>"
+
+VNET:
+Azure Virtual Network (VNet) is the fundamental building block for your private network in Azure. VNet enables many types of Azure resources, such as Azure Virtual Machines (VM), to securely communicate with each other, the internet, and on-premises networks.
+
+
+SUBNET:
+A subnet, or subnetwork, is a segmented piece of a larger network. More specifically, subnets are a logical partition of an IP network into multiple, smaller network segments. The Internet Protocol (IP) is the method for sending data from one computer to another over the internet.
+
+AZURE SUBNET:
+A subnet is a range of IP addresses in the virtual network. You can divide a virtual network into multiple subnets for organization and security. Each NIC in a VM is connected to one subnet in one virtual network.
+
+NIC:
+A network interface enables an Azure Virtual Machine to communicate with internet, Azure, and on-premises resources. When creating a virtual machine using the Azure portal, the portal creates one network interface with default settings for you.
+
+NSG:
+A network security group contains security rules that allow or deny inbound network traffic to, or outbound network traffic from, several types of Azure resources. For each rule, you can specify source and destination, port, and protocol.
+
+RDP - 3389
+HTTP - 80
+HTTPS - 443 - Need SSL certificate (Secure Socket Layer)
+SSH - 22 - Secure Shell
+SMB - 445 - Server Message Block, for Azure File Share Storage
+
+
+10.0.0.0/24 - IP address range/CIDR
+
+CIDR - CIDR (Classless Inter-Domain Routing) -- also known as supernetting -- is a method of assigning Internet Protocol (IP) addresses that improves the efficiency of address distribution and replaces the previous system based on Class A, Class B and Class C networks.
+
+/24 - Subnet mask
+
+What is Subnet Mask?
+A subnet mask is a 32 bits address used to distinguish between a network address and a host address in IP address. A subnet mask identifies which part of an IP address is the network address and the host address. They are not shown inside the data packets traversing the Internet. They carry the destination IP address, which a router will match with a subnet.
+
+
+
+
+What is TLS (Transport Layer Security)?
+https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/#:~:text=Transport%20Layer%20Security%2C%20or%20TLS,web%20browsers%20loading%20a%20website.
+
+TLS is a security protocol that provides privacy and data integrity for Internet communications. Implementing TLS is a standard practice for building secure web apps.
+
+Transport Layer Security, or TLS, is a widely adopted security protocol designed to facilitate privacy and data security for communications over the Internet. A primary use case of TLS is encrypting the communication between web applications and servers, such as web browsers loading a website. TLS can also be used to encrypt other communications such as email, messaging, and voice over IP (VoIP). In this article we will focus on the role of TLS in web application security.
+
+What is the difference between TLS and SSL?
+TLS evolved from a previous encryption protocol called Secure Sockets Layer (SSL), which was developed by Netscape. TLS version 1.0 actually began development as SSL version 3.1, but the name of the protocol was changed before publication in order to indicate that it was no longer associated with Netscape. Because of this history, the terms TLS and SSL are sometimes used interchangeably.
+
+What is the difference between TLS and HTTPS?
+HTTPS is an implementation of TLS encryption on top of the HTTP protocol, which is used by all websites as well as some other web services. Any website that uses HTTPS is therefore employing TLS encryption.
+---------------------------------
+What is Azure Firewall?
+https://learn.microsoft.com/en-us/azure/firewall/overview
+
+Azure Firewall web categories
+https://learn.microsoft.com/en-us/azure/firewall/web-categories
+
+Deploy and configure Azure Firewall using the Azure portal
+https://learn.microsoft.com/en-us/azure/firewall/tutorial-firewall-deploy-portal
+
+--
+Denying specific websites(Facebook,youtube) through Azure Firewall
+https://learn.microsoft.com/en-us/answers/questions/564023/denying-specific-websites(facebook-youtube)-throug
+
+Block users to visit specific www through Azure?
+https://learn.microsoft.com/en-us/answers/questions/372706/block-users-to-visit-specific-www-through-azure
+
+How to block network traffic with Azure Virtual Network Manager - Azure portal
+https://learn.microsoft.com/en-us/azure/virtual-network-manager/how-to-block-network-traffic-portal
+
+i have disable the internet in azure VM, now i want to allow a specific website.
+https://learn.microsoft.com/en-us/answers/questions/1070511/i-have-disable-the-internet-in-azure-vm-now-i-want
+
+Block specific URL's
+https://www.reddit.com/r/AZURE/comments/13jysik/block_specific_urls/
+
+Better way to block IP Addresses with an Azure VM
+https://serverfault.com/questions/1158698/better-way-to-block-ip-addresses-with-an-azure-vm
+
+
+
+---------------------------------
+my IP address:
+
+
+36.255.18.185 - this IP (Internet Protocol) address has been assigned to Kranthi by some RailTel Corporation of India Ltd ISP - HYD, India
+36.255.18.186
+36.255.18.187
+36.255.18.188
+36.255.18.189
+.
+.
+.
+.
+.
+.
+36.255.18.254
+36.255.18.255
+36.255.19.0 - Reserved
+36.255.19.1 - Reserved
+36.255.19.2 - Reserved
+36.255.19.3 - Reserved
+36.255.19.4
+36.255.19.5
+36.255.19.6
+.
+.
+.
+.
+.
+36.255.19.254
+36.255.19.255 - Reserved
+36.255.20.0
+
+256 IP addresses we would be getting in a series
+= 256 - 5 = 251 IP's only
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------
+my IP address:
+
+
+202.141.37.110 - this IP (Internet Protocol) address has been assigned to Kranthi by some RailTel Corporation of India Ltd ISP - HYD, India
+202.141.37.111
+202.141.37.112
+202.141.37.113
+202.141.37.114
+202.141.37.115
+.
+.
+.
+.
+.
+.
+202.141.37.255
+202.141.38.0
+202.141.38.1
+202.141.38.2
+202.141.38.3
+202.141.38.4
+202.141.38.5
+202.141.38.6
+.
+.
+.
+.
+.
+.
+202.141.38.254
+202.141.38.255 - Octane
+
+overall in a series, we are getting 256 IP's
+
+
+49.37.146.135 - this IP (Internet Protocol) address has been assigned to Kranthi by some Jio ISP - HYD, India
+49.37.146.136
+49.37.146.137
+49.37.146.138
+49.37.146.139
+49.37.146.140
+.
+.
+.
+.
+.
+.
+.
+49.37.146.255 - Octane
+49.37.147.0
+49.37.147.1
+49.37.147.2
+49.37.147.3
+49.37.147.4
+49.37.147.5
+.
+.
+.
+.
+49.37.147.254
+49.37.147.255
+
+altogether we were getting 256 IP addresses in a single series
+49.37.148.0
+.
+.
+.
+.
+49.37.148.255
+.
+.
+.
+49.37.255.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+49.37.148.87 - this IP (Internet Protocol) address has been assigned to Kranthi by some Jio ISP - HYD
+49.37.148.88
+49.37.148.89
+49.37.148.90
+.
+.
+.
+.
+.
+49.37.148.254
+49.37.148.255 - Octane
+49.37.149.0
+49.37.149.1
+49.37.149.2
+49.37.149.3
+49.37.149.4
+49.37.149.5
+49.37.149.6
+49.37.149.7
+.
+.
+.
+.
+.
+.
+49.37.149.254
+49.37.149.255
+49.37.150.0 - Revered
+49.37.150.1 - Revered
+49.37.150.2 - Revered
+49.37.150.3 - Revered
+49.37.150.4
+49.37.150.5
+49.37.150.6
+.
+.
+.
+.
+.
+49.37.150.254
+49.37.150.255 - Revered
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+my IP address:
+
+49.37.148.216 - this IP (Internet Protocol) address has been assigned to Kranthi by some Jio ISP - HYD
+49.37.148.217
+49.37.148.218
+49.37.148.219
+49.37.148.220
+.
+.
+.
+.
+49.37.148.255 - Octane
+49.37.149.0 - Reserved
+49.37.149.1 - Reserved
+49.37.149.2 - Reserved
+49.37.149.3 - Reserved
+49.37.149.4
+49.37.149.5
+.
+.
+.
+.
+.
+49.37.149.254
+49.37.149.255 - Reserved
+49.37.150.0
+49.37.150.1
+49.37.150.2
+.
+.
+.
+.
+49.37.150.254
+49.37.150.255
+.
+.
+.
+49.37.151.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+117.99.200.94
+117.99.200.95
+117.99.200.96
+117.99.200.97
+.
+.
+.
+.
+.
+.
+.
+117.99.200.255
+117.99.201.0
+117.99.201.1
+117.99.201.2
+.
+.
+
+.
+.
+.
+
+117.99.201.255
+
+117.99.201.0 - 255 = 256
+
+
+
+
+
+
+
+
+
+49.37.155.173 - this IP (Internet Protocol) address has been assigned to Kranthi by some local ISP - HYD
+49.37.155.174
+49.37.155.175
+49.37.155.176
+49.37.155.177
+.
+.
+.
+.
+.
+.
+.
+49.37.155.254
+49.37.155.255 - - 255 would be the broadcast IP in networking terminology
+49.37.156.0
+49.37.156.1
+49.37.156.2
+49.37.156.3
+49.37.156.4
+49.37.156.5
+49.37.156.6
+.
+.
+.
+.
+49.37.156.254
+49.37.156.255
+49.37.157.0
+
+
+
+
+
+
+
+
+
+
+10.0.0.0/24
+
+10.0.0.0 - IP Address
+/24 - subnet mask
+10.0.0.0/24 - IP address range/IP Address series/CIDR - Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses to devices/VM's on the internet
+
+max subnet mask we can go upto is 32
+
+ 32
+-24
+----
+ 8
+----
+
+2 to the power of 8 is 256 IP addresses, we can only use 251 IP's
+4 IP's would be reserved
+
+10.0.0.0 - reserved
+10.0.0.1 - reserved
+10.0.0.2 - reserved
+10.0.0.3 - reserved
+10.0.0.4
+10.0.0.5
+10.0.0.6
+.
+.
+.
+.
+.
+.
+.
+.
+10.0.0.254
+10.0.0.255 - reserved
+--------------
+10.0.0.0/27
+
+ 32
+-27
+---
+5
+--
+ 2 to the power of 5 is 32, we can use only 27
+
+10.0.0.0 - Reserved
+10.0.0.1 - Reserved
+10.0.0.2 - Reserved
+10.0.0.3 - Reserved
+10.0.0.4
+10.0.0.5
+.
+.
+.
+10.0.0.30
+10.0.0.31 - Reserved
+
+----------------
+
+10.0.0.0/24
+
+10.0.0.0 - IP Address
+/24 - subnet mask
+10.0.0.0/24 - IP address range/IP Address series/CIDR - Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses to devices/VM's on the internet
+
+the max subnet mask in networking is 32
+
+ 32
+-24
+-----
+8
+-----
+
+2 to the power of 8 is what 256, how many you can use = 251, 5 would be reserved by MS
+
+10.0.0.0 - Reserved
+10.0.0.1 - Reserved
+10.0.0.2 - Reserved
+10.0.0.3 - Reserved
+10.0.0.4
+10.0.0.5
+10.0.0.6
+.
+.
+.
+.
+.
+10.0.0.254
+10.0.0.255 - Reserved
+
+
+10.0.0.0/16
+
+ 32
+-16
+----
+16
+----
+
+2 to the power of 16 = 65,536, you can use 65531
+
+10.0.0.0 - Reserved
+10.0.0.1 - Reserved
+10.0.0.2 - Reserved
+10.0.0.3 - Reserved
+10.0.0.4
+10.0.0.5
+10.0.0.6
+.
+.
+.
+.
+.
+10.0.0.254
+10.0.0.255 - Reserved
+
+till here we got only 256 IP's
+
+10.0.1.0
+10.0.1.1
+10.0.1.2
+10.0.1.3
+10.0.1.4
+10.0.1.5
+.
+.
+.
+.
+10.0.1.255
+10.0.2.0
+10.0.2.1
+10.0.2.2
+10.0.2.3
+.
+.
+.
+10.0.2.254
+10.0.2.255
+10.0.3.0
+
+
+-----------------------------------------
+10.0.0.0/22
+
+ 32
+-22
+---
+10
+---
+
+2 to the power of 10 is 1024 (1024 - 5 = 1019 these many IP's we can use
+-------
+10.0.0.0/26
+
+ 32
+-26
+---
+6
+---
+
+2 to the power of 6 is 64, i can use 59 only
+
+----------
+
+10.0.0.0/24 - ?
+
+10.0.0.0 - IP address
+
+10.0.0.0/24 - IP Address Space/Range/CIDR
+
+/24 - Subnet mask
+
+the max subnet mask that we have is 32
+
+10.0.0.0/24
+
+ 32
+-24
+------
+8
+------
+
+2 to the power of 8 = 256 - 5 = 251 IP's can be used/we can create 251 VM's in 10.0.0.0/24
+
+10.0.0.0 - Reserved by Azure
+10.0.0.1 - Reserved by Azure
+10.0.0.2 - Reserved by Azure
+10.0.0.3 - Reserved by Azure
+10.0.0.4
+10.0.0.5
+.
+.
+.
+.
+.
+10.0.0.254
+10.0.0.255 - Reserved by Azure
+-----------------------------------------
+---------------------------
+
+10.0.0.0/24 - Subnet - IP Address Space/IP Address Range
+10.0.0.0 - IP Address
+/24 - subnet mask
+
+32 - is the max subnet max that we can go ahead and allocate
+
+ 32
+-24
+-----
+8
+-----
+
+2 to the power of 8 is 256 - 5 = 251
+
+10.0.0.0 - Reserved by MS
+10.0.0.1 - Reserved by MS
+10.0.0.2 - Reserved by MS
+10.0.0.3 - Reserved by MS
+10.0.0.4
+10.0.0.5
+.
+.
+.
+.
+.
+10.0.0.254
+10.0.0.255 - Reserved by MS
+----------------------------
+
+-----------------------------------
+10.0.0.0 - IP address
+10.0.0.0/24 - IP address space/IP address range/CIDR
+
+/24 - subnet mask
+
+10.0.0.0/24
+
+max subnet mask is 32
+
+ 32
+-24
+------
+8
+------
+
+2 to the power of 8 is 256
+
+256 - 5 = 251 - i can use only 251 IP's
+
+
+10.0.0.0 - Reserved
+10.0.0.1 - Reserved
+10.0.0.2 - Reserved
+10.0.0.3 - Reserved
+10.0.0.4
+10.0.0.5
+10.0.0.6
+.
+.
+.
+.
+10.0.0.254
+10.0.0.255 - Reserved
+--------------
+
+10.0.0.0/16
+
+ 32
+-16
+------
+16
+------
+2 to the power of 16 is 65536 - 5 = 65531
+
+10.0.0.0 - Reserved
+10.0.0.1 - Reserved
+10.0.0.2 - Reserved
+10.0.0.3 - Reserved
+10.0.0.4
+10.0.0.5
+10.0.0.6
+.
+.
+.
+.
+10.0.0.254
+10.0.0.255 - Reserved
+10.0.1.0
+10.0.1.1
+10.0.1.2
+.
+.
+.
+10.0.1.255
+10.0.2.0
+-------------
+10.0.0.0/25
+
+ 32
+-25
+------
+7
+------
+2 to the power of 7 is 128 - 5 = 123
+
+
+10.0.0.0 - Reserved
+10.0.0.1 - Reserved
+10.0.0.2 - Reserved
+10.0.0.3 - Reserved
+10.0.0.4
+10.0.0.5
+10.0.0.6
+.
+.
+.
+.
+10.0.0.119
+10.0.0.120
+10.0.0.121
+10.0.0.122 - Reserved
+
+
+
+----------------------------
+10.0.0.0/16
+10.0.0.0/17
+10.0.0.0/18
+10.0.0.0/19
+----------------------------
+10.0.0.0/24 - IP address range/CIDR
+
+CIDR - CIDR (Classless Inter-Domain Routing) -- also known as supernetting -- is a method of assigning Internet Protocol (IP) addresses that improves the efficiency of address distribution and replaces the previous system based on Class A, Class B and Class C networks.
+
+/24 - Subnet mask
+
+What is Subnet Mask?
+A subnet mask is a 32 bits address used to distinguish between a network address and a host address in IP address. A subnet mask identifies which part of an IP address is the network address and the host address. They are not shown inside the data packets traversing the Internet. They carry the destination IP address, which a router will match with a subnet.
+
+10.0.0.0/24
+
+Maximum subnet mask is 32
+
+ 32
+-24
+-----
+ 8
+----
+
+2 to the power of 8 is 256
+
+We can only use 251
+
+5 would be reserved by Azure
+
+10.1.0.0
+10.1.0.1
+10.1.0.2
+10.1.0.3
+10.1.0.4
+10.1.0.5
+10.1.0.6
+10.1.0.255
+
+
+
+
+--------------------
+10.0.0.0/16 - IP Address Range/CIDR/Subnet
+
+/16 - Subnet mask
+
+ 32 - Maximum subnet mask
+-16
+----
+ 16
+----
+
+2 to the power of 16
+
+65,536
+
+5 IP's would be reserved by MS Azure
+
+65531 - We can use them
+
+
+---------
+10.0.0.0
+10.0.0.1
+10.0.0.2
+10.0.0.3
+10.0.0.4
+10.0.0.5
+10.0.0.6
+10.0.0.255
+10.0.1.0
+10.0.1.1
+10.0.1.2
+10.0.1.3
+10.0.1.255
+10.0.2.0
+10.0.2.1
+10.0.2.255
+10.0.3.0
+10.0.3.1
+10.0.3.2
+10.0.3.255
+10.0.4.0
+------------------
+10.0.0.0/27
+
+ 32
+-27
+---
+ 5
+
+2 to the power of 5
+
+32
+
+5 ip's would be reserved by MS Azure
+
+27 can be used
+
+10.0.0.0 - Reserved
+10.0.0.1 - Reserved
+10.0.0.2 - Reserved
+10.0.0.3 - Reserved
+10.0.0.4
+10.0.0.5
+10.0.0.6
+10.0.0.7
+10.0.0.8
+10.0.0.9
+10.0.0.10
+10.0.0.11
+10.0.0.12
+10.0.0.12
+10.0.0.14
+10.0.0.15
+10.0.0.16
+10.0.0.17
+10.0.0.18
+10.0.0.19
+10.0.0.20
+10.0.0.21
+10.0.0.22
+10.0.0.23
+10.0.0.24
+10.0.0.25
+10.0.0.26 - Reserved
+------------------------
+10.0.0.0/29 - IP Address Space/CIDR
+
+
+
+
+ 32
+-29
+-------
+ 3
+
+2 to the power of 3 is 8
+
+5 ip's would be reserved by MS Azure
+
+3 can be used
+
+IP address space: 10.0.0.0 - 10.0.0.7 (8 addresses)
+
+10.0.0.0 - Network address
+10.0.0.1 - Reserved by Azure for the default gateway
+10.0.0.2 - Reserved by Azure to map the Azure DNS IPs to the VNet space
+10.0.0.3 - Reserved by Azure to map the Azure DNS IPs to the VNet space
+10.0.0.4 - vm1 - 20.115.15.6
+10.0.0.5 - vm2 - 20.42.17.101
+10.0.0.6 - vm3 - 20.42.14.172
+10.0.0.7 - Network broadcast address.
+
+Azure@123456789
+----------------------
+10.0.0.0/28
+
+ 32
+-28
+----
+4
+-----
+2 to the power of 4 is 16 - 5 = 11 - 3 = 8 more VM's
+
+10.0.0.0 - Network address
+10.0.0.1 - Reserved by Azure for the default gateway
+10.0.0.2 - Reserved by Azure to map the Azure DNS IPs to the VNet space
+10.0.0.3 - Reserved by Azure to map the Azure DNS IPs to the VNet space
+10.0.0.4 - vm1 - 20.232.98.241
+10.0.0.5 - vm2 - 20.232.99.77
+10.0.0.6 - vm3 - 20.163.164.221
+10.0.0.7
+10.0.0.8
+10.0.0.9
+10.0.0.10
+10.0.0.11
+10.0.0.12
+10.0.0.13
+10.0.0.14
+10.0.0.15- Network broadcast address.
+
+
+2 subnets:
+
+10.0.0.0/16 - 65536 - 5 = 65531 - 16 = 
+
+10.0.0.0/28 - 16 IP's
+10.0.0.0/24 - 256
+10.0.0.0/22 - 1024
+10.0.0.0/21 - 2048
+10.0.0.0/17 - 32768
+
+=============================
+10.0.0.0/24
+
+ 32
+-24
+---
+8
+
+2 to the power of 8 is 256 - 5 = 251 IP's
+
+10.0.0.0 - Reserved
+10.0.0.1 - Reserved
+10.0.0.2 - Reserved
+10.0.0.3 - Reserved
+10.0.0.4
+.
+.
+.
+10.0.0.254
+10.0.0.255 - Reserved
+
+---
+10.0.0.0/30
+
+ 32
+-30
+---
+2
+
+2 to the power of 2 is 4 - 5 = -1
+
+
+ - Reserved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14.76.180.6/24
+
+
+10.0.0.0/28
+
+ 32
+ 28
+----
+4
+
+16 - 5 = 11 - 3 = 8 more VMs i can create
+----------------------------------
+10.0.0.0/16
+
+ 32 
+-16
+---
+16
+----
+2 to the power of 16 is 65536 - 5 = 65531
+65536
+65531
+Company Name: ABC Ltd
+Company Age: 10 years
+Company Size: 60,000 - 61000
+Env: On-Prem - Cost, manpower, maintainence, management, downtime, security
+Migrate to Azure Cloud: 60,000
+
+Internal IT Support Team of ABC Ltd
+
+
+Test VM
+
+When MS sends the updates, this IT team would manually Download the updates, then install them in the test machine, if everything works, they push the updates to 
+
+ITDept - 2000
+/21
+
+32
+21
+---
+11
+----
+2048
+
+Sales - 3000
+/20
+HR - 500
+/23
+Mkt - 20000
+Admin - 800
+Logistics - 5000
+Finance - 10000
+-------------------------
+10.0.0.0/16
+
+
+myVNET
+
+10.0.0.0/16
+
+ 32
+-16
+----
+16
+
+2 to the power of 16 is 65536
+
+65531 - 60000 = 5531
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+76.98.45.88
+76.98.45.89
+76.98.45.90
+76.98.45.91
+76.98.45.92
+76.98.45.93
+76.98.45.94
+76.98.45.95
+
+------------------------
+10.0.0.0/28
+
+ 32
+-28
+----
+4
+2 to the power of 4 is 16
+
+5 ip's would be reserved by MS Azure
+
+11 can be used
+
+------------------------
+10.0.0.0/20
+
+ 32
+-20
+-------
+ 12
+
+2 to the power of 12 is 4096
+
+5 ip's would be reserved by MS Azure
+
+https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq
+
+Are there any restrictions on using IP addresses within these subnets?
+Yes. Azure reserves the first four and last IP address for a total of 5 IP addresses within each subnet.
+
+For example, the IP address range of 192.168.1.0/24 has the following reserved addresses:
+
+192.168.1.0 : Network address
+192.168.1.1 : Reserved by Azure for the default gateway
+192.168.1.2, 192.168.1.3 : Reserved by Azure to map the Azure DNS IPs to the VNet space
+192.168.1.255 : Network broadcast address.
+------------------------
+10.0.0.0/30
+
+ 32
+30
+
+/1
+
+32
+
+
+
+
+
+
+
+
+
+
+
