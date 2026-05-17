@@ -28,4 +28,12 @@ vnet - settings - peering - add <br>
 <img width="1203" height="596" alt="image" src="https://github.com/user-attachments/assets/856f8b70-00b2-4520-b6b3-5b206dadb4af" />
 <br>
 Name - vnet 1 to vnet 2 <br>
-<img width="1027" height="606" alt="image" src="https://github.com/user-attachments/assets/8220cc63-2b60-4774-92af-32301d2e17dd" />
+<img width="1027" height="606" alt="image" src="https://github.com/user-attachments/assets/76038c01-7f03-4d62-ba99-8acbeba5ce1a" />
+<br>
+vnet 2 to vnet1
+<img width="1103" height="605" alt="image" src="https://github.com/user-attachments/assets/2cc14d96-5ae0-4aec-9e85-713a30f91408" />
+<br>
+<img width="1391" height="416" alt="image" src="https://github.com/user-attachments/assets/4e985ff9-eec7-40f8-a087-1e210ae7f41e" />
+
+# create one vm in vnet1 and one vm in vnet2 and try to ping them
+
