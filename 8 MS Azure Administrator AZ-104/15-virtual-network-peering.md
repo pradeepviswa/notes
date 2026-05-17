@@ -33,7 +33,8 @@ Name - vnet 1 to vnet 2 <br>
 vnet 2 to vnet1
 <img width="1103" height="605" alt="image" src="https://github.com/user-attachments/assets/2cc14d96-5ae0-4aec-9e85-713a30f91408" />
 <br>
-<img width="1391" height="416" alt="image" src="https://github.com/user-attachments/assets/4e985ff9-eec7-40f8-a087-1e210ae7f41e" />
+<img width="1385" height="427" alt="image" src="https://github.com/user-attachments/assets/231eae5b-ae25-4167-95b0-c7ef45246ee5" />
+<br>
 
 # create one vm in vnet1 and one vm in vnet2 and try to ping them
 
