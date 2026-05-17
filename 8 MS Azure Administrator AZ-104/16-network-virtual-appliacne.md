@@ -13,7 +13,19 @@ https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-ta
 
 <br>
 
+DMZ we create NVA <br>
+<img width="957" height="626" alt="image" src="https://github.com/user-attachments/assets/4fc40cfe-f904-47e8-b75a-72047d9073e4" />
 
+<br>
+create 4 subnets <br>
+other than document + <br>
+<img width="1046" height="606" alt="image" src="https://github.com/user-attachments/assets/11ba3ba3-434c-43aa-9c88-282069e47346" />
+
+<br>
+all subnets <br>
+<img width="953" height="547" alt="image" src="https://github.com/user-attachments/assets/bd22f69a-a9b2-42a4-a313-2eb2929f13a5" />
+<br>
+using /16 we have created 4 subnets <br>
 
 
 
