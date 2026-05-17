@@ -117,7 +117,8 @@ tracepath vm-private
 traffice is going via nva machine
 <br>
 <img width="587" height="140" alt="image" src="https://github.com/user-attachments/assets/9dd485a4-6818-4321-89a1-8bbd8733d7fc" />
-
+<br>
+so here we have learned vm-public and vm-private are not directly connected and are in 2 different networks. they both are connecting each other via nva vm.
 
 
 
