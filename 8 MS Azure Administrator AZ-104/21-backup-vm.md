@@ -20,14 +20,17 @@ create new backup policy
 <img width="1407" height="604" alt="image" src="https://github.com/user-attachments/assets/7e569e57-34ac-4fc5-bb97-610adb9a8674" />
 
 <br>
+vm created go to vm resoruce
+<br>
+backup option
+<br>
+<img width="1296" height="671" alt="image" src="https://github.com/user-attachments/assets/1116f492-caff-4ea3-a1cf-1e807deede52" />
 
 <br>
-
+in recovery vault also we can configure VM backup
 <br>
+<img width="1416" height="568" alt="image" src="https://github.com/user-attachments/assets/cc52c22c-4ea9-42c2-b942-75d36d9a31f2" />
 
-<br>
-
-<br>
 
 <br>
 
