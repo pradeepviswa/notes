@@ -1,3 +1,7 @@
+# agenda
+<img width="1160" height="407" alt="image" src="https://github.com/user-attachments/assets/bf394c80-1b8d-49f9-b8e5-1b2d6a8394cc" />
+<br>
+<br>
 <img width="1283" height="528" alt="image" src="https://github.com/user-attachments/assets/d156ad85-9e79-432b-9ad0-31a48b4c6aa8" /><img width="778" height="660" alt="image" src="https://github.com/user-attachments/assets/b490ed53-f4c1-4c98-9b8e-0599b7f10e7a" /># Netowrk
 Ip subnet /24 - thre are total 256 IPS, but we get only 251 IPs only. <br>
 belwo ips are resereved by Azure cloud serviec provider:
