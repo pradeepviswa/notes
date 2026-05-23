@@ -67,18 +67,33 @@ create backup policy as per  need
 
 
 <br>
+<img width="1408" height="203" alt="image" src="https://github.com/user-attachments/assets/74120871-a260-4c5e-8c5c-704473195f89" />
+
+<br>
+click on viwe details <br>
+<img width="1188" height="425" alt="image" src="https://github.com/user-attachments/assets/47113346-487d-48b3-9e6c-c880145efdc1" />
 
 
 <br>
 
+<img width="1375" height="599" alt="image" src="https://github.com/user-attachments/assets/0a347789-d011-4942-8d08-a0511b2816d3" />
 
 <br>
+delete all files <br>
+<img width="1374" height="526" alt="image" src="https://github.com/user-attachments/assets/1e85164d-01c3-4f0f-a40e-155629a02d48" />
 
 
 <br>
-
+go to backup and restore. we can restore from recovery vault as well<br>
+<img width="1419" height="634" alt="image" src="https://github.com/user-attachments/assets/bb179a17-79f8-46e4-8a32-6268bbb72cdd" />
 
 <br>
+<img width="1011" height="535" alt="image" src="https://github.com/user-attachments/assets/840c5545-4ece-4558-ac80-a68a127f3aee" />
 
+<br>
+add > select files aned restore <br>
+<img width="1476" height="548" alt="image" src="https://github.com/user-attachments/assets/ee3f673d-fa10-44d8-be99-595aaff82139" />
 
-
+<br>
+browse > you can see all 3 files again
+<img width="703" height="449" alt="image" src="https://github.com/user-attachments/assets/6eabda8a-d92c-4cb2-a147-37eb0020b145" />
