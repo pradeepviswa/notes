@@ -41,12 +41,10 @@ automation account will get created automatically in background
 <img width="920" height="607" alt="image" src="https://github.com/user-attachments/assets/481eef0c-bc89-424d-9b0c-5ef45fdc116f" />
 
 <br>
-once done name of VM will apepar here
+once done name of VM will apepar here in Backup items and replicated items
 <br>
+<img width="1421" height="622" alt="image" src="https://github.com/user-attachments/assets/be540f0a-bed8-4028-af04-5c9ac83a4e9d" />
 
 <br>
 
-<br>
-
-<br>
 
