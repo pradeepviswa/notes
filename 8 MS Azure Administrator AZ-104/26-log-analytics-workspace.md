@@ -129,11 +129,27 @@ got to logs
 <img width="1260" height="647" alt="image" src="https://github.com/user-attachments/assets/4240f1ee-de45-4d02-ad8b-147b414a8eab" />
 
 <br>
-query logs using pre defined 
+query logs using pre defined AQL
 <br>
 <img width="1072" height="588" alt="image" src="https://github.com/user-attachments/assets/6c30cce9-c865-457c-87ef-1489146728cd" />
 
 <br>
+<img width="1165" height="381" alt="image" src="https://github.com/user-attachments/assets/efa88bd2-ee5a-48d9-91b5-6e61640ad8c3" />
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
 
 
 
