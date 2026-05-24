@@ -38,6 +38,32 @@ go to detail and create aleart rule
 <br>
 
 <br>
+do something to increase CPU utilization
+<br>
+<img width="1070" height="403" alt="image" src="https://github.com/user-attachments/assets/9ecb91fc-e9f0-480d-8fda-ae624976fa7d" />
+
+<br>
+keep on refreshing 
+<br>
+<img width="1439" height="568" alt="image" src="https://github.com/user-attachments/assets/0a7f77b9-080d-40c5-8b88-cb9a4c361a80" />
+
+<br>
+email also triggered
+<br>
+<img width="1103" height="565" alt="image" src="https://github.com/user-attachments/assets/17c3b2f0-5059-4c5d-9066-c7101ab2d55b" />
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
 
 <br>
 
