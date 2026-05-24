@@ -72,3 +72,5 @@ click on aleart, and acknowledge it
 
 <br>
 
+# close the alert ocne issue addressed
+<img width="1426" height="650" alt="image" src="https://github.com/user-attachments/assets/a059d8be-c303-447b-8498-daccc9256e8e" />
