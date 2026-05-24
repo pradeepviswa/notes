@@ -3,3 +3,7 @@
 refer: https://github.com/pradeepviswa/notes/blob/main/8%20MS%20Azure%20Administrator%20AZ-104/17-load-balancer.md
 
 <br>
+avoid bastion 
+only one zone is enough
+
+
