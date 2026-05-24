@@ -15,14 +15,13 @@
 
 <br>
 <img width="814" height="601" alt="image" src="https://github.com/user-attachments/assets/105e7e64-3a2e-48cc-b6c1-aeeab0375a7d" />
-
+<br>
+choose Enabel site recovery
 <br>
 <img width="511" height="185" alt="image" src="https://github.com/user-attachments/assets/f7f0ff25-096b-454a-9954-b93cd2914fd0" />
 
 <br>
 enable replication for VM
-<br>
-<img width="316" height="375" alt="image" src="https://github.com/user-attachments/assets/182898a8-531f-48ba-9dc1-a17c4f243ec2" />
 <br>
 <img width="544" height="414" alt="image" src="https://github.com/user-attachments/assets/ce4f9f78-2b0f-4ebd-9eae-e0a09db2f6cc" />
 
