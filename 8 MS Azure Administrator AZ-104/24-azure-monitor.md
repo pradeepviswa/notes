@@ -63,7 +63,7 @@ click on aleart, and acknowledge it
 <br>
 
 <br>
-# as a remediation upscale the vm
+# as a remediation upscale the vm, this will restart vm
 <br>
 <img width="953" height="569" alt="image" src="https://github.com/user-attachments/assets/c0524362-37f5-43f3-96d9-fbe87506384c" />
 
