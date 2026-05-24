@@ -100,7 +100,7 @@ add destination
 <img width="728" height="398" alt="image" src="https://github.com/user-attachments/assets/d893909f-94ea-41d1-8606-9ce0fd299625" />
 
 <br>
-****<img width="898" height="599" alt="image" src="https://github.com/user-attachments/assets/4df0604c-97d2-459a-b820-bfe3eb1129e6" />
+<img width="898" height="599" alt="image" src="https://github.com/user-attachments/assets/4df0604c-97d2-459a-b820-bfe3eb1129e6" />
 
 <br>
 add one more data source
@@ -112,6 +112,26 @@ add one more data source
 add one mor edta soruce, windows events and select all
 <br>
 <img width="834" height="608" alt="image" src="https://github.com/user-attachments/assets/2e1f46b0-a558-4d08-8336-4de476789ebb" />
+
+<br>
+
+add vm
+
+<br>
+
+<img width="1015" height="579" alt="image" src="https://github.com/user-attachments/assets/1ee35d50-b58d-4509-81f7-21c3f8f05b10" />
+<br>
+
+<br>
+got to logs
+
+<br>
+<img width="1260" height="647" alt="image" src="https://github.com/user-attachments/assets/4240f1ee-de45-4d02-ad8b-147b414a8eab" />
+
+<br>
+query logs using pre defined 
+<br>
+<img width="1072" height="588" alt="image" src="https://github.com/user-attachments/assets/6c30cce9-c865-457c-87ef-1489146728cd" />
 
 <br>
 
