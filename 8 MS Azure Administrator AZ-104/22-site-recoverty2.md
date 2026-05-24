@@ -23,6 +23,8 @@
 enable replication for VM
 <br>
 <img width="316" height="375" alt="image" src="https://github.com/user-attachments/assets/182898a8-531f-48ba-9dc1-a17c4f243ec2" />
+<br>
+<img width="544" height="414" alt="image" src="https://github.com/user-attachments/assets/ce4f9f78-2b0f-4ebd-9eae-e0a09db2f6cc" />
 
 <br>
 <img width="822" height="365" alt="image" src="https://github.com/user-attachments/assets/679bb019-558f-4094-9b54-9d9636361973" />
