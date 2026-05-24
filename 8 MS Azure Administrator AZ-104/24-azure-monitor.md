@@ -56,16 +56,19 @@ email also triggered
 <br>
 
 <br>
+click on aleart, and acknowledge it
+<br>
+<img width="1410" height="685" alt="image" src="https://github.com/user-attachments/assets/636f8ea5-2fb9-4f30-a293-f4582aec53d1" />
 
 <br>
 
 <br>
+# as a remediation upscale the vm
+<br>
+<img width="953" height="569" alt="image" src="https://github.com/user-attachments/assets/c0524362-37f5-43f3-96d9-fbe87506384c" />
 
 <br>
-
-<br>
-
-<br>
+<img width="1163" height="582" alt="image" src="https://github.com/user-attachments/assets/54ba4a07-9aa5-437f-af10-98a5d9b0ded1" />
 
 <br>
 
