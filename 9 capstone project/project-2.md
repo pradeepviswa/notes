@@ -9,3 +9,6 @@ BankPro, a leading financial services company, operates a multi-cloud infrastruc
 
 As a DevOps Engineer at BankPro, you are tasked with automating the CI/CD pipeline for the core banking microservice using Jenkins, Ansible, and Docker. The project involves setting up an efficient multi-cloud deployment strategy, ensuring seamless integration between AWS and Azure VMs, and enabling continuous delivery of the application updates. Your role is to implement a robust solution that automates the build, test, and deployment processes, reducing downtime and improving service availability for BankPro’s customers.
 
+
+# rought wrok, as per info shared by trainer
+google docs page: https://docs.google.com/document/d/1r6u2vYOEJhxjHmUYU65KO9gfz9faDQesA4jKM0u3QzE/edit?usp=sharing
