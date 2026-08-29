@@ -24,3 +24,16 @@
     - data centers (contains servers, storage, network, and power cooling)
   - availability zones 3
     - data centers (contains servers, storage, network, and power cooling)
+
+> sla clculator: https://uptime.is
+> 99.9% means 1 min downtime every day
+> for no downtiem need DR site
+
+## DR
+- Region pairing can ensure 100% uptime
+- DR architecture has 4 strategies
+  - backup and restore (this takes time)
+  - Pilot light (choose services for always availale)
+  - warm standby (resources are available in other revion with less capacity)
+  - multi site active-active architecture (both sites always available) this takes very less time
+> azure doesn't commit SLA on multi-site stragety
