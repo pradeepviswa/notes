@@ -12,7 +12,8 @@
 - Azure VM
   - alert for VM (iuf cpu utilization is > 80% then send email)
  
-## CPU load increase script
+### CPU load increase script
+> loadTest.bat
 ```
 @echo off
 setlocal
