@@ -29,7 +29,7 @@ additional solution some 3rd party api
 
 ## Analyze
 - metric explorer (measurement of performance) for example we have 
-  - cput utilization
+  - cpu utilization
   - incoming traffic
 
 ## Log analytics
@@ -37,3 +37,23 @@ additional solution some 3rd party api
 
 ## visualization
 - dashboards
+
+## workbooks
+
+## Respond
+ - actions
+
+
+
+> visit for more information https://github.com/riteshbehal/Designing-Azure-Infrastructure-Solutions-AZ-305/tree/main/1%20Design%20Monitoring
+
+# Alert on VM
+ - alert rule on VM
+   - decide scope of resource
+     - add signal (cpu utilization)
+       - add condition (if avg cpu is > 80% fo continuously 3 mins then send email)
+         - Fire of alert  
+> since we are studing monitoring, we can do it on web app, SQL DBs, VMs. go through github repo mentioned above.
+
+
+
