@@ -33,3 +33,11 @@ review + create
 Under table -> security -> event -> click on `run`
 <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/cda9051f-1bfe-4c3e-a4a2-62ce1c6cdc27" />
 
+### Go to KQL mode
+<img width="152" height="139" alt="image" src="https://github.com/user-attachments/assets/900f3f91-b27c-4f44-9adb-4ec2393f38ba" />
+
+### few queries
+```
+Event | top 10 by TimeGenerated
+Event | where TimeGenerated > ago (5min)
+```
