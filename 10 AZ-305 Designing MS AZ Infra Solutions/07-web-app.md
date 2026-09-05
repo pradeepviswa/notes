@@ -16,3 +16,17 @@ web app summary
 <img width="585" height="601" alt="image" src="https://github.com/user-attachments/assets/d11a6ca4-4d9d-467c-93e6-b81544fbbcdb" />
 
 create it
+copy default domain
+<img width="660" height="52" alt="image" src="https://github.com/user-attachments/assets/69970113-fb7f-4320-ac73-2b811fbe5992" />
+
+
+open web app code editor
+<img width="947" height="337" alt="image" src="https://github.com/user-attachments/assets/ba6090da-c20f-474e-bd87-493fbfbbdc3a" />
+
+<img width="410" height="140" alt="image" src="https://github.com/user-attachments/assets/0567043c-6120-4496-bd2b-022d33605bcf" />
+
+<img width="697" height="582" alt="image" src="https://github.com/user-attachments/assets/b74db460-10d0-4978-adb7-dc1b9362433d" />
+
+public access allow
+
+<img width="635" height="550" alt="image" src="https://github.com/user-attachments/assets/1acbbbd7-a20e-4af6-a982-576c5d07cf75" />
