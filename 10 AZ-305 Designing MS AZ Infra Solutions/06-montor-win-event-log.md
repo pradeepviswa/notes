@@ -31,4 +31,5 @@ review + create
 
 ### logs should appear here
 Under table -> security -> event -> click on `run`
-<img width="892" height="326" alt="image" src="https://github.com/user-attachments/assets/a92d6c41-e1b8-4b1a-aa21-963667393753" />
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/cda9051f-1bfe-4c3e-a4a2-62ce1c6cdc27" />
+
