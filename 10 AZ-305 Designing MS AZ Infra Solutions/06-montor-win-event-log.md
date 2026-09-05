@@ -11,13 +11,24 @@ ther is a provisionc alled DCR - data collection rule
 this will send all the logs fro msystem to log analytics workspace
 
 # create Data Collection Rule
-<img width="731" height="636" alt="image" src="https://github.com/user-attachments/assets/a95e8307-f34d-4b75-9ccf-16f59a980e87" />
+<img width="782" height="732" alt="image" src="https://github.com/user-attachments/assets/e16125e0-afcf-4bcb-bccf-4cf634fcb545" />
+
 
 - add resource
-<img width="746" height="700" alt="image" src="https://github.com/user-attachments/assets/c722490e-743e-4faf-b10d-956cb6365f40" />
+  <img width="746" height="700" alt="image" src="https://github.com/user-attachments/assets/c722490e-743e-4faf-b10d-956cb6365f40" />
 
 - add vm
 <img width="442" height="287" alt="image" src="https://github.com/user-attachments/assets/f79fbbce-0adb-4774-a5e7-08a2d71c5e65" />
 
 - select windows evetn logs
-<img width="586" height="435" alt="image" src="https://github.com/user-attachments/assets/20da86e1-46d7-4f5e-8d2c-73090fb0a6ed" />
+  <img width="586" height="435" alt="image" src="https://github.com/user-attachments/assets/20da86e1-46d7-4f5e-8d2c-73090fb0a6ed" />
+
+
+- add new data source
+  <img width="477" height="557" alt="image" src="https://github.com/user-attachments/assets/5c191222-8acf-4e57-aae8-f21b2a075aeb" />
+
+review + create
+
+### logs should appear here
+Under table -> security -> event -> click on `run`
+<img width="892" height="326" alt="image" src="https://github.com/user-attachments/assets/a92d6c41-e1b8-4b1a-aa21-963667393753" />
