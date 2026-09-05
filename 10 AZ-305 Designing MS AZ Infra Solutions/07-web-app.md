@@ -30,3 +30,10 @@ open web app code editor
 public access allow
 
 <img width="635" height="550" alt="image" src="https://github.com/user-attachments/assets/1acbbbd7-a20e-4af6-a982-576c5d07cf75" />
+
+
+
+
+
+NS GLow logs documetn
+https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview
