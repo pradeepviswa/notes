@@ -68,3 +68,8 @@ try to access VMs, won't see anything
 - user can see and create virtual network only
 - try to delete existing virtual network, it will give error
 
+### compute permission
+-  create another cusome role under `compute`
+-  start, stop, create permision only
+-  and check delete VM
+
