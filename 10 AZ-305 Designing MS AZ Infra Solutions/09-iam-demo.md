@@ -71,5 +71,6 @@ try to access VMs, won't see anything
 ### compute permission
 -  create another cusome role under `compute`
 -  start, restart permision only
+-  <img width="563" height="307" alt="image" src="https://github.com/user-attachments/assets/50082a5e-a0e5-4a63-8348-5ff0ae84b899" />
 -  and check stop or delete VM, it should give error
 
