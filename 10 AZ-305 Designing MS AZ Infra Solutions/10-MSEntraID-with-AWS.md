@@ -1,5 +1,6 @@
 # integrate Microsoft Entra ID with AWS
 > https://github.com/riteshbehal/Aws-Solution-Architect/blob/main/IAM%20Labs/IAM%20IDENTITY%20CENTER.pdf
+> https://github.com/riteshbehal/Aws-Solution-Architect/blob/main/aws_sso.txt
 
 - Microsoft AD
   - Azure Account
