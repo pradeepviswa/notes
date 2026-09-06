@@ -1,0 +1,51 @@
+# Identity and Access Management (IAM)
+### Identity
+it can be <br>
+- dev team
+- an applicaiton
+- azure vm
+- azure service
+- service 
+
+### Access
+what are the things you are allowed to do <br>
+example, user1 can access SQL database but cannot access Cosmos DB
+
+
+### authentication
+who are you. <br>
+login + Multi Factor Authentication (MFA)
+
+
+### Authorization
+what can you do <br>
+you can read the data, write the data, delete the data. <br>
+can be user / application / VM also
+
+### Identify
+who / what is requested <br>
+it can be person or service
+resources can be VM or storage or databse
+
+To control all these we have Microsoft Entra ID. <br>
+Previously this serviec called as Microsoft Active Directory
+
+# what Microsoft Entra ID contains
+in Microsoft Entra ID we have
+- users
+- groups
+- applications
+- service principle principles
+- managed identities
+- devices
+
+> this access managemnt can be done at multiple levels
+> when we work with RBAC (Resource Based Access Control)
+> We can give access on different scopes
+
+> this means we can give access at  ,anagement group level
+> mgmt group means we have multiple azure accounts group
+> you can give access on a `subscription` level also, means divide billing based on subscription
+> give permission on `resource group` level also. it is logical grouping of resources. all resources will be managed at RG level permission.
+> we can give permission on resource level, meast on VM or SQL serer.
+
