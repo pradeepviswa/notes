@@ -39,13 +39,12 @@ in Microsoft Entra ID we have
 - managed identities
 - devices
 
-> this access managemnt can be done at multiple levels
+### this access managemnt can be done at 4 levels
 > when we work with RBAC (Resource Based Access Control)
 > We can give access on different scopes
 
-> this means we can give access at  ,anagement group level
-> mgmt group means we have multiple azure accounts group
-> you can give access on a `subscription` level also, means divide billing based on subscription
-> give permission on `resource group` level also. it is logical grouping of resources. all resources will be managed at RG level permission.
-> we can give permission on resource level, meast on VM or SQL serer.
+1. this means we can give access at  management group level. mgmt group means we have multiple azure accounts group
+2. you can give access on a `subscription` level also, means divide billing based on subscription
+3. give permission on `resource group` level also. it is logical grouping of resources. all resources will be managed at RG level permission.
+4. we can give permission on resource level, meast on VM or SQL serer.
 
