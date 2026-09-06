@@ -70,6 +70,6 @@ try to access VMs, won't see anything
 
 ### compute permission
 -  create another cusome role under `compute`
--  start, stop, create permision only
--  and check delete VM
+-  start, restart permision only
+-  and check stop or delete VM, it should give error
 
