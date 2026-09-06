@@ -48,3 +48,4 @@ in Microsoft Entra ID we have
 3. give permission on `resource group` level also. it is logical grouping of resources. all resources will be managed at RG level permission.
 4. we can give permission on resource level, meast on VM or SQL serer.
 
+> Note: try to give least privileges to user. it means give only requried access to users
