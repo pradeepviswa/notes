@@ -13,9 +13,9 @@ This is preferred. Number on VMs increases.
 
 #### scaling terms
 #### Horizontal
-Horizontal +++++ `Scale Out`
+Horizontal +++++ `Scale Out` <br>
 Horizontal ------ `Scale In`
 #### Vertical
-Vertical  +++++ `scale up`
+Vertical  +++++ `scale up` <br>
 vertical scaling ------ `scale down`
 
