@@ -27,4 +27,4 @@ it defines
   - `Geographically`: LB is region specific. One LB in each Region
   - `Ramdom`: LB randomly decide which instance to choose
 
-  
+  refer for multi region LB: https://github.com/riteshbehal/architecting-on-aws/tree/master/13.%20AWS_Global_Accelerator
