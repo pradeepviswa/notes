@@ -44,6 +44,7 @@
 - healthprobe: select
 
   
-<img width="952" height="571" alt="image" src="https://github.com/user-attachments/assets/4942e898-f05a-4b5c-997c-b023965d41d6" />
+<img width="922" height="590" alt="image" src="https://github.com/user-attachments/assets/f9f57ed4-2b43-4c53-bccc-6ff8b7814071" />
 
 
+refer lab: https://github.com/pradeepviswa/Azure-Administrator/blob/main/Networking/6%20Standard%20Load%20Balancer%20Set.pdf
