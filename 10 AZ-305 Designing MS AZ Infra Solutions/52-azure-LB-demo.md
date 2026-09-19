@@ -26,6 +26,24 @@
 - backend pool: name `backednpooldemo1`, VNET `central india`, add server `web1 and web2`
 - review + create
 
+### summary
+<img width="1030" height="262" alt="image" src="https://github.com/user-attachments/assets/7d84ab98-d267-4f5b-be34-71a4032d1ddf" />
+
+### health probbe
+- add : name `healthprobe`, protocol `http`, port `80`, path `/`, interval `5` (checks health in every 5 seconds)
+- save
+
+### load balancing rule
+- add --> name: `loadbalancerrule1`
+- ip version `IP4`
+- frontend ip: `select`
+- backend `pool`
+- protocol: `tcp`
+- port `80`
+- backend port `80`
+- healthprobe: select
+
+  
 <img width="952" height="571" alt="image" src="https://github.com/user-attachments/assets/4942e898-f05a-4b5c-997c-b023965d41d6" />
 
 
