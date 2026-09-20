@@ -1,7 +1,7 @@
 # Synapse demo
 <img width="242" height="117" alt="image" src="https://github.com/user-attachments/assets/f52485f2-e78e-4050-8ff8-a3108406a5d9" />
 
-# creae storage account
+# pre-requisite: creae storage account first
 standard storage account cannot be used with Synapse
 - new storage
 - simple storage account
