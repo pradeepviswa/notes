@@ -35,6 +35,9 @@ Install-WindowsFeature -name web-server
 - Install IIS
 - Same process. choose specialized image
 
+# where are the Images saved
+**Azure Compute Gallery** <br>
+<img width="992" height="512" alt="image" src="https://github.com/user-attachments/assets/3917a6af-4f3c-4772-a406-ae7ce1c2fecf" />
 
 
 # VM from Generalized Image
