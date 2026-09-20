@@ -37,11 +37,11 @@ Install-WindowsFeature -name web-server
 
 
 
-# VM from Generalized VM
+# VM from Generalized Image
 - new VM <br>
   <img width="510" height="282" alt="image" src="https://github.com/user-attachments/assets/45a336f1-5c66-4a74-bd5c-0360e7b6f085" /> <br>
 - set credential because old creds has been deleted <br>
   <img width="507" height="147" alt="image" src="https://github.com/user-attachments/assets/250453e0-95cd-4e09-a904-47f5d6979f82" />
 
-- 
+# VM From Specialized Image
 
