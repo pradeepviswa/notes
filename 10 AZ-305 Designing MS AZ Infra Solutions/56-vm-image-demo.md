@@ -26,23 +26,27 @@ $hostname = $env:COMPUTERNAME
 
 
 ### Clean up OS Remove machine specific values
-- delete Panther folder it contains system specific inforamtion
+- delete Panther folder it contains system specific inforamtion (restart VM if you get `folder in use` error
   `c:\Windows\Panther\`
-- if any issue in delete the kill the proccess isung
-  ```
-    Get-Process | Where-Object {
-        $_.Path -like "*Panther*"
-    } | Select-Object Id, ProcessName, Path
-
-  #then kill
-  Stop-Process -Id <PID> -Force
-  ```
 - run sysprep
   ```
   cd c:\WIndows\System32\Sysprep\
   sysprep.exe /generalize /shutdown
   ```
   <img width="585" height="352" alt="image" src="https://github.com/user-attachments/assets/1163b675-785e-418d-a541-5d16af02d480" />
+- In Azure portal, go to VM -> Capture -> Image
+  <img width="77" height="37" alt="image" src="https://github.com/user-attachments/assets/e0bedfc0-f234-4a6b-8f76-2dbe05a82bb0" />
+  - choose RG and Region
+  - name
+  - OS State: select `generalize` option
+  - target VM Image: create new
+      - VM  Name
+  - versonnumber: 1.0.0
+  - This takes approx 10 mins
 
-  
+# VM  Image - specialized
+- Create a new VM
+- Install IIS
+- 
+Same process. choose specialized image
 
