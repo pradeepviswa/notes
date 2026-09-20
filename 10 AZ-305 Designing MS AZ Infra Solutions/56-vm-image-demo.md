@@ -5,22 +5,8 @@ Create a VM and install IIS
 ```
 # install IIS
 Install-WindowsFeature -name web-server
-
 # create sample web page
-$hostname = $env:COMPUTERNAME
-
-@"
-<!DOCTYPE html>
-<html>
-<head>
-    <title>IIS Hostname Test</title>
-</head>
-<body>
-    <h1>Demo web site</h1>
-    <h2>Hostname: $hostname</h2>
-</body>
-</html>
-"@ | Set-Content "C:\inetpub\wwwroot\index.html"
+"<h1>Demo web site</h1> <h2>Hostname: $($env:COMPUTERNAME)</h2>" | Set-Content "C:\inetpub\wwwroot\index.html"
 ```
 <img width="307" height="277" alt="image" src="https://github.com/user-attachments/assets/4cb217d9-e669-41ba-b2bb-4ca809110418" />
 
@@ -47,6 +33,15 @@ $hostname = $env:COMPUTERNAME
 # VM  Image - specialized
 - Create a new VM
 - Install IIS
+- Same process. choose specialized image
+
+
+
+# VM from Generalized VM
+- new VM <br>
+  <img width="510" height="282" alt="image" src="https://github.com/user-attachments/assets/45a336f1-5c66-4a74-bd5c-0360e7b6f085" /> <br>
+- set credential because old creds has been deleted <br>
+  <img width="507" height="147" alt="image" src="https://github.com/user-attachments/assets/250453e0-95cd-4e09-a904-47f5d6979f82" />
+
 - 
-Same process. choose specialized image
 
