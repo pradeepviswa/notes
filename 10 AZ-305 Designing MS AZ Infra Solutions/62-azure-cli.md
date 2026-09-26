@@ -44,11 +44,28 @@ az network vnet create --name "app-network" --resource-group "demo-grp" --subnet
 az network vnet subnet create -n "SubnetB" --address-prefixes 10.0.1.0/24 -g "demo-grp" --vnet-name "app-network"
 ```
 
+
+### get vm image list
+```
+az vm image list --output table
+az vm list-sizes --location "Central India"
+```
+
 ### create VM
 VM List: `https://learn.microsoft.com/en-us/azure/virtual-machines/windows/cli-ps-findimage`
 ```
 az vm create -g "demo-grp" -n "appvm" --image Win2019Datacenter --admin-username "appusr"
 ```
+or
+```
+az vm create -g "demo-grp" -n "appvm" --image "MicrosoftWindowsServer:WindowsServer:2022-Datacenter:latest" --admin-username "appusr" --size "Standard_DS1_v2" --vnet-name "app-network" --subnet "SubnetA"
+```
 
 
-  
+### create separate disk and attach to VM
+
+```
+az disk create -n "data-disk" -g "demo-grp" -l "Central India" --size-gb 16
+
+az vm disk attach --vm-name "appvm" --lun 0 -g "demo-grp" -n "data-disk"
+```
