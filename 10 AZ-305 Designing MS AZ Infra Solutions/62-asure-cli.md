@@ -45,7 +45,7 @@ az network vnet subnet create -n "SubnetB" --address-prefixes 10.0.1.0/24 -g "de
 ```
 
 ### create VM
-VM List: https://az-vm-image.info/
+VM List: `https://learn.microsoft.com/en-us/azure/virtual-machines/windows/cli-ps-findimage`
 ```
 az vm create -g "demo-grp" -n "appvm" --image Win2019Datacenter --admin-username "appusr"
 ```
