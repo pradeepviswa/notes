@@ -15,6 +15,9 @@ winget upgrade --id Microsoft.PowerShell
 
 # in cmd or powershell type `pwsh` to enter PowerShell v7
 pwsh
+
+# install az module
+Install-Module -Name az
 ````
 
 ### connect
