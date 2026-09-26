@@ -69,3 +69,17 @@ az disk create -n "data-disk" -g "demo-grp" -l "Central India" --size-gb 16
 
 az vm disk attach --vm-name "appvm" --lun 0 -g "demo-grp" -n "data-disk"
 ```
+
+### create storage account
+
+```
+az storage account create -n "newstore4434432143" -g "demo-grp" --kind "StorageV2" --sku "Standard_LRS"
+```
+
+## Home Work
+- webapp
+- vm scale set
+```
+https://github.com/pradeepviswa/Azure-Administrator/blob/main/Azure%20CLI/08_webapp.azcli
+https://github.com/pradeepviswa/Azure-Administrator/blob/main/Azure%20CLI/09_VMscaleset.azcli
+```
