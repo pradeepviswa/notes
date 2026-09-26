@@ -1,6 +1,6 @@
 # AZ-305
 ## trainer infor
-- Instructor: Ritesh Behal
+- Instructor: Ritesh Behal (behal.ritesh@gmail.com)
 - refer https://github.com/riteshbehal/Designing-Azure-Infrastructure-Solutions-AZ-305/tree/main
 
 ## types of cloud
