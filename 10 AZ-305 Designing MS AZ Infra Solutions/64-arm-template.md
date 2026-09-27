@@ -38,3 +38,5 @@ we ca nuse it from
 }
 ```
 
+### online help
+https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview
