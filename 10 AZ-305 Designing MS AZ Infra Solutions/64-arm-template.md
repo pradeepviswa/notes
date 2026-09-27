@@ -40,3 +40,16 @@ we ca nuse it from
 
 ### online help
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview
+
+### lab
+> consider this template: https://github.com/pradeepviswa/Azure-Administrator/blob/main/ARM/Templates/Temp01.json%20(Creating%20Storage%20Account).json <br>
+> copy the content of above file <br>
+> in azure search for template: `Template deployment`
+> build your own template in editor
+> paste here the jason content <br>
+<img width="857" height="341" alt="image" src="https://github.com/user-attachments/assets/d61bf3a5-df02-431d-bcae-f38fd4af3439" />
+> run this <br>
+> choose subscription and Resource Group and region <br>
+> review + create <br>
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d4ce7be8-06ba-45f6-9ade-c1d41f7415b7" />
+
