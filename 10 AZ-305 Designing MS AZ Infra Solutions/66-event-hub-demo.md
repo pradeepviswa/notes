@@ -4,14 +4,14 @@
 <table>
  <Tr>
    <Td>
-<li>In azure search for event hub <br></li>
-- create a namesapce <br>
-- rg: rg1 <br>
-- namespace name: pradeepns1 <br>
-- regions: central india <br>
-- pricing tier: Basic <br>
-- Troughput: 1 <br>
-- review + create <br>
+<li> In azure search for event hub </li>
+<li> create a namesapce </li>
+<li> rg: rg1 </li>
+<li> namespace name: pradeepns1 </li>
+<li> regions: central india </li>
+<li> pricing tier: Basic </li>
+<li> Troughput: 1 </li>
+<li> review + create </li>
     
    </Td>
    <Td>
@@ -37,6 +37,8 @@
 - onc epolicy is created we get  connection string
 - <img width="727" height="826" alt="image" src="https://github.com/user-attachments/assets/de68611e-0414-4bf1-af2e-f666b7246b50" />
 
-
+### consume event hub
+- using chatgpt write a code to consume data from event hub
+- 
 
  
