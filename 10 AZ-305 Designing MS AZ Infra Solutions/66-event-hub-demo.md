@@ -4,14 +4,14 @@
 <table>
  <Tr>
    <Td>
-- In azure search for event hub
-- create a namesapce
-- rg: rg1
-- namespace name: pradeepns1
-- regions: central india
-- pricing tier: Basic
-- Troughput: 1
-- review + create
+- In azure search for event hub <br>
+- create a namesapce <br>
+- rg: rg1 <br>
+- namespace name: pradeepns1 <br>
+- regions: central india <br>
+- pricing tier: Basic <br>
+- Troughput: 1 <br>
+- review + create <br>
     
    </Td>
    <Td>
@@ -21,8 +21,12 @@
  </Tr>
  
 </table>
-<br>
-<br>
 
+
+### create even hub
+- name: pradeephub
+- <img width="726" height="832" alt="image" src="https://github.com/user-attachments/assets/c5d4883c-8f20-4130-8e3e-cf6df3c84e93" />
+- <br>
+- 
 
  
