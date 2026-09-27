@@ -20,3 +20,13 @@ Refer: https://github.com/pradeepviswa/Designing-Azure-Infrastructure-Solutions-
   - event hub 1: applicaiton logs
   - event hub 2: transaction logs
   - event hub 3: user clicks
+
+### components structure
+- produer: That sends data to event hub like web app, mobile logs, IOT devices, servers, Microservices, log collectors
+- event hub: data is sent to event hub
+- consumer: That receives data from event hub. example custom app, azure stream analytics service, databricks, apache spark, azure functions
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/516655d4-a879-42d1-9d75-0ae67c7b5fdc" />
+
+### partitions
+> It is a section of event hub which is used for distributing incoming traffic.
+> events hub will have multiple partitions, example P1, P2, P3 ands so on
