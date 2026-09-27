@@ -62,9 +62,7 @@ az deployment group create -- resource-group rg1 --template-file Temp01.json
 
 
 ### multiple storages via loop
-> refer: https://github.com/pradeepviswa/Azure-Administrator/blob/main/ARM/Templates/Temp03.json%20(Creating%20Vnet).json
-> <br>
-> loop logic, if we want 2 resources, we  have to mention `count: 3`
+> refer: https://github.com/pradeepviswa/Azure-Administrator/blob/main/ARM/Templates/Temp03.json%20(Creating%20Vnet).json <br>
 > go to template in azur again
 > build yoru own template
 > paste json contenet
