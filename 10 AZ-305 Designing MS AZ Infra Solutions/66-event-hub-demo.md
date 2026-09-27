@@ -39,6 +39,31 @@
 
 ### consume event hub
 - using chatgpt write a code to consume data from event hub
-- 
+program_consumer.cs
+```
+using Azure.Messaging.EventHubs.Consumer;
+
+string connectionString = "SECURE_CONNECTION_STRING";
+
+await using EventHubConsumerClient consumer =
+    new EventHubConsumerClient(
+        EventHubConsumerClient.DefaultConsumerGroupName,
+        connectionString,
+        eventHubName
+    );
+
+Console.WriteLine("Listening for Event Hub messages...");
+
+await foreach (PartitionEvent partitionEvent in consumer.ReadEventsAsync())
+{
+    string message = partitionEvent.Data.EventBody.ToString();
+
+    Console.WriteLine("----------------------------------");
+    Console.WriteLine($"Partition: {partitionEvent.Partition.PartitionId}");
+    Console.WriteLine($"Message: {message}");
+    Console.WriteLine($"Sequence: {partitionEvent.Data.SequenceNumber}");
+    Console.WriteLine($"Time: {partitionEvent.Data.EnqueuedTime}");
+}
+```
 
  
