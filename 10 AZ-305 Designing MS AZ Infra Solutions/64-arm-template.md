@@ -51,5 +51,5 @@ https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overvie
 > run this <br>
 > choose subscription and Resource Group and region <br>
 > review + create <br>
-<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d4ce7be8-06ba-45f6-9ade-c1d41f7415b7" />
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/d4ce7be8-06ba-45f6-9ade-c1d41f7415b7" />
 
