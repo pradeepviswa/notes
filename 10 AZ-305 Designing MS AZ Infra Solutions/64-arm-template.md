@@ -1,4 +1,4 @@
-# ARM Template
+<img width="952" height="565" alt="image" src="https://github.com/user-attachments/assets/0aeb1066-452b-4785-ac4e-44c2e8d873f8" /># ARM Template
 
 ### What is ARM Temaplate and why do we need it?
 ARM - Azure Resource Manager <br>
@@ -41,7 +41,8 @@ we ca nuse it from
 ### online help
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview
 
-### lab
+## lab
+### using Azure GUI - Run template manually
 > consider this template: https://github.com/pradeepviswa/Azure-Administrator/blob/main/ARM/Templates/Temp01.json%20(Creating%20Storage%20Account).json <br>
 > copy the content of above file <br>
 > in azure search for template: `Template deployment`
@@ -53,3 +54,22 @@ https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overvie
 > review + create <br>
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/d4ce7be8-06ba-45f6-9ade-c1d41f7415b7" />
 
+### using command
+> open cmd and make sure `az cli` is installed <br>
+```
+az deployment group create -- resource-group rg1 --template-file Temp01.json
+```
+
+
+### multiple storages via loop
+> refer: https://github.com/pradeepviswa/Azure-Administrator/blob/main/ARM/Templates/Temp03.json%20(Creating%20Vnet).json
+> <br>
+> loop logic, if we want 2 resources, we  have to mention `count: 3`
+> go to template in azur again
+> build yoru own template
+> paste json contenet
+
+### create virtual network
+> refer: https://github.com/pradeepviswa/Azure-Administrator/blob/main/ARM/Templates/Temp03.json%20(Creating%20Vnet).json <br>
+> again in azure --> template --> build yoru own template
+> and urn the template
