@@ -14,7 +14,7 @@ we ca nuse it from
 - add these templates to to CI/CD pipeline
 
  ### how template look like?
- 
+ > Refer: https://github.com/pradeepviswa/Azure-Administrator/tree/main/ARM/Templates
 ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
