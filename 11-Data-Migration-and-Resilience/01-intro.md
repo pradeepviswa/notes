@@ -1,4 +1,4 @@
-# cData Migration and Resilience
+# Data Migration and Resilience
 data migration from on-prem to cloud
 
 ### Basics of Data Migratration
