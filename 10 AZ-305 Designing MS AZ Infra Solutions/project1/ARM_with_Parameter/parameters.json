@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "centralindia"
+    },
+    "vmName": {
+      "value": "randVM01"
+    },
+    "vmSize": {
+      "value": "Standard_D2ds_v4"
+    },
+    "osImageSku": {
+      "value": "2025-Datacenter"
+    },
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "adminPassword": {
+      "value": "Password#123!"
+    },
+    "storageAccountName": {
+      "value": "randstorageacct01"
+    }
+  }
+}
