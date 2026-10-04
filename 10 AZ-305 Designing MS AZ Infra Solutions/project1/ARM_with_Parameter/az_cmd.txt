@@ -5,6 +5,7 @@ az group create --name RandRG01 --location centralindia
 az deployment group create --resource-group RandRG01 --name mainCentralIndia --template-file main.json --parameters @parameters.json
 
 
+
 Verification command: 
 ----------------------
 nslookup pvstorage111.blob.core.windows.net
@@ -12,7 +13,9 @@ nslookup pvstorage111.blob.core.windows.net
 
 Test Blob Reachability via PowerShell:
 ---------------------------------------
-Invoke-WebRequest -Uri "https://pvstorage111.blob.core.windows.net/con1/Screenshot%202026-03-01%20222000.png?<YOUR_SAS_TOKEN>"
+Invoke-WebRequest -Uri "<YOUR_BLOB_IMAGE_FILE_URL>?<YOUR_GENERATED_SAS_TOKEN>"
+
+
 
 
 DELETE Resource Group
