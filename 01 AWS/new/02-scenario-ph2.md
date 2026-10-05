@@ -1,63 +1,42 @@
-# Real-World Scenario: CloudPay E-Commerce Platform
+# Scenario Phase 2: CloudPay E-Commerce Platform (ECS Containerized Architecture)
 
-## Scenario Overview
-You are tasked with designing and building the cloud infrastructure for **CloudPay**, a multi-tier financial technology application. Users upload payment invoices (PDFs/Images), process them via backend application services, and persist transaction records in a database.
-
----
-
-## Architectural Requirements & Specifications
-
-### 1. High-Level Architecture Flow
-
-<img width="1032" height="705" alt="image" src="https://github.com/user-attachments/assets/64acc1c9-c152-4ab3-8b44-5b1b8ff66b19" />
-
-
+## Overview
+In this lab scenario, you will build the containerized microservices infrastructure for the **CloudPay** platform from scratch using **Amazon Elastic Container Service (ECS)** on **AWS Fargate**. The application is packaged into Docker containers, pushed to **Amazon ECR**, and deployed serverlessly across multiple Availability Zones with complete network isolation.
 
 ---
+
+## High-Level Architecture Flow (Pure ECS Lab)
+
+<img width="1023" height="540" alt="image" src="https://github.com/user-attachments/assets/4f1bb55b-2ef8-4398-a22b-b596ac94ff14" />
+
 
 ## Network & Subnet Topology
 
-| Layer | Subnet Type | CIDR Block | Availability Zone | Associated Gateway / Route | Target Workloads |
+| Layer | Subnet Name | CIDR Block | Availability Zone | Associated Gateway / Route | Target Workloads |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Edge / Public** | Public Subnet 1 | `10.0.1.0/24` | `ap-south-1a` | Internet Gateway (`IGW`) | Application Load Balancer (ALB), NAT Gateway |
-| **Edge / Public** | Public Subnet 2 | `10.0.11.0/24` | `ap-south-1b` | Internet Gateway (`IGW`) | Secondary Load Balancer Endpoint |
-| **Application** | Private Subnet 1 | `10.0.2.0/24` | `ap-south-1a` | NAT Gateway (`NAT-GW`) | EC2 Application Nodes / ECS Fargate Tasks |
-| **Application** | Private Subnet 2 | `10.0.12.0/24` | `ap-south-1b` | NAT Gateway (`NAT-GW`) | Secondary App Microservices |
-| **Database** | Private Subnet 1 | `10.0.3.0/24` | `ap-south-1a` | Local VPC Route Only | Amazon RDS PostgreSQL Primary |
-| **Database** | Private Subnet 2 | `10.0.13.0/24` | `ap-south-1b` | Local VPC Route Only | Amazon RDS PostgreSQL Standby |
+| **Public / Edge** | `Public-Subnet-1a` | `10.0.1.0/24` | `ap-south-1a` | Internet Gateway (`IGW`) | Application Load Balancer, NAT Gateway 1a |
+| **Public / Edge** | `Public-Subnet-2b` | `10.0.11.0/24` | `ap-south-1b` | Internet Gateway (`IGW`) | Application Load Balancer Standby Endpoint |
+| **Application** | `Private-App-Subnet-1a` | `10.0.2.0/24` | `ap-south-1a` | NAT Gateway (`NAT-GW-1a`) | Amazon ECS Fargate Tasks (Primary AZ) |
+| **Application** | `Private-App-Subnet-2b` | `10.0.12.0/24` | `ap-south-1b` | NAT Gateway (`NAT-GW-1a`) | Amazon ECS Fargate Tasks (Secondary AZ) |
+| **Database** | `Private-DB-Subnet-1a` | `10.0.3.0/24` | `ap-south-1a` | Local VPC Route Only | Amazon RDS PostgreSQL Primary |
+| **Database** | `Private-DB-Subnet-2b` | `10.0.13.0/24` | `ap-south-1b` | Local VPC Route Only | Amazon RDS PostgreSQL Standby |
 
 ---
 
-## Module-by-Module Progression Plan
+## Detailed Component Workflow (Pure ECS Lab)
 
-### Phase 1: Virtual Private Cloud (VPC) & Networking Setup
-- Provision `10.0.0.0/16` custom VPC across 2 Availability Zones (`ap-south-1a` and `ap-south-1b`).
-- Set up **Internet Gateway** for public subnets and **NAT Gateway** with an Elastic IP for egress traffic from private subnets.
-- Define **Route Tables** for Public, Private App, and Isolated Database subnet groups.
+### 1. Container Image Lifecycle
+* **Build & Push:** Build the application Docker container image and push it to **Amazon Elastic Container Registry (ECR)**.
+* **Task Image Pull:** ECS Fargate tasks pull container images from ECR outbound through the **NAT Gateway**.
 
-### Phase 2: EC2 Compute Deployment
-- Launch EC2 web/app nodes in private application subnets.
-- Implement Security Groups with least-privilege inbound rules (allowing traffic only from ALB).
-- Configure continuous app updates without exposing servers directly to the public internet.
+### 2. External Inbound Web Traffic
+* **Entry Point:** Inbound requests pass through **Route 53 DNS** and **CloudFront CDN** to the **Application Load Balancer (ALB)** in the Public Subnets.
+* **IP Target Group:** The ALB forwards traffic directly to the private ENI IP address of active **ECS Fargate Tasks** on container port `8080`.
 
-### Phase 3: High Availability & Load Balancing
-- Deploy an **Application Load Balancer (ALB)** in public subnets to distribute user requests.
-- Configure target groups and health check thresholds.
-- Set up an **Auto Scaling Group (ASG)** using Custom AMIs to scale application nodes dynamically.
+### 3. Serverless Compute Layer (AWS Fargate)
+* **Cluster & Tasks:** Deployed inside an **ECS Cluster** across `Private-App-Subnet-1a` and `Private-App-Subnet-2b`.
+* **Networking (`awsvpc` mode):** Each task gets a dedicated Elastic Network Interface (ENI) and private IP inside the private application subnets.
 
-### Phase 4: Database Provisioning
-- Create an Amazon RDS PostgreSQL instance deployed in Multi-AZ configuration using DB Subnet Groups across private database subnets.
-- Restrict inbound traffic to accept requests only from the application security group.
-
-### Phase 5: Containerized Re-architecture (ECS & ECR)
-- Build Docker container images for the CloudPay application.
-- Push images to **Amazon ECR (Elastic Container Registry)**.
-- Migrate from EC2 instances to **AWS ECS Fargate** serverless container deployment.
-
-### Phase 6: Storage & Static Asset Caching
-- Provision an **Amazon S3 Bucket** for encrypted invoice document uploads with lifecycle management policies.
-- Attach an **Amazon CloudFront CDN** distribution with Origin Access Control (OAC) for secure content caching.
-
-### Phase 7: Infrastructure as Code & DevOps Automation
-- Codify the entire infrastructure using **AWS CloudFormation** and **Terraform**.
-- Implement CI/CD automation pipelines using **AWS CodePipeline** / GitHub Actions.
+### 4. Database Layer & Document Storage
+* **Relational Database:** ECS Fargate tasks connect directly to **Amazon RDS PostgreSQL Multi-AZ** in isolated database subnets on port `5432`.
+* **Invoice Storage:** Invoice uploads are written directly to an encrypted **Amazon S3 Bucket** via IAM Task Roles.
