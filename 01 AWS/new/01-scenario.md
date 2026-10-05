@@ -9,6 +9,9 @@ You are tasked with designing and building the cloud infrastructure for **CloudP
 
 ### 1. High-Level Architecture Flow
 
+<img width="1032" height="705" alt="image" src="https://github.com/user-attachments/assets/64acc1c9-c152-4ab3-8b44-5b1b8ff66b19" />
+
+
 
 ---
 
