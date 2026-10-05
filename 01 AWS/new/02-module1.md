@@ -24,6 +24,7 @@
 ---
 
 ## 2. AWS Global Infrastructure
+<img width="1035" height="520" alt="image" src="https://github.com/user-attachments/assets/3216a8bc-f642-4adb-8368-2e5dbde049b6" />
 
 
 ### A. Key Components
@@ -62,7 +63,7 @@ To prevent single points of failure, the **CloudPay** platform employs a strict 
 
 ---
 
-## Teaching Summary & Quick Quiz
+## Summary & Quick Quiz
 
 ### Key Takeaways
 1. **IaaS** gives max control (EC2); **PaaS** offloads OS/runtime maintenance (RDS).
