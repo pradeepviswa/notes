@@ -12,7 +12,7 @@
 - **Global Infrastructure:**
   - **Regions:** Physical geographic locations containing multiple isolated Availability Zones (e.g., `ap-south-1` in Mumbai).
   - **Availability Zones (AZs):** One or more discrete data centers with redundant power, networking, and connectivity within a Region.
-  - **Edge Locations:** Points of Presence (PoP) used by CloudFront CDN to cache content closer to end-users.
+  - **Edge Locations:** Points of Presence (PoP) used by CloudFront CDN (Content Delivery Network) to cache content closer to end-users.
 - **Shared Responsibility Model:**
   - **AWS Responsibility (Security OF the Cloud):** Physical data centers, hardware, host OS, virtualization layer, network infrastructure.
   - **Customer Responsibility (Security IN the Cloud):** Guest OS patches, IAM access management, network/firewall configurations (Security Groups), data encryption.
