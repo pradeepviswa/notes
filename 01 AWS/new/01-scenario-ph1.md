@@ -6,7 +6,8 @@ In Phase 1, you will design and build the cloud infrastructure for **CloudPay** 
 ---
 
 ## High-Level Architecture Flow (EC2 Phase)
-<img width="997" height="452" alt="image" src="https://github.com/user-attachments/assets/3eb1e88b-583c-4846-832a-74fb95cc0022" />
+<img width="1026" height="697" alt="image" src="https://github.com/user-attachments/assets/17101c96-8e33-4b8b-b50e-fb6bbd4bf6d5" />
+
 
 
 ## Network & Subnet Topology
