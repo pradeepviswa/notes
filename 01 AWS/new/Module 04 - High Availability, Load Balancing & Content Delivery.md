@@ -41,10 +41,31 @@ In Phase 1, you will design, build, and configure the end-to-end cloud infrastru
 
 ## Step 3: High Availability & Load Balancing (ALB)
 
-### 3.1 Target Groups & Application Load Balancer
-1. **Create Target Group**: Go to EC2 -> **Target Groups** -> Create `cloudpay-app-tg` (Target type: **Instances**, Protocol/Port: HTTP/80, VPC: `CloudPay-Production-VPC`). Set health check path to `/health`. Register your EC2 application instances.
-2. **Create ALB**: Create an Internet-facing Application Load Balancer named `CloudPay-Public-ALB`, mapping `Public-Subnet-1a` and `Public-Subnet-2b`, and attach `cloudpay-alb-sg`.
-3. **Configure Listeners**: Add a listener rule on Port `80` (and `443` with an ACM certificate) routing traffic to `cloudpay-app-tg`.
+### 3.1 Target Group Creation
+1. Open the **EC2 Console** and navigate to **Load Balancing** -> **Target Groups**.
+2. Click **Create target group**.
+3. **Target type**: Select **Instances**.
+4. **Target group name**: Enter `cloudpay-app-tg`.
+5. **Protocol & Port**: HTTP / `80` (or `8080` matching your application port).
+6. **VPC**: Select `CloudPay-Production-VPC`.
+7. **Health checks**: Set path to `/health`.
+8. Click **Next**, select your running EC2 application instances from the list, click **Include as pending below**, and click **Create target group**.
+
+### 3.2 Application Load Balancer (ALB) Provisioning
+1. In the EC2 Console, navigate to **Load Balancers** -> Click **Create load balancer**.
+2. Choose **Application Load Balancer** and click **Create**.
+3. **Basic configurations**:
+   * **Name**: `CloudPay-Public-ALB`
+   * **Scheme**: Internet-facing
+   * **IP address type**: IPv4
+4. **Network mapping**:
+   * **VPC**: Select `CloudPay-Production-VPC`.
+   * **Mappings**: Select `ap-south-1a` (`Public-Subnet-1a`) and `ap-south-1b` (`Public-Subnet-2b`).
+5. **Security groups**: Select your pre-created `cloudpay-alb-sg` security group.
+6. **Listeners and routing**:
+   * **Listener**: HTTP : `80`
+   * **Default action**: Forward to `cloudpay-app-tg`.
+7. Click **Create load balancer**.
 
 ---
 
