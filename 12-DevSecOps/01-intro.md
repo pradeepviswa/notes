@@ -5,3 +5,5 @@
 
 
 https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+<br>
+https://github.com/riteshbehal/Aws-Solution-Architect/blob/main/session-manager-plugin.txt
