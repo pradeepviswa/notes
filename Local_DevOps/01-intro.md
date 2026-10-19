@@ -71,7 +71,7 @@
 - Tasks (2 Hours):
   1. Create a simple Node.js or Python Flask REST API with a `/health` endpoint.
   2. Write an optimized multi-stage `Dockerfile`:
-     ```Dockerfile
+     ```
     # Build stage
     FROM node:18-alpine AS builder
     WORKDIR /app
