@@ -71,21 +71,21 @@
 - Tasks (2 Hours):
   1. Create a simple Node.js or Python Flask REST API with a `/health` endpoint.
   2. Write an optimized multi-stage `Dockerfile`:
-     ```
-    # Build stage
-    FROM node:18-alpine AS builder
-    WORKDIR /app
-    COPY package*.json ./
-    RUN npm ci --only=production
-    
-    # Runtime stage
-    FROM node:18-alpine
-    WORKDIR /app
-    COPY --from=builder /app/node_modules ./node_modules
-    COPY . .
-    USER node
-    EXPOSE 3000
-    CMD ["node", "server.js"]
+     ```Dockerfile
+      # Build stage
+      FROM node:18-alpine AS builder
+      WORKDIR /app
+      COPY package*.json ./
+      RUN npm ci --only=production
+      
+      # Runtime stage
+      FROM node:18-alpine
+      WORKDIR /app
+      COPY --from=builder /app/node_modules ./node_modules
+      COPY . .
+      USER node
+      EXPOSE 3000
+      CMD ["node", "server.js"]
      ```
   3. Build and test locally: `docker build -t local-app:v1.0.0` .
   4. Load the image into Kind:
