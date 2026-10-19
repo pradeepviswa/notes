@@ -47,11 +47,11 @@
   3. Install Docker Desktop or configure Docker Engine inside WSL 2
   4. Verify resource allocation: run `docker info` and check memory thresholds.
  
-# Day 2: Local Kubernetes (`Kind`) Deployment
+## Day 2: Local Kubernetes (`Kind`) Deployment
 - Goal: Spin up a single-node local Kubernetes cluster.
 - Tasks (2 Hours):
-  1. Install kind CLI and kubectl.
-  2. Create a cluster configuration file (kind-config.yaml):
+  1. Install `kind` CLI and `kubectl`.
+  2. Create a cluster configuration file (`kind-config.yaml`):
      ```yaml
       kind: Cluster
       apiVersion: kind.x-k8s.io/v1alpha4
@@ -62,3 +62,31 @@
           hostPort: 8080
           protocol: TCP
      ```
+  3. Create cluster:
+     `kind create cluster --config kind-config.yaml --name devops-lab`.
+  4. Test connectivity: `kubectl cluster-info` and `kubectl get nodes`.
+
+## Day 3: Application Development & Containerization
+- Goal: Write a lightweight microservice and package it into a Docker image.
+- Tasks (2 Hours):
+  1. Create a simple Node.js or Python Flask REST API with a `/health` endpoint.
+  2. Write an optimized multi-stage `Dockerfile`:
+     ```Dockerfile
+    # Build stage
+    FROM node:18-alpine AS builder
+    WORKDIR /app
+    COPY package*.json ./
+    RUN npm ci --only=production
+    
+    # Runtime stage
+    FROM node:18-alpine
+    WORKDIR /app
+    COPY --from=builder /app/node_modules ./node_modules
+    COPY . .
+    USER node
+    EXPOSE 3000
+    CMD ["node", "server.js"]
+     ```
+  3. Build and test locally: `docker build -t local-app:v1.0.0` .
+  4. Load the image into Kind:
+     `kind load docker-image local-app:v1.0.0 --name devops-lab`.
