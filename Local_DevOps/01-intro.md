@@ -135,4 +135,23 @@
      ```Bash
       kubectl create secret generic app-db-secret --from-literal=password='SuperSecretPass' --dry-run=client -o yaml | kubeseal --format yaml > sealed-secret.yaml
      ```
+  4. Confirm that sealed-secret.yaml can be committed safely to Git.
      
+## Day 6: Manifest Packaging with Kustomize
+- Goal: Structure manifests across environments (Dev / Staging) without duplicating YAML code.
+- Tasks (2 Hours):
+  1. Set up Kustomize directory structure:
+     ```
+      k8s-manifests/
+      ├── base/
+      │   ├── deployment.yaml
+      │   ├── service.yaml
+      │   └── kustomization.yaml
+      └── overlays/
+          ├── dev/
+          │   └── kustomization.yaml
+          └── prod/
+              └── kustomization.yaml
+     ```
+  2. Configure image tagging and replicas in `overlays/dev/kustomization.yaml`.
+  3. Test rendering: `kubectl kustomize k8s-manifests/overlays/dev`.
