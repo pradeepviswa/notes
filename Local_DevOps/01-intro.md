@@ -53,12 +53,12 @@
   1. Install kind CLI and kubectl.
   2. Create a cluster configuration file (kind-config.yaml):
      ```yaml
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-nodes:
-- role: control-plane
-  extraPortMappings:
-  - containerPort: 30080
-    hostPort: 8080
-    protocol: TCP
+      kind: Cluster
+      apiVersion: kind.x-k8s.io/v1alpha4
+      nodes:
+      - role: control-plane
+        extraPortMappings:
+        - containerPort: 30080
+          hostPort: 8080
+          protocol: TCP
      ```
