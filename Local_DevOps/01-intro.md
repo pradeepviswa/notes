@@ -90,3 +90,49 @@
   3. Build and test locally: `docker build -t local-app:v1.0.0` .
   4. Load the image into Kind:
      `kind load docker-image local-app:v1.0.0 --name devops-lab`.
+
+
+# Phase 2: Declarative Infrastructure & Secrets (Days 4–6)
+## Day 4: OpenTofu Infrastructure Provisioning
+- Goal: Declare local Kubernetes namespaces, ConfigMaps, and deployments using OpenTofu.
+- Tasks (2 Hours):
+  1. Create `providers.tf` pointing to the local Kubernetes cluster context:
+     ```Terraform
+      terraform {
+        required_providers {
+          kubernetes = {
+            source  = "hashicorp/kubernetes"
+            version = "~> 2.23"
+          }
+        }
+      }
+      
+      provider "kubernetes" {
+        config_path = "~/.kube/config"
+      }
+     ```
+  2. Define Kubernetes resources in `main.tf`:
+     - Namespace: `dev-environment`
+     - ConfigMap: Application environment variables
+    
+  3. Execute OpenTofu workflow:
+     ```Bash
+    tofu init
+    tofu plan
+    tofu apply -auto-approve
+     ```
+
+## Day 5: Secrets Management in GitOps
+
+- Goal: Implement encrypted secrets that can safely live in Git.
+- Tasks (2 Hours):
+  1. Install Bitnami **Sealed Secrets** controller on the Kind cluster:
+  ```Bash
+  kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.24.0/controller.yaml
+  ```
+  2. Install `kubeseal` CLI on host machine.
+  3. Convert a standard Kubernetes Secret into an encrypted `SealedSecret` custom
+     ```Bash
+      kubectl create secret generic app-db-secret --from-literal=password='SuperSecretPass' --dry-run=client -o yaml | kubeseal --format yaml > sealed-secret.yaml
+     ```
+     
