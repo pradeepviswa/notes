@@ -208,12 +208,53 @@ This documentation provides a structured, 14-day step-by-step implementation pla
   2. Define Kubernetes resources in `main.tf`:
      * Namespace: `dev-environment`
      * ConfigMap: Application environment variables
-  3. Execute OpenTofu workflow:
+       ```Terraform
+        # Define the Kubernetes Namespace for your development environment
+        resource "kubernetes_namespace" "dev" {
+          metadata {
+            name = "dev-environment"
+          }
+        }
+        
+        # Define a ConfigMap for application environment variables
+        resource "kubernetes_config_map" "app_config" {
+          metadata {
+            name      = "app-config"
+            namespace = kubernetes_namespace.dev.metadata[0].name
+          }
+        
+          data = {
+            ENVIRONMENT = "development"
+            LOG_LEVEL   = "debug"
+            PORT        = "3000"
+          }
+        }
+       ```
+  3. Install OpenTofu:
      ```bash
+      sudo apt update && sudo apt install -y curl unzip
+      curl -Lo opentofu.zip https://github.com/opentofu/opentofu/releases/download/v1.8.8/tofu_1.8.8_linux_amd64.zip
+      unzip opentofu.zip
+      chmod +x tofu
+      sudo mv tofu /usr/local/bin/tofu
+      tofu version
+     ```
+  4. Execute OpenTofu workflow:
+     ```bash
+     
      tofu init
      tofu plan
      tofu apply -auto-approve
      ```
+  5. Verify:
+     ```bash
+     kubectl get namespaces
+     kubectl get configmap -n dev-environment
+     kubectl describe configmap app-config -n dev-environment
+     
+
+     ```
+     
 
 ---
 
@@ -225,11 +266,24 @@ This documentation provides a structured, 14-day step-by-step implementation pla
      kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.24.0/controller.yaml
      ```
   2. Install `kubeseal` CLI on host machine.
-  3. Convert a standard Kubernetes Secret into an encrypted `SealedSecret` custom resource:
+     ```bash
+      # Set your desired version (matching v0.24.0 controller)
+      KUBESEAL_VERSION="0.24.0"    
+      # download and extract directly if using the tarball format:
+      wget https://github.com/bitnami-labs/sealed-secrets/releases/download/v${KUBESEAL_VERSION}/kubeseal-${KUBESEAL_VERSION}-linux-amd64.tar.gz
+      tar -xvzf kubeseal-${KUBESEAL_VERSION}-linux-amd64.tar.gz kubeseal
+      # Move the binary into your system's global PATH so you can run it from anywhere
+      chmod +x kubeseal
+      sudo mv kubeseal /usr/local/bin/kubeseal
+      # Verify the Installation
+      kubeseal --version
+
+     ```
+  4. Convert a standard Kubernetes Secret into an encrypted `SealedSecret` custom resource:
      ```bash
      kubectl create secret generic app-db-secret --from-literal=password='SuperSecretPass' --dry-run=client -o yaml | kubeseal --format yaml > sealed-secret.yaml
      ```
-  4. Confirm that `sealed-secret.yaml` can be committed safely to Git.
+  5. Confirm that `sealed-secret.yaml` can be committed safely to Git.
 
 ---
 
@@ -249,8 +303,89 @@ This documentation provides a structured, 14-day step-by-step implementation pla
          └── prod/
              └── kustomization.yaml
      ```
+     - command to create folder structure
+       ```bash
+       mkdir -p k8s-manifests/base k8s-manifests/overlays/dev k8s-manifests/overlays/prod && touch k8s-manifests/base/deployment.yaml k8s-manifests/base/service.yaml k8s-manifests/base/kustomization.yaml k8s-manifests/overlays/dev/kustomization.yaml k8s-manifests/overlays/prod/kustomization.yaml
+       ```
   2. Configure image tagging and replicas in `overlays/dev/kustomization.yaml`.
-  3. Test rendering: `kubectl kustomize k8s-manifests/overlays/dev`.
+     - vi k8s-manifests/overlays/dev/kustomization.yaml
+       ```
+        apiVersion: kustomize.config.k8s.io/v1beta1
+        kind: Kustomization
+        
+        # Inherit resources and base configurations from the base folder
+        resources:
+          - ../../base
+        
+        # Override or set specific images for the dev environment
+        images:
+          - name: local-app
+            newTag: v1.0.0
+        
+        # Scale the number of replicas for development
+        replicas:
+          - name: local-app-deployment  # Make sure this matches the name in your base deployment.yaml
+            count: 1
+            
+       ```
+       - vi k8s-manifests/base/kustomization.yaml
+         ```
+          apiVersion: kustomize.config.k8s.io/v1beta1
+          kind: Kustomization
+          
+          resources:
+            - deployment.yaml
+            - service.yaml
+
+         ```
+      - vi k8s-manifests/base/deployment.yaml
+        ```yaml
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: local-app-deployment
+        spec:
+          replicas: 2
+          selector:
+            matchLabels:
+              app: local-app
+          template:
+            metadata:
+              labels:
+                app: local-app
+            spec:
+              containers:
+              - name: local-app
+                image: local-app:latest
+                ports:
+                - containerPort: 3000
+        ```
+      - vi k8s-manifests/base/service.yaml
+        ```yaml
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: local-app-service
+        spec:
+          selector:
+            app: local-app
+          ports:
+          - protocol: TCP
+            port: 80
+            targetPort: 3000
+        ```
+  4. Test rendering: `kubectl kustomize k8s-manifests/overlays/dev`.
+     > It will now successfully render and output your complete, scaled Kubernetes manifests for the development environment!
+  5. To deploy your application manifests using your Kustomize overlay, run
+     ```bash
+     kubectl apply -k k8s-manifests/overlays/dev
+     ```
+
+
+     
+   
+
+   
 
 ---
 
