@@ -58,9 +58,16 @@ This documentation provides a structured, 14-day step-by-step implementation pla
 * **Goal:** Configure resource limits and install local container tools.
 * **Tasks (2 Hours):**
   1. Confirm system resource settings (`.wslconfig` on Windows or host limits on Linux).
-  2. Restart WSL: `wsl --shutdown` in PowerShell (if using Windows).
-  3. Install Docker Engine / Docker Desktop.
-  4. Verify resource allocation: run `docker info` and check memory thresholds.
+     - "C:\Users\prade\.wslconfig"
+     ```
+      [wsl2]
+      memory=6GB
+      processors=4
+      swap=2GB
+     ```
+  3. Restart WSL: `wsl --shutdown` in PowerShell (if using Windows).
+  4. Install Docker Engine / Docker Desktop.
+  5. Verify resource allocation: run `docker info` and check memory thresholds.
 
 ---
 
