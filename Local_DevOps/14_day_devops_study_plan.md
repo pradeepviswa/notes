@@ -79,7 +79,19 @@ This documentation provides a structured, 14-day step-by-step implementation pla
 * **Goal:** Spin up a local Kubernetes cluster.
 * **Tasks (2 Hours):**
   1. Install `kind` CLI and `kubectl`.
-  2. Create a cluster configuration file (`kind-config.yaml`):
+     ```
+      # kubectl
+      curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+      sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+      kubectl version --client
+
+      # kind
+      [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64
+      chmod +x ./kind
+      sudo mv ./kind /usr/local/bin/kind
+      kind version
+     ```
+  3. Create a cluster configuration file (`kind-config.yaml`):
      ```yaml
      kind: Cluster
      apiVersion: kind.x-k8s.io/v1alpha4
@@ -90,8 +102,8 @@ This documentation provides a structured, 14-day step-by-step implementation pla
          hostPort: 8080
          protocol: TCP
      ```
-  3. Create cluster: `kind create cluster --config kind-config.yaml --name devops-lab`.
-  4. Test connectivity: `kubectl cluster-info` and `kubectl get nodes`.
+  4. Create cluster: `kind create cluster --config kind-config.yaml --name devops-lab`.
+  5. Test connectivity: `kubectl cluster-info` and `kubectl get nodes`.
 
 ---
 
