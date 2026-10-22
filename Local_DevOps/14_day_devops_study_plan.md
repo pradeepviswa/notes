@@ -175,6 +175,13 @@ This documentation provides a structured, 14-day step-by-step implementation pla
      ```
   4. Build and test locally: `docker build --no-cache -t local-app:v1.0.0 .`
   5. Load the image into Kind: `kind load docker-image local-app:v1.0.0 --name devops-lab`.
+  6. This loads newly built image in kind container. To verify connect to container and run `crictl images` commands
+     ```bash
+      docker exec -it devops-lab-control-plane /bin/bash
+      crictl images
+     
+     ```
+     
 
 ---
 
