@@ -67,7 +67,11 @@ This documentation provides a structured, 14-day step-by-step implementation pla
      ```
   3. Restart WSL: `wsl --shutdown` in PowerShell (if using Windows).
   4. Install Docker Engine / Docker Desktop.
-  5. Verify resource allocation: run `docker info` and check memory thresholds.
+     ```bash
+      sudo apt update -y
+      sudo apt install docker.io -y
+     ```
+  6. Verify resource allocation: run `docker info` and check memory thresholds.
 
 ---
 
