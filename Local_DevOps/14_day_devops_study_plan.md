@@ -161,7 +161,8 @@ This documentation provides a structured, 14-day step-by-step implementation pla
      FROM node:18-alpine AS builder
      WORKDIR /app
      COPY package*.json ./
-     RUN npm ci --only=production
+     #RUN npm ci --only=production
+     RUN npm install --omit=dev
 
      # Runtime stage
      FROM node:18-alpine
