@@ -251,7 +251,6 @@ This documentation provides a structured, 14-day step-by-step implementation pla
      kubectl get namespaces
      kubectl get configmap -n dev-environment
      kubectl describe configmap app-config -n dev-environment
-     
 
      ```
      
@@ -380,6 +379,15 @@ This documentation provides a structured, 14-day step-by-step implementation pla
      ```bash
      kubectl apply -k k8s-manifests/overlays/dev
      ```
+  6. Port-Forwarding (Quickest Test)
+     ```bash
+      kubectl port-forward svc/local-app-service 8080:80
+     ```
+     > browse: <br>
+     > http://localhost:8080 <br>
+     > http://localhost:8080/health
+     
+     
 
 
      
