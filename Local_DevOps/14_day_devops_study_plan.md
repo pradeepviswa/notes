@@ -111,7 +111,51 @@ This documentation provides a structured, 14-day step-by-step implementation pla
 * **Goal:** Write a lightweight microservice and package it into a Docker image.
 * **Tasks (2 Hours):**
   1. Create a simple Node.js or Python Flask REST API with a `/health` endpoint.
-  2. Write an optimized multi-stage `Dockerfile`:
+     - folder structure
+       ```
+        your-project-folder/
+        ├── Dockerfile
+        ├── package.json
+        ├── package-lock.json   (optional, npm will generate or use package.json)
+        └── server.js
+       ```
+
+     - `package.json`
+       ```json
+          {
+            "name": "local-app",
+            "version": "1.0.0",
+            "description": "Local DevOps lab microservice",
+            "main": "server.js",
+            "scripts": {
+              "start": "node server.js"
+            },
+            "dependencies": {
+              "express": "^4.18.2"
+            }
+          }
+
+       ```
+       - `server.js`
+         ```
+          const express = require('express');
+          const app = express();
+          const PORT = process.env.PORT || 3000;
+          
+          app.get('/health', (req, res) => {
+            res.status(200).json({ status: 'UP', timestamp: new Date() });
+          });
+          
+          app.get('/', (req, res) => {
+            res.send('Hello from Local DevOps Lab App!');
+          });
+          
+          app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+          });
+         ```
+         
+  3. Write an optimized multi-stage `Dockerfile`:
      ```dockerfile
      # Build stage
      FROM node:18-alpine AS builder
@@ -128,8 +172,8 @@ This documentation provides a structured, 14-day step-by-step implementation pla
      EXPOSE 3000
      CMD ["node", "server.js"]
      ```
-  3. Build and test locally: `docker build -t local-app:v1.0.0 .`
-  4. Load the image into Kind: `kind load docker-image local-app:v1.0.0 --name devops-lab`.
+  4. Build and test locally: `docker build --no-cache -t local-app:v1.0.0 .`
+  5. Load the image into Kind: `kind load docker-image local-app:v1.0.0 --name devops-lab`.
 
 ---
 
