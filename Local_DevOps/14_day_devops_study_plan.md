@@ -582,3 +582,17 @@ This documentation provides a structured, 14-day step-by-step implementation pla
 1. Keep system memory capped (e.g., 6 GB in `.wslconfig` if on Windows).
 2. Do not run Docker GUI when unnecessary; run commands through the terminal interface.
 3. Shut down the local `Kind` cluster at the end of every 2-hour session (`kind delete cluster --name devops-lab`) to reclaim system memory for daily tasks.
+
+## Revert all changes
+```
+# Delete the Kind Cluster
+kind delete cluster --name devops-lab
+
+# Destroy OpenTofu Resources (Note: you already deleted the Kind cluster above, this will clear.terraform folders)
+tofu destroy -auto-approve
+
+
+# Clear Local Docker Cache/Containers
+docker system prune -f
+docker image prune -a -f
+```
