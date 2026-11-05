@@ -58,7 +58,7 @@ This documentation provides a structured, 14-day step-by-step implementation pla
 * **Goal:** Configure resource limits and install local container tools.
 * **Tasks (2 Hours):**
   1. Confirm system resource settings (`.wslconfig` on Windows or host limits on Linux).
-     - "C:\Users\prade\.wslconfig"
+     - `C:\Users\prade\.wslconfig`
      ```
       [wsl2]
       memory=6GB
