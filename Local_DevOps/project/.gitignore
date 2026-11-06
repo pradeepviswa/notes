@@ -1,0 +1,30 @@
+# Terraform / OpenTofu local data and state
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Node.js dependencies and local logs
+node_modules/
+npm-debug.log*
+
+# Local environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Downloaded CLI archives
+docker/kubeseal-*-linux-amd64.tar.gz
+
+# Keep encrypted SealedSecret manifests trackable; ignore plaintext secret files.
+secret/*-plaintext.yaml
+secret/*-unsealed.yaml

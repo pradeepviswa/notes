@@ -1,0 +1,16 @@
+# Build stage
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+#RUN npm ci --only=production
+RUN npm install --omit=dev
+
+# Runtime stage
+FROM node:18-alpine
+WORKDIR /app
+COPY --from=builder /app/node_modules ./node_modules
+COPY . .
+USER node
+EXPOSE 3000
+CMD ["node", "server.js"]
+
