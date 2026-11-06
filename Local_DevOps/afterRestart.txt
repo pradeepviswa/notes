@@ -1,0 +1,15 @@
+After waking, make sure Docker is running, then check from WSL:
+---------------------------------------------------------------
+kind get clusters
+kubectl config current-context
+kubectl get nodes
+kubectl get pods -A
+
+
+
+
+Your cluster should still be kind-devops-lab. The port-forward command is temporary, though; if it stopped during sleep, run it again to browse the site:
+---------------------------------------------------------------------------
+kubectl port-forward service/local-app-service 8080:80
+
+

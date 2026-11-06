@@ -104,6 +104,12 @@ This documentation provides a structured, 14-day step-by-step implementation pla
      ```
   4. Create cluster: `kind create cluster --config kind-config.yaml --name devops-lab`.
   5. Test connectivity: `kubectl cluster-info` and `kubectl get nodes`.
+     ```
+      kubectl cluster-info
+      kubectl get nodes
+      kind get clusters
+      kubectl get nodes
+     ```
 
 ---
 
@@ -276,13 +282,34 @@ This documentation provides a structured, 14-day step-by-step implementation pla
       sudo mv kubeseal /usr/local/bin/kubeseal
       # Verify the Installation
       kubeseal --version
-
+     ```
+  3. Verify the current cluster and wait for the controller to become ready:
+     ```bash
+     kubectl config current-context
+     kubectl -n kube-system rollout status deployment/sealed-secrets-controller --timeout=120s
+     kubectl get service,pods -n kube-system | grep sealed
      ```
   4. Convert a standard Kubernetes Secret into an encrypted `SealedSecret` custom resource:
      ```bash
-     kubectl create secret generic app-db-secret --from-literal=password='SuperSecretPass' --dry-run=client -o yaml | kubeseal --format yaml > sealed-secret.yaml
+     kubectl create secret generic app-db-secret \
+       -n dev-environment \
+       --from-literal=password='your-password' \
+       --dry-run=client -o yaml |
+     kubeseal --controller-name sealed-secrets-controller \
+       --controller-namespace kube-system \
+       --format yaml > sealed-secret.yaml
      ```
-  5. Confirm that `sealed-secret.yaml` can be committed safely to Git.
+  5. Apply the generated `SealedSecret` and verify that the controller created the regular Secret:
+     ```bash
+     kubectl apply -f sealed-secret.yaml
+     kubectl get sealedsecret app-db-secret -n dev-environment
+     kubectl get secret app-db-secret -n dev-environment
+     ```
+     To inspect the Secret without displaying its values:
+     ```bash
+     kubectl describe secret app-db-secret -n dev-environment
+     ```
+  6. Confirm that `sealed-secret.yaml` can be committed safely to Git. Do not commit the original unsealed Secret or real credentials.
 
 ---
 
